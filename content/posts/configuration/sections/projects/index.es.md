@@ -1,87 +1,85 @@
 ---
-title: "Configurando la sección de Proyectos"
+title: Configuring Projects Section
 date: 2020-06-08T06:20:35+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Sección de Proyectos
+    name: Projects Section
     identifier: projects-section
     parent: sections
     weight: 140
 ---
 
-El propósito de la sección `Proyectos` es mostrar eficazmente sus proyectos. En esta publicación, le guiaré a través del proceso de configuración de la sección de `Proyectos` en su sitio web. Para obtener una referencia completa, puede consultar el archivo de ejemplo [projects.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/projects.yaml).
+The purpose of the `Projects` section is to effectively showcase your projects. In this post, we will guide you on how to configure the `Projects` section on your site. For a complete reference, please refer to the sample [projects.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/projects.yaml) file.
 
-Para empezar, crea un nuevo archivo llamado `projects.yaml` dentro del directorio `data/es/sections` de tu sitio web. Después, sigue las instrucciones de abajo.
+To begin, create a new file named `projects.yaml` in the `data/en/sections` directory of your website. Then, follow the instructions below.
 
-### Añade la información de la sección
+### Add Section Information
 
-Añade la siguiente sección de metadatos en el archivo `projects.yaml`:
+Add the following section metadata to your `projects.yaml` file:
 
 ```yaml
+# section information
 section:
-  name: Proyectos # Título de la sección (predeterminado: "")
-  id: projects # id del url de la sección *se requiere*
-  enable: true # Booleano que determina si la sección está activada (predeterminado: false)
-  weight: 5 # Orden de la sección (predeterminado: alfabeticamente seguida del peso)
-  showOnNavbar: true # Booleano que determina si el enlace de esta sección debe aparecer en la barra de navegación
-  # Opcionalmente puede ocultar el título del menú
+  name: Projects
+  id: projects
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
   # hideTitle: true
 ```
 
-### Añade los botones de filtrado de proyectos
+### Add Project Filtering Buttons
 
-Ahora, añade una sección `buttons` dentro del archivo `projects.yaml`, como a continuación,
+Now, add a `buttons` section in your `projects.yaml` file as bellow,
 
 ```yaml
 buttons:
-- name: Todos
+- name: All
   filter: "all"
 - name: Professional
   filter: "professional"
-- name: Académico
+- name: Academic
   filter: "academic"
 - name: Hobby
   filter: "hobby"
 ```
 
-Cada botón tiene dos propiedades. La primera propiedad es `name`, que es el texto que se mostrará en el botón, y la otra es `filter` que especifica la categoría de los proyectos que el botón debe seleccionar.
+Each button has two properties. The first property is `name` which is the text that will be displayed on the button and the other is `filter` which specifies the category of the projects this button should select.
 
-Un botón solo mostrará los proyectos que tengan una etiqueta que coincida con el texto especificado en el campo `filter`. El filtro del valor `all` es tratado especialmente. Selecciona todos los proyectos aunque no tengan la etiqueta `all` en su campo `tags`.
+A button will show only those projects that have a tag that matches the text specified in the `filter` filed. The filter value `all` is treated specially. It matches all the projects even though they don't have `all` as a tag in their `tags` field.
 
-### Añade tus proyectos
+### Add Your Projects
 
-Ahora, añade tus proyectos debajo de la sección `projects` del archivo, `projects.yaml` como a continuación,
+Now, add your projects under the `projects` section of your `projects.yaml` file as bellow,
 
 ```yaml
 projects:
 - name: Kubernetes
-  logo: images/sections/projects/kubernetes.png
-  role: Contribuidor
-  timeline: "Marzo 2018 - Presente"
+  logo: images/projects/kubernetes.png
+  role: Contributor
+  timeline: "March 2018 - Present"
   repo: https://github.com/kubernetes/kubernetes
-  #url: ""
-  summary: Programación y gestión de contenedores de nivel de producción.
+  # url: ""
+  summary: Production-Grade Container Scheduling and Management .
   tags: ["professional", "kubernetes", "cloud"]
 ```
 
-Puedes especificar los siguientes campos en cada proyecto,
+You can specify the following field for a project,
 
-- **name**: Nombre del proyecto.
-- **logo**: Logo del proyecto. Si el proyecto no tiene logo, el tema automáticamente añadirá un marcador de posición allí.
-- **role**: Tu rol en el proyecto.
-- **timeline**: Intervalo de tiempo que has trabajado en el proyecto.
-- **repo**: Si tu proyecto tiene un repositorio público de Github, entonces provee el enlace. Mostrará el contador de estrellas.
-- **url**: Si tu proyecto no tiene un repositorio público, pero tiene una página web u otra url de detalles externos, proveelo aquí. No provees "repo" y "url" a la vez. Esto creará un botón con un enlace en la tarjeta del proyecto.
-- **summary**: Breve descripción del proyecto.
-- **tags**: Lista de etiquetas de tu proyecto. Se usarán para seleccionar el proyecto debajo de una categoría con los botones de filtrado.
+- **name**: The name of the project.
+- **logo**: The logo of the project. If the project does not have a logo, the theme will automatically add a placeholder there.
+- **role**: Your role in the project.
+- **timeline**: The timeline when you have worked on the project.
+- **repo**: If the project is an open-source project and hosted on Github, you can provide the repository URL. This will be used to show the star count for the project.
+- **url**: If the project is not an open-source project or not hosted on Github, you can provide an URL of the project. This will create a button with the link in the project card.
+- **summary**: A short description of your project.
+- **tags**: A list of tags for your project. It will be used to select the project under a category by the filtering buttons.
 
->Puedes usar la sintáctica de markdown en el campo `summary`.
+> You can use markdown syntax in the `summary` field.
 
 {{< vs 2 >}}
 
-La siguiente imagen muestra cómo el contenido de `projects.yaml` está distribuido en la sección de `Proyectos`.
+The following image shows how the contents of `projects.yaml` are mapped into the `Projects` section.
 
 {{< img src="images/projects.png" >}}
