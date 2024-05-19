@@ -1,8 +1,8 @@
 ---
-title: Configuración
+title: Configuration
 menu:
   sidebar:
-    name: Configuración
+    name: Configuration
     identifier: configuration
     weight: 100
 ---
