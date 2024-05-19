@@ -1,34 +1,31 @@
 ---
-title: "Enlaces de Soporte"
+title: Supports Links
 date: 2022-03-14T06:00:23+06:00
-description: Añade enlaces de soporte en el tema de hugo Toha
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
+description: Adding support links in hugo theme Toha
 menu:
   sidebar:
-    name: Enlaces de Soporte
+    name: Support Links
     identifier: supports
     weight: 660
 ---
 
-Este tema soporta la adición de varios enlaces de soporte/donación en su sitio. Actualmente, los enlaces de soporte admitidos son:
+This theme supports adding various support/donation links in your site. Currently, supported support links are:
 
 - [Ko-fi](https://ko-fi.com/)
 - [Buy Me a Coffee](https://www.buymeacoffee.com/zicklam)
 
-Para una lista completa de los enlaces de soporte admitidos, puede consultar el archivo de ejemplo [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml).
+For a complete list of supported support links, please refer the sample [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml) file.
 
 ## Ko-fi
 
-Puedes añadir tu botón flotante Ko-fi en tu sitio web. Para añadir el botón flotante, añade la sección `support` debajo de la sección `params.features`  del archivo `config.yaml`.
+You can add your Ko-fi floating button in your website. To add the floating button, add the `support` section under `params.features` section of your sites `config.yaml` file:
 
 ```yaml
 support:
   enable: true
   services:
     kofi:
-      user: <id de tu usuario de ko-fi>
+      user: <your ko-fi user id>
       text: Tip Me
       textColor: '#f9fafc'
       backgroundColor: '#248aaa'
@@ -36,7 +33,7 @@ support:
 
 ## Buy Me a Coffee
 
-Puedes añadir tu botón flotante "Buy Me a Coffee" en tu sitio web. Para añadir el botón flotante, añade la sección `support` debajo de la sección `params.features`  del archivo `config.yaml`.
+You can add your "Buy Me a Coffee" floating button in your website. To add the floating button, add the `support` section under `params.features` section of your sites `config.yaml` file:
 
 ![bmacbutton](https://git-doc-files.s3.eu-central-1.amazonaws.com/github.com/hugo-toha/guides/buymeacoffe-button.png)
 ![bmacwidget](https://git-doc-files.s3.eu-central-1.amazonaws.com/github.com/hugo-toha/guides/buymeacoffe-widget.png)
@@ -46,7 +43,7 @@ support:
   enable: true
   services:
     buymeacoffee:
-      user: <su usuario de buymeacoffee.com>
+      user: <your buymeacoffee.com user>
       text: Support me on Buy me a coffee!
       info: Buy me a coffee!
       color: '#FFDD00'
