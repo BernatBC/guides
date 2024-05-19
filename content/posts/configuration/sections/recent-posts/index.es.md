@@ -1,28 +1,25 @@
 ---
-title: "Configurando la sección de Publicaciones Recientes"
+title: Configuring Recent Posts Section
 date: 2020-06-08T06:20:34+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Sección de Publicaciones Recientes
+    name: Recent Posts Section
     identifier: recent-posts-section
     parent: sections
     weight: 150
 ---
 
-La sección de `Publicaciones Recientes` sirve para mostrar las últimas publicaciones de tu contenido. Para habilitar esta sección, crea un archivo `recent-posts.yaml` dentro del directorio `data/en/sections` e incluye el siguiente contenido:
+The `Recent Posts` section is used to showcase the latest posts from your content. To enable this section, create a `recent-posts.yaml` file in the `data/en/sections` directory and include the following content:
 
 ```yaml
-# Información de la sección
+# section information
 section:
-  name: Publicaciones Recientes # Título de la sección
-  id: recent-posts # id del url de la sección *se requiere*
-  enable: true # Booleano que determina si la sección está activada (predeterminado: false)
-  weight: 6 # Orden de la sección (predeterminado: alfabeticamente seguida del peso)
-  showOnNavbar: true # Booleano que determina si el enlace de esta sección debe aparecer en la barra de navegación
-  hideTitle: true # Opcionalmente puede ocultar el título del menú (predeterminado: false)
-  numShow: 4 # Opcionalmente puede incrementar el número de publicaciones para mostrar (predeterminado: 3)
-  showMoreButton: false # Opcionalmente puede mostrar el botón `Más publicaciones` (predeterminado: false)
+  name: Recent Posts # Title of section (default: "")
+  id: recent-posts # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 6 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  hideTitle: true # Can optionally hide the title in sections (default: false)
+  numShow: 4 # Can optionally increase the number of posts to display (default: 3)
+  showMoreButton: false #Can optionally show 'More Posts' button (default: false)
 ```
