@@ -1,85 +1,81 @@
 ---
-title: "Configurando la sección de Experiencia"
+title: Configuring Experiences Section
 date: 2020-06-08T06:20:40+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Sección de Experiencia
+    name: Experiences Section
     identifier: experiences-section
     parent: sections
     weight: 130
 ---
 
-La sección de `Experiencia` ha sido diseñada para mostrar su trayectoria profesional y resalte las responsabilidades que ha asumido a lo largo de su trayectoria profesional. En esta publicación, le guiaré a través del proceso de configuración de la sección de `Experiencia` en su sitio web. Para obtener una referencia completa, puede consultar el archivo de ejemplo [experiences.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/experiences.yaml).
+The `Experiences` section is designed to showcase your career background and highlight the responsibilities you have handled throughout your professional journey. In this post, we will guide you on how to configure the `Experiences` section of your site. For a complete reference, you can refer to the sample [experiences.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/experiences.yaml) file.
 
-Para empezar, crea un nuevo archivo llamado `experiences.yaml` dentro del directorio `data/es/sections` de tu sitio web. Después, sigue las instrucciones de abajo.
+To begin, create a new file named `experiences.yaml` in the `data/en/sections` directory of your site. Then, follow the instructions below.
 
-### Añade la información de la sección
+### Add Section Information
 
-Añade la siguiente sección de metadatos en el archivo `experiences.yaml`:
+Add the following section metadata to your `experiences.yaml` file:
 
 ```yaml
 section:
-  name: Experiencia # Título de la sección (predeterminado: "")
-  id: experiences # id del url de la sección *se requiere*
-  enable: true # Booleano que determina si la sección está activada (predeterminado: false)
-  weight: 3 # Orden de la sección (predeterminado: alfabeticamente seguida del peso)
-  showOnNavbar: true # Booleano que determina si el enlace de esta sección debe aparecer en la barra de navegación
-  # Opcionalmente puede ocultar el título del menú
-  # hideTitle: true
+  name: Experiences # Titre de la section (par défaut: "" )
+  id: experiences # url id/slug of section *Required*
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
 ```
 
+### Add Your Experiences
 
-### Añade tu experiencia
-
-Para añadir una experiencia, añade la respectiva información debajo de la sección `experiences` dentro del archivo `experiences.yaml`, como a continuación:
+To add an experience, include the respective information under `experiences` section in the `experiences.yaml` file as below:
 
 ```yaml
-# Tu experiencia
+# Your experiences
 experiences:
 - company:
     name: Example Co.
     url: "https://www.example.com"
     location: Dhaka Branch
     logo: /images/experiences/company.png
-    darkLogo: /images/experiences/company-dark.png #(opcional), opcionalmente puede mostrar un logo distinto para el tema oscuro.
-    # resumen de la empresa
-    overview: Example Co. es una empresa ampliamente reconocida de cloud-native development. Crea herramientas para Kubernetes.
+    darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
+    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
   positions:
-  - designation: Ingeniero de Software Sénior
+  - designation: Senior Software Engineer
     start: Nov 2019
-    # No des una fecha de finalización si aún trabajas ahí. Será sustituida "Presente"
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
-    # Da unos puntos sobre tus responsablildades en la empresa.
+    # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Diseñar y desarollar la herramienta XYZ para la tarea ABC
-    - Diseñar, desarollar y administrar herramienta de recuperación de desastres [Xtool](https://www.example.com) que hace copias de seguridad de volúmenes de Kubernetes, Bases de Datos y definición de recursos del clúster.
-    - Líder del equipo de backend.
+    - Design and develop XYZ tool for ABC task
+    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
+    - Lead backend team.
 
-  - designation: Ingeniero de Software Júnior
+  - designation: Junior Software Engineer
     start: Nov 2017
     end: Oct 2019
     responsibilities:
-    - Implementar y testear la funcionalidad xyz de la herramienta abc.
-    - Dar soporte al cliente de la herramienta abc.
-    - Aprender tecnología k,d,w de xyz.
+    - Implement and test xyz feature for abc tool.
+    - Support client for abc tool.
+    - Learn k,d,w technology for xyz.
 ```
 
-Cada entrada de la sección `experiences` debería tener la siguiente información,
+Each entry in the `experiences` section should have the following information:
 
-- **company**: Información sobre tu empresa. Deberías proveer `name`, `url`, `location`, `logo`, y un breve `overview` de la empresa.
-- **positions**: Lista de posiciones que has tenido en la empresa. Puedes proveer múltiples posiciones si has cambiado de posición en la empresa.
-- **designation**: Representa los roles que has tenido en la posición correspondiente.
-- **start**: Fecha en que te uniste en la respectiva posición.
-- **end**: Fecha en que dejaste la posición. Si aún está trabajando en esa posición, no llenes este campo.
-- **responsibilities**: Lista de responsabilidades que tuviste en esa posición. Esta sección es muy importante, ya que el visitante podrá tener una idea sobre las responsabilidades profesionales que eres capaz de manejar.
+- **company**: Some information about your company. You should provide `name`, `url`, `location`, `logo`, and a brief `overview` of the company.
+- **positions**: A list of positions you have held in the company. You can provide multiple positions if you have changed your position in the company.
+- **designation**: Represents the role that you were playing at the position.
+- **start**: Time when you had joined at the position.
+- **end**: Time when you have left the position. If you are currently working at the position, don't provide this field.
+- **responsibilities**: A list of responsibilities you handled at that position. This section is very important as it will give the viewer an idea about the professional responsibilities you are capable to deal with.
 
-> Puedes usar la sintáctica de markdown en el campo `overview` de la sección `company` y el campo de `responsibilities`.
+> You can use markdown syntax in `overview` field of `company` section and `responsibilities` field.
 
 <!-- {{< vs 2 >}}
 
-La siguiente imagen muestra cómo se distribuye el contenido de `experiences.yaml` de la sección de `Experiencia`.
+The following image shows how the contents of `experiences.yaml` are mapped into the `Experiences` section.
 
 {{< img src="images/experiences.png" >}} -->
