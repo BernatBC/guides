@@ -1,64 +1,61 @@
 ---
-title: "Migrar de la versión V3 a V4"
+title: Migrate from V3 to V4 version
 date: 2024-01-05T02:30:00+06:00
-description: Guía de migración de la versión V3 a V4
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
+description: A migration guide from v3 to v4 version of the theme.
 menu:
   sidebar:
-    name: Migración de V3 a V4
+    name: V3 to V4 Migration
     identifier: v3-to-v4-migration
     weight: 900
 ---
 
-Toha V4 ha introducido muchos cambios que pueden romper el tema, es decir, cambian cómo se usa y configura el tema. Esta guía ta ayudará a migrar de la versión del tema v3 a v4. Por favor, compruebe estas [release notes](https://github.com/hugo-toha/toha/releases/tag/v4.0.0) para el registro de cambios completo.
+Toha V4 has introduced a lots of breaking changes in terms of how the theme is used and how it is configured. This guide will help you to migrate from v3 to v4 version of the theme. Please, check this [release notes](https://github.com/hugo-toha/toha/releases/tag/v4.0.0) for complete changelog.
 
-En esta guía, lo guiaré por los pasos para migrar de la versión 3 a la versión 4 del tema Toha. Esta guía se basa en la guía de migración escrita por [Alexandre Neto](https://github.com/SrNetoChan) en [este issue](https://github.com/hugo-toha/toha/issues/852). ¡Empecemos!
+In this guide, I will walk you through the steps to migrate from version 3 to version 4 of the Toha theme. This guide is based on the migration guide written by [Alexandre Neto](https://github.com/SrNetoChan) in [this issue](https://github.com/hugo-toha/toha/issues/852). Let's get started!
 
-### 1. Borra el submódulo de git `toha`
+### 1. Remove `toha` git submodule
 
-Toha V4 ha introducido unos cambios en el proceso de instalación. Uno de los cambios es que el tema ya no usa los submódulos de git. Por lo tanto, necesitamos eliminar el submódulo git `toha`. No te preocupes, este paso no eliminará nada de tu contenido.
+Toha V4 has made some changes to the installation process. One of the changes is that the theme no longer uses a git submodule. Therefore, we need to remove the `toha` git submodule. Don't worry, this step will not remove any of your content.
 
 ```bash
 git rm themes/toha/
 git commit -m "Remove v3 theme"
 ```
 
-### 2. Borra `theme` de `config.yaml`
+### 2. Remove `theme` from `config.yaml`
 
-En la nueva versión, ya no necesitamos especificar `theme` en el archivo `config.yaml`. En cambio, necesitaremos añadir el tema como módulo. Por lo tanto, borra la siguiente línea del archivo `config.yaml`.
+In the new version, we no longer need to specify the `theme` in the `config.yaml` file. Instead, we will add the theme as a module. Therefore, remove the following line from your `config.yaml` file:
 
 ```yaml
 theme: toha
 ```
 
-### 3. Cumple los requerimentos
+### 3. Meet the requirements
 
-Para ejecutar el tema localmente, debes tener las siguientes herramientas instaladas.
+For building the site locally we will need to update/install the following requirements:
 
-1. Versión Hugo `v0.118.x` (extended) o posterior.
-2. [Go](https://go.dev/doc/install) language versión `v1.18.x` o posterior.
-3. Versión Node `v18.x` y versión npm `8.x` o posterior.
+1. Hugo version `v0.118.x` (extended) or later.
+2. [Go](https://go.dev/doc/install) language version `v1.18.x` or later.
+3. Node version `v18.x` and npm version `8.x` or later.
 
-Asegérate de que tienes las herramientas requeridas instaladas con la versión adecuada usando los siguientes comandos.
+Make sure you have installed all the required tools.
 
 ### 4. Initialize Hugo Module
 
-Toha V4 usa [Hugo Module](https://gohugo.io/hugo-modules/) para manejar el tema. Vamos a usar el módulo de hugo para añadir el tema `Toha` a nuestro sitio web. Inicializa los módulos de hugo usando el siguiente comando:
+Toha V4 now uses [Hugo Module](https://gohugo.io/hugo-modules/) to manage the theme. To get going, we need to initialize the module.
 
 ```bash
-hugo mod init github.com/<su usuario>/<su repositorio>
+hugo mod init github.com/<your username>/<your repo name>
 ```
 
-Este comando creará un archivo `go.mod` a la raíz de su repositorio. Compruebe que el archivo se haya creado correctamente.
+This will create a `go.mod` file in the root of your site. You can check the file to see if it has been created properly.
 
-### 5. Añade el tema como módulo
+### 5. Add the theme as a module
 
-Ahora, añade la siguiente sección `module` en el archivo `config.yaml`. Esto añadirá el tema como módulo y lo montará en los archivos estáticos del tema.
+Now, add the following `module` section in your `config.yaml` file. This will add the theme as a module and also mount the static files from the theme.
 
 ```yaml
-# Usa los modules de Hugo para añadir el tema
+# Use Hugo modules to add theme
 module:
   imports:
   - path: github.com/hugo-toha/toha/v4
@@ -73,13 +70,13 @@ module:
     target: static/fonts
 ```
 
-### 6. Actualiza el archivo `config.yaml`
+### 6. Update the `config.yaml` file
 
-En la nueva versión, la estructura de configuración de las funcionalidades ha sido restructurada. Asimismo, será necesario actualizar el archivo `config.yaml`. Como referencia, puede consultar el ejemplo del archivo [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml). Aquí resaltaremos las configuraciones más comunes que necesitan cambiarse.
+In the new version, the configuration structure for managing features has been restructured. Therefore, it is necessary to update the `config.yaml` file. For reference, you can check the sample [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml). Here, we will highlight the most commonly used configurations that need to be changed.
 
-**Modo oscuro:**
+**Dark Mode:**
 
-Hemos introducido soporte para un nuevo modo oscuro. Como resultado, ya no necesitamos usar servicios de terceros como `darkreader`. Para habilitar el nuevo modo oscuro, por favor borra las siguientes líneas de tu archivo `config.yaml`:
+We have introduced a new built-in dark mode support. As a result, there is no longer a need to use a third-party service like `darkreader`. To enable the new dark mode, please remove the following lines from your `config.yaml` file:
 
 ```yaml
  darkMode:
@@ -88,18 +85,18 @@ Hemos introducido soporte para un nuevo modo oscuro. Como resultado, ya no neces
     default: system
 ```
 
-Después, añade las siguientes líneas debajo de la sección `params.features`:
+Then, add the following lines under `params.features` section:
 
 ```yaml
 darkMode:
   enable: true
 ```
 
-**Analíticas:**
+**Analytics:**
 
-Hemos reestructurado la configuración de las analíticas, comentarios y proveedores de servicio de soporte. Ahora están puestos debajo del campo `services` de la sección respectiva.
+We have restructured the configuration for analytics, comments, and support service providers. They are now placed under the `services` field of the respective section.
 
-Asimismo, tus configuraciones previas de analíticas serán actualizadas de:
+Therefore, your previous analytics configuration will be updated from:
 
 ```yaml
 analytics:
@@ -108,7 +105,7 @@ analytics:
     id: UA-XXXXXXXXX-X
 ```
 
-a:
+to:
 
 ```yaml
 analytics:
@@ -118,9 +115,9 @@ analytics:
       id: UA-XXXXXXXXX-X
 ```
 
-**Comentarios:**
+**Comment:**
 
-De la misma forma, tus configuraciones de comentarios se transformarán de:
+Likewise, your existing comments configuration will be transformed as follows:
 
 ```yaml
 comment:
@@ -129,8 +126,8 @@ comment:
     shortName: <your-disqus-shortname>
 ```
 
-a:
-  
+to:
+
 ```yaml
 comment:
   enable: true
@@ -139,9 +136,9 @@ comment:
       shortName: <your-disqus-shortname>
 ```
 
-**Soporte:**
+**Support:**
 
-Y, las siguientes configuraciones de soporte pasarán de:
+And, your following support configuration will change from:
 
 ```yaml
 support:
@@ -153,7 +150,7 @@ support:
     backgroundColor: '#248aaa'
 ```
 
-a:
+to:
 
 ```yaml
 support:
@@ -166,28 +163,28 @@ support:
       backgroundColor: '#248aaa'
 ```
 
-**Otros Cambios:**
+**Other Changes:**
 
-Hay otras opciones que han cambiado. Por ejemplo:
+There are few other options that have been changed. For examples:
 
 ```yaml
 enableToc: true
 ```
 
-remplazado por:
+replaced by:
 
 ```yaml
 toc:
   enable: true
 ```
 
-Similarmente:
+Similarly:
 
 ```yaml
 enableTags: true
 ```
 
-remplazado por:
+replaced by:
 
 ```yaml
 tags:
@@ -195,13 +192,13 @@ tags:
   on_card: true
 ```
 
-Finalmente,
+Finally,
 
 ```yaml
 showFlags: true
 ```
 
-remplazado por:
+replace by:
 
 ```yaml
 # Specify whether to show flag in the language selector. Default is true.
@@ -214,29 +211,29 @@ flags:
 
 ```
 
-Ha habido algunos otros cambios. Consulte el archivo de configuración de muestra [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml) para obtener más detalles.
+There have been a few other changes. Please refer to the sample configuration file for more details.
 
-### 7. Ejecuta el sitio
+### 7. Build the site
 
-Finalmente, estás listo para ejecutar el tema. Por favor, ejecute los siguientes pasos para crear el sitio: 
+Finally, you ready to build the theme. Please, execute the following steps to build the site:
 
-a. Cargar módulos de Hugo
+a. Load Hugo modules
 
 ```bash
 hugo mod tidy
 ```
 
-b. Instalar módulos de Node
+b. Install node modules
 
 ```bash
 hugo mod npm pack
 npm install
 ```
 
-c. Ejecuta el sitio
+c. Run the site
 
 ```bash
 hugo server -w
 ```
 
-Espero que esta guía te haya servido de ayuda con la migración del tema de la versión V3 a V4. Si encuentras algun problema, por favor abre una issue en el [repositorio en Github](https://github.com/hugo-toha/toha).
+I hope this guide has been helpful in migrating your theme from V3 to V4. If you encounter any issues, please feel free to open an issue in the [Github repository](https://github.com/hugo-toha/toha).
