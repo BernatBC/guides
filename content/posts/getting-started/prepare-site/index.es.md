@@ -1,46 +1,43 @@
 ---
-title: "Prepare su sitio web"
+title: Prepare Your Site
 date: 2020-06-08T23:00:20+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Prepare su sitio web
+    name: Prepare Site
     identifier: getting-started-prepare-site
     parent: getting-started
     weight: 10
 ---
 
-En esta publicación, vamos a crear un sitio de hugo desde cero. Después, lo configuraremos con el tema `Toha`, lo haremos plurilingüe, y añadiremos publicaciones de ejemplo. Al final de esta publicación, deberías poder ejecutar un sitio hugo con el tema `Toha` totalmente funcional localmente.
+In this post, we are going to create a hugo site from scratch. Then, we will configure it with `Toha` theme, make it multilingual, add some example posts. At the end of this post, you should be able to run a fully functional hugo site with `Toha` theme locally.
 
-Si quieres un atajo, puedes simplemente hacer un fork del repositorio [hugo-toha/hugo-toha.github.io](https://github.com/hugo-toha/hugo-toha.github.io), renombrarlo y actualizarlo con tus datos. Este repositorio ya está configurado para el despliegue en [Github Pages](https://pages.github.com/) y [Netlify](https://www.netlify.com/).
+If you want a head start, you can just fork [hugo-toha/hugo-toha.github.io](https://github.com/hugo-toha/hugo-toha.github.io) repo, rename it and update with your own data. This repo has already been configured to deploy in [Github Pages](https://pages.github.com/) and [Netlify](https://www.netlify.com/).
 
-### Crea el Repositorio
+### Create Repository
 
-Para empezar, crea un repositorio en Github. Si quieres desplegar este sitio en Github Pages, el nombre de tu repositorio debería ser `<su usuario>.github.io`. Clona el repositorio en tu máquina local y dirígete hacia él.
+At first, create a repository in Github. If you want to deploy this site in Github Pages, your repo named should be `<your user name>.github.io`. Clone the repository into your local machine and navigate into it.
 
-### Crea el sitio
+### Create Site
 
-Ahora, asegúrese que tiene [Hugo](https://gohugo.io/getting-started/installing/) instalado. Este tema debería funcionar con la versión de hugo `v0.118.0` o posterior. Ahora, ejecuta el siguiente comando en la raíz de su repositorio para inicializar un sitio web de hugo.
+Now, make sure that you have [Hugo](https://gohugo.io/getting-started/installing/) installed. This theme should work with hugo version `v0.118.0` and later. Now, run the following command in the root of your repository to initiate a hugo website.
 
 ```console
 hugo new site ./ --format=yaml --force
 ```
 
-Este comando creará una estructura básica de un sitio de hugo. Aquí, el parámetro `-f=yaml` indica a hugo que cree el archivo de configuración en el formato YAML, y el parámetro `--force` fuerza a hugo que cree el sitio aunque el directorio destino no esté vacío. Creará un archivo `hugo.yaml`  que contendrá todas las configuraciones necesarias para su sitio.
+This command will create a basic hugo site structure. Here, `--format=yaml` flag tells hugo to create configuration file in YAML format and `--force` flag forces hugo to create a site even if the target directory is not empty. It will create `hugo.yaml` file that will hold the all the necessary configurations for your site.
 
-### Añade el tema
+### Add Theme
 
-Vamos a usar el módulo de hugo para añadir el tema `Toha` a nuestro sitio web. Para empezar, inicializa los módulos de hugo usando el siguiente comando:
+We are going to use hugo module to add `Toha` theme into our site. At first, initialize hugo modules using the following command:
 
 ```bash
-hugo mod init github.com/<su usuario>/<su repositorio>
+hugo mod init github.com/<your user name>/<your repo name>
 ```
 
-Este comando creará un archivo `go.mod` a la raíz de su repositorio.
+This command will create a `go.mod` file in the root of your repository.
 
-Después, añade la siguiente sección de módulo en el archivo `hugo.yaml`:
+Then, add the following module section in your `hugo.yaml` file:
 
 ```yaml
 module:
@@ -55,36 +52,36 @@ module:
     target: static/fonts
 ```
 
-Finalmente, ejecuta los siguientes comandos para descargar el tema y sus dependencias:
+Finally, run the following commands to download the theme and its dependencies:
 
 ```bash
-# descargar el tema
+# download the theme
 hugo mod get -u
-# descargar las dependencias del tema
+# download the theme's dependencies
 hugo mod tidy
-# genera dependencias de node
+# generate node dependencies
 hugo mod npm pack
-# instala dependencias
+# install install dependencies
 npm install
 ```
 
-### Ejecuta el sitio web localmente
+### Run Site Locally
 
-Ahora, ya puedes ejecutar tu sitio web localmente. Lo ejecutaremos en modo observador con el siguiente comando:
+Now, you can already run your site locally. Let's run the site in watch mode using the following command:
 
 ```console
 hugo server -w
 ```
 
-Si navega hacia `http://localhost:1313`, debería ver un sitio web básico con el tema Toha. En la siguiente sección, configuraremos el sitio para que se parezca a [hugo-toha.github.io](https://hugo-toha.github.io/). Como hemos ejecutado el server en modo observador, cualquier cambio que hagamos al sitio, será visible instantáneamente en el navegador.
+If you navigate to `http://localhost:1313`, you should see a basic site with Toha theme. In the next section, we are going to configure the site to look like the [hugo-toha.github.io](https://hugo-toha.github.io/). As we have run the server in watch mode, any changes we make to the site will be instantly visible in the browser.
 
-### Configura el sitio
+### Configure Site
 
-Ahora, ya estamos preparados para configurar nuestro sitio web. En esta sección, añadiremos la información de autor, diferentes secciones, publicaciones de ejemplo, etc.
+Now, we are ready to configure our site. In this section, we are going to add  author information, different sections, and sample posts etc.
 
-#### Actualiza `hugo.yaml`
+#### Update `hugo.yaml`
 
-Cuando ha creado el sitio usando el comando `hugo new site`, ha creado un archivo `hugo.yaml` en la raíz de su repositorio. Substituye el contenido por defecto del archivo `hugo.yaml` por el siguiente:
+When you have created the site using `hugo new site` command, it has created a `hugo.yaml` file in the root of your repository. Replace the default content of the `hugo.yaml` file with the following:
 
 ```yaml
 baseURL: https://hugo-toha.github.io
@@ -92,7 +89,7 @@ baseURL: https://hugo-toha.github.io
 languageCode: en-us
 title: "John's Blog"
 
-# Utiliza Hugo modules para añadir el tema
+# Use Hugo modules to add theme
 
 module:
   imports:
@@ -107,20 +104,20 @@ module:
   - source: ./node_modules/katex/dist/fonts
     target: static/fonts
 
-# Administrar idiomas
-# Para más detalles, puedes visitar la documentación oficial de hugo: https://gohugo.io/content-management/multilingual/
+# Manage languages
+# For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
 languages:
-  es:
-    languageName: Español
-    weight: 1
   en:
     languageName: English
+    weight: 1
+  fr:
+    languageName: Français
     weight: 2
 
-# Forzar el uso de una configuración regional, ¡realmente útil para desarrollar la aplicación!
+# Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 # DefaultContentLanguage: bn
 
-# Autorizar raw html en markdown
+# Allow raw html in markdown file
 markup:
   goldmark:
     renderer:
@@ -130,120 +127,122 @@ markup:
     endLevel: 6
     ordered: false
 
-# Al menos HTML y JSON son requeridos por el contenido principal de HTML y búsqueda de Javascript en el lado del cliente.
+# At least HTML and JSON are required for the main HTML content and
+# client-side JavaScript search
 outputs:
   home:
     - HTML
     - RSS
     - JSON
 
-# Habilitar soporte global de emojis
+# Enable global emoji support
 enableEmoji: true
 
-# Parámetros del sitio
+# Site parameters
 params:
-  # URL del repositorio de Github de tu sitio web
+  # GitHub repo URL of your site
   gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
 
   features:
-    # Habilitar sección de portfolio
+    # Enable portfolio section
     portfolio:
       enable: true
 
-    # Habilitar publicaciones de Blog
+    # Enable blog posts
     blog:
       enable: true
 
-    # Habilitar tabla de contenido en la página de lectura
+    # Enable Table of contents in reading page
     toc:
       enable: true
 
-  # Configurar pie de págna
+  # Configure footer
   footer:
     enable: true
 ```
 
-Aquí, está viendo la configuración básica del tema de Toha. Puede ver el archivo de configuración usado en el sitio web de ejemplo [aquí](https://github.com/hugo-toha/hugo-toha.github.io/blob/source/hugo.yaml). Para más detalles en las opciones de configuración, por favor visite [esta publicación](/es/posts/configuration/site-parameters/).
+Here, you are seeing a basic configuration for Toha theme. You can see the configuration file used in the example site form [here](https://github.com/hugo-toha/hugo-toha.github.io/blob/source/hugo.yaml). For more detailed configuration options, please check [this post](https://toha-guides.netlify.app/posts/configuration/site-parameters/).
 
-#### Añade datos
+#### Add Data
 
-La mayoría del contenido de este tema es manejado por algún archivo YAML dentro del directorio `data`. En esta sección, vamos a añadir datos de ejemplo. Ya que estamos construyendo un sitio plurilingüe, vamos a mantener los datos de cada idioma separados en su propio directorio de idioma.
+Most of the contents of this theme is driven by some YAML files in `data` directory. In this section, we are going to add some sample data. Since, we're building a multilingual site, we are going to keep the data for each language separate into their own locale folder.
 
-Para empezar, crea el directorio `es` dentro del directorio `data`. Aquí vamos a añadir los datos en el idioma `Español`.
+At first, create `en` folder inside your `data` directory. We are going to add data for `English` language here.
 
-##### Información del sitio
+##### Site Information
 
-Ahora, crea un sitio `site.yaml` dentro del directorio `/data/es/` de tu repositorio. Añade el siguiente contenido:
+Now, create a `site.yaml` file inside `/data/en/` directory of your repository. Add the following content there:
 
 ```yaml
-# Aviso de copyright
-copyright: © 2024 Copyright.
+# Copyright Notice
+copyright: © 2020 Copyright.
 
-# Meta descripción de su sitio. Esto ayudará a los motores de búsqueda a encontrar su sitio.
-description: Página de ejemplo del tema de hugo Toha.
+# Meta description for your site.  This will help the search engines to find your site.
+description: Portfolio and personal blog of John Doe.
 ```
 
-Para ver todas las opciones disponibles para la información del sitio, visite [este archivo de ejemplo](https://github.com/hugo-toha/hugo-toha.github.io/blob/source/data/en/site.yaml).
+To see all the available options for site information, check [this sample file](https://github.com/hugo-toha/hugo-toha.github.io/blob/source/data/en/site.yaml).
 
-##### Información del Autor
+##### Author Information
 
-Ahora, crea un archivo `author.yaml` dentro del directorio `/data/es/` y añade tu información como a continuación:
+Now, create a `author.yaml` file in `/data/en/` directory and add your information there as below:
 
 ```yaml
-# Alguna información sobre ti
+# some information about you
 name: "John Doe"
 nickname: "John"
-# mensaje de saludo antes de tu nombre. El valor predeterminado será "Hi!, I am" si no se proporciona.
-greeting: "Hola, soy"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
 image: "images/author/john.png"
-# da tu información de contacto. Se utilizará en el pie de página
+# give your some contact information. they will be used in the footer
 contactInfo:
   email: "johndoe@example.com"
   phone: "+0123456789"
   github: johndoe
   linkedin: johndoe
 
-# Un pequeño resumen de lo que haces
+# some summary about what you do
 summary:
-  - Soy un desarrollador
-  - Soy un Devops
-  - Me gustan los servers
-  - Trabajo en proyectos de código abierto
-  - Me gusta trabajar en proyectos divertidos
+  - I am a Developer
+  - I am a Devops
+  - I love servers
+  - I work on open-source projects
+  - I love to work with some fun projects
 ```
 
-##### Añade secciones
+##### Add Sections
 
-Ahora, vamos a añadir distintas secciones en nuestra página de inicio. Al principio, crea un directorio `sections` dentro de tu directorio `/data/es`. Aquí añadiremos algunas secciones con configuraciones mínimas. Para ver opciones de configuraciones detalladas para las secciones, por favor, visite [aquí](/es/posts/configuration/sections/).
+Now, we are going to add different sections into our home page. At first, create a `sections` folder inside your `/data/en` directory. Here, we are going to add few sections with minimum configurations. In order to see detailed configuration options for the sections, please visit [here](https://toha-guides.netlify.app/posts/configuration/sections/).
 
-###### Sección Sobre mi
+###### About Section
 
-Crea un archivo `about.yaml` dentro del directorio `/data/es/sections/`. Después añade el siguiente contenido:
+Create `about.yaml` file inside your `/data/en/sections/` directory. Then add the following contents there:
 
 ```yaml
-# Información de la sección
+# section information
 section:
-  name: Sobre mi
+  name: About
   id: about
   enable: true
   weight: 1
   showOnNavbar: true
+  template: sections/about.html
 
-# Tu designación
-designation: Ingeniero de Software
-# Información de tu empresa
+# your designation
+designation: Software Engineer
+# your company information
 company:
   name: Example Co.
   url: "https://www.example.com"
 
-# tu currículum. Este archivo debe ser relativo a tu directorio "static"
+# your resume. this file path should be relative to you "static" directory
 resume: "files/resume.pdf"
 
-# Un resumen sobre ti
-summary: 'Soy un ingeniero de software apsionado con x años de experiencia. He creado herramientas OSS para [Kubernetes](https://kubernetes.io/) utilizando Go. Mis herramientas ayudan a personas a desplegar sus workloads en Kubernetes. A veces trabajo en projectos divertidos como crear un tema, etc.'
+# a summary about you
+summary: 'I am a passionate software engineer with x years of working experience. I built OSS tools for [Kubernetes](https://kubernetes.io/) using GO. My tools help people to deploy their workloads in Kubernetes. Sometimes, I work on some fun projects such as writing a theme, etc.'
 
-# tus links de redes sociales
-# da tantos como quieras. Utilitza font-awesome para los iconos.
+# your social links
+# give as many as you want. use font-awesome for the icons.
 socialLinks:
 - name: Email
   icon: "fas fa-envelope"
@@ -269,69 +268,79 @@ socialLinks:
   icon: "fab fa-facebook"
   url: "#"
 
-# competencias sociales
-# Da un percentaje entre 50 y 100, en intervalos de 5 unidades.
-# colores soportados: blue, yellow, pink, green, sky, orange.
-softSkills:
-- name: Liderazgo
+# Show your badges
+# You can show your verifiable certificates from https://www.credly.com.
+# You can also show a circular bar indicating the level of expertise on a certain skill
+badges:
+- type: certification
+  name: Certified Kubernetes Security Specialist
+  url: "https://www.credly.com/org/the-linux-foundation/badge/exam-developer-certified-kubernetes-security-specialist"
+  badge: "https://images.credly.com/size/680x680/images/f4bf92ed-8985-40b2-bc07-2f9308780854/kubernetes-security-specialist-logo-examdev.png"
+
+- type: certification
+  name: Istio and IBM Cloud Kubernetes Service
+  url: "https://www.credly.com/org/the-linux-foundation/badge/exam-developer-certified-kubernetes-security-specialist"
+  badge: "https://images.credly.com/size/680x680/images/8d34d489-84bf-4861-a4a0-9e9d68318c5c/Beyond_basics_of_Istio_on_Cloud_v2.png"
+
+- type: certification
+  name: Artificial Intelligence and Machine Learning
+  url: "https://www.credly.com/org/grupo-bancolombia/badge/artificial-intelligence-and-machine-learning"
+  badge: "https://images.credly.com/size/680x680/images/e027514f-9d07-4b29-862f-fe21a8aaebf1/ae.png"
+
+- type: soft-skill-indicator
+  name: Leadership
   percentage: 85
   color: blue
-- name: Trabajo en equipo
+
+- type: soft-skill-indicator
+  name: Team Work
   percentage: 90
   color: yellow
-- name: Comunicación
-  percentage: 85
-  color: pink
-- name: Trabajo duro
-  percentage: 85
-  color: green
-- name: Aprendizaje rápido
-  percentage: 85
-  color: sky
-- name: Solucionador de problemas
+
+- type: soft-skill-indicator
+  name: Hard Working
   percentage: 85
   color: orange
-# también puede dar códigos de colores en vez de un nombre de color predeterminado
-# - name: Example 1
+
+# you can also provide color code instead of the color name
+# - type: soft-skill-indicator
+#   name: Example 1
 #   percentage: 75
 #   color: "#00adb5"
-# - name: Example 2
-#   percentage: 65
-#   color: "#8b8383"
 ```
 
-pon el archivo `resume.pdf` dentro del directorio `/static/files` de tu repositorio. Puedes encontrar el archivo `about.yaml` usado en el sitio web de ejemplo [aquí](https://github.com/hugo-toha/hugo-toha.github.io/blob/source/data/en/sections/about.yaml).
+Put the `resume.pdf` file in `/static/files` directory of your repository. You can find the `about.yaml` file used in the example site from [here](https://github.com/hugo-toha/hugo-toha.github.io/blob/source/data/en/sections/about.yaml).
 
-###### Añade las otras secciones
+###### Add other sections
 
-Para mantener esta publicación breve, la hemos dividido en distintas publicaciones. A continuación hay la lista de publicaciones que te guiará en cómo configurar las otras secciones.
+In order to keep this post short, we have splitted it in different posts. Below there's the list of posts that will show you how to configure the other sections:
 
-- [Configurando la sección Sobre mi](/es/posts/configuration/sections/about/).
-- [Configurando la sección de Educación](/es/posts/configuration/sections/education/).
-- [Configurando la sección de Experiencia](/es/posts/configuration/sections/experiences/).
-- [Configurando la sección de Proyectos](/es/posts/configuration/sections/projects/).
-- [Configurando la sección de Publicaciones Recientes](/es/posts/configuration/sections/recent-posts/).
-- [Configurando la sección de Logros](/es/posts/configuration/sections/achievements/).
-- [Configurando la sección de Habilidades](/es/posts/configuration/sections/skills/).
+- [Configuring About Section](/posts/configuration/sections/about/).
+- [Configuring Education Section](/posts/configuration/sections/education/).
+- [Configuring Experiences Section](/posts/configuration/sections/experiences/).
+- [Configuring Projects Section](/posts/configuration/sections/projects/).
+- [Configuring Recent Posts Section](/posts/configuration/sections/recent-posts/).
+- [Configuring Achievements Section](/posts/configuration/sections/achievements/).
+- [Configuring Skills Section](/posts/configuration/sections/skills/).
 
-#### Añade Publicaciones
+#### Add Posts
 
-Ahora, ya estamos listos para añadir nuestra primera publicación a nuestro sitio. Aquí, añadiremos [esta publicación](https://hugo-toha.github.io/posts/introduction/).
+Now, we are ready add our first post into our site. Here, we are going to add this [introduction post](https://hugo-toha.github.io/posts/introduction/).
 
-- Para empezar, crea un directorio `posts` dentro del directorio `content` de tu sitio.
-- Después, crea un archivo `_index.md` dentro del directorio `posts`. Copia el contenido de [este archivo](https://raw.githubusercontent.com/hugo-toha/hugo-toha.github.io/source/content/posts/_index.md) y pégalo dentro del archivo `_index.md` creado recientemente.
-- Crea un directorio `introduction` dentro del directorio `posts`.
-- Añade el siguiente [hero.svg](https://raw.githubusercontent.com/hugo-toha/hugo-toha.github.io/source/content/posts/introduction/hero.svg) dentro de tu directorio `introduction`.
-- Ahora, crea un archivo `index.md` dentro del directorio `introduction`. Este `index.md` tendrá el contenido de la publicación.
-- Añade el siguiente [contenido de ejemplo](https://raw.githubusercontent.com/hugo-toha/hugo-toha.github.io/source/content/posts/introduction/index.md) dentro del archivo `index.md` creado recientemente.
+- At first, create a `posts` folder inside `content` directory of your site.
+- Then, create `_index.md` file inside the `posts` directory. Copy the content of [this file](https://raw.githubusercontent.com/hugo-toha/hugo-toha.github.io/source/content/posts/_index.md) file and paste into the newly created `_index.md` file.
+- Create `introduction` folder inside your `posts` directory.
+- Add the following [hero.svg](https://raw.githubusercontent.com/hugo-toha/hugo-toha.github.io/source/content/posts/introduction/hero.svg) inside your `introduction` folder.
+- Now, create `index.md` file inside the `introduction` folder. This `index.md` file will hold the post contents.
+- Add the following [sample contents](https://raw.githubusercontent.com/hugo-toha/hugo-toha.github.io/source/content/posts/introduction/index.md) in the newly created `index.md` file.
 
-Ahora, tu publicación debería aparecer en `http://localhost:1313/posts` y tu sección `Publicaciones Recientes` también mostrarán esta tarjeta. Para traducir una publicación, simplemente crea un archivo con el nombre `index.<código de idioma>.md` en el mismo directorio. Después, añade el contenido traducido ahí.
+Now, your post should appear at `http://localhost:1313/posts` and your `Recent Posts` section also should show this post card. For translating a post, just create a new file with name `index.<language code>.md` in the same directory. Then, add the translated content there.
 
-Para más publicaciones de ejemplo, por favor, visite [aquí](https://github.com/hugo-toha/hugo-toha.github.io/tree/source/content/posts).
+For more sample posts, please visit [here](https://github.com/hugo-toha/hugo-toha.github.io/tree/source/content/posts).
 
-### Siguientes pasos
+### What Next
 
-En este punto, tu sitio debería ser similar al de [ejemplo](https://hugo-toha.github.io/). Ahora, es hora de desplegar tu sitio web. Puedes seguir las siguientes guías de despliegue:
+At this point, your site should look similar to the [example site](https://hugo-toha.github.io/). Now, it's time to deploy your site. You can follow the following deployments guides:
 
-- [Despliegue en Github Pages](/es/posts/getting-started/github-pages/)
-- [Despliegue en Netlify](/es/posts/getting-started/netlify/)
+- [Deploy in Github Pages](https://toha-guides.netlify.app/posts/getting-started/github-pages/)
+- [Deploy in Netlify](https://toha-guides.netlify.app/posts/getting-started/netlify/)
