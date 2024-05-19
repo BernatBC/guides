@@ -1,9 +1,6 @@
 ---
-title: "Soporte Mermaid"
+title: Mermaid Support
 date: 2022-03-14T06:15:35+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
     name: Mermaid
@@ -13,10 +10,10 @@ menu:
 mermaid: true
 ---
 
-Este tema soporta mermaid, desarrollado por [mermaid-js](https://mermaid-js.github.io/mermaid). Para habilitar mermaid para una página, tienes que poner `mermaid: true` en tu página de front-matter. Por ejemplo, esta página tiene el siguiente front-matter:
+This theme comes with built in mermaid support powered by [mermaid-js](https://mermaid-js.github.io/mermaid). To enable mermaid for a page, you have to put `mermaid: true` in your page front-matter. For example, this page has the following front-matter:
 
 ```yaml
-title: "Soporte Mermaid"
+title: "Mermaid Support"
 date: 2022-03-14T06:15:35+06:00
 menu:
   sidebar:
@@ -27,20 +24,20 @@ menu:
 mermaid: true
 ```
 
-Después, puede usar el shortcode `mermaid` para añadir contenido de mermaid. Por ejemplo:
+Then, you can use `mermaid` short code to add your mermaid content. For example:
 
 ```bash
 {{</* mermaid align="center"*/>}}
-  # su contenido de mermaid aquí
+  # your mermaid content here
 {{</* /mermaid */>}}
 ```
 
-El shortcode de `mermaid` acepta los siguientes parámetros:
+The `mermaid` short code accept the following parameters:
 
-- **align**: Permite alinear el diagrama a la izquierda, derecha o centro. La alineación predeterminada es el centro.
-- **background:** Permite cambiar el color de fondo del diagrama.
+- **align**: Let's you align your diagram at left, right, or center. The default alignment is center.
+- **background:** Let's you change the background color of your diagram.
 
-Además, también puedes personalizar el tema de tus diagramas, por ejemplo:
+In addition, you can also customize the theme of yours diagrams, for example:
 
 ```bash
 {{</* mermaid align="center" */>}}
@@ -49,18 +46,19 @@ Además, también puedes personalizar el tema de tus diagramas, por ejemplo:
 {{</* mermaid */>}}
 ```
 
-El parámetro `theme` acepta los siguientes valores:
+The `theme` parameter accept the following values:
+
 - `default`
 - `neutral`
 - `dark`
 - `forest`
 - `base`
 
-## Ejemplos
+## Examples
 
-Aquí hay algunos ejemplos de distintos diagramas usando mermaid.
+Here, are few example of different diagram using mermaid.
 
-#### Grafo
+#### Graph
 
 ```bash
 {{</* mermaid align="left" */>}}
@@ -74,15 +72,15 @@ graph LR;
 
 {{< mermaid align="left" >}}
 graph LR;
-    A[Hard edge] -->|Link text| B(Round edge)
-    B --> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
+A[Hard edge] -->|Link text| B(Round edge)
+B --> C{Decision}
+C -->|One| D[Result one]
+C -->|Two| E[Result two]
 {{< /mermaid >}}
 
 <hr>
 
-#### Diagrama de secuencia
+#### Sequence Diagram
 
 ```bash
 {{</* mermaid */>}}
@@ -102,21 +100,21 @@ sequenceDiagram
 
 {{< mermaid >}}
 sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
+participant Alice
+participant Bob
+Alice->>John: Hello John, how are you?
+loop Healthcheck
+John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts <br/>prevail!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
 {{< /mermaid >}}
 
 <hr>
 
-#### Diagrama de Gantt
+#### Gantt diagram
 
 ```bash
 {{</* mermaid */>}}
@@ -135,20 +133,20 @@ section A section
 
 {{< mermaid >}}
 gantt
-  dateFormat  YYYY-MM-DD
-  title Adding GANTT diagram to mermaid
-  excludes weekdays 2014-01-10
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
 
 section A section
-  Completed task            :done,    des1, 2014-01-06,2014-01-08
-  Active task               :active,  des2, 2014-01-09, 3d
-  Future task               :         des3, after des2, 5d
-  Future task2               :         des4, after des3, 5d
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
 {{< /mermaid >}}
 
 <hr>
 
-#### Diagrama de Clases
+#### Class Diagram
 
 ```bash
 {{</* mermaid */>}}
@@ -171,24 +169,24 @@ classDiagram
 
 {{< mermaid >}}
 classDiagram
-  Class01 <|-- AveryLongClass : Cool
-  Class03 *-- Class04
-  Class05 o-- Class06
-  Class07 .. Class08
-  Class09 --> C2 : Where am i?
-  Class09 --* C3
-  Class09 --|> Class07
-  Class07 : equals()
-  Class07 : Object[] elementData
-  Class01 : size()
-  Class01 : int chimp
-  Class01 : int gorilla
-  Class08 <--> C2: Cool label
+Class01 <|-- AveryLongClass : Cool
+Class03 _-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --_ C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
 {{< /mermaid >}}
 
 <hr>
 
-#### Grafo de Git
+#### Git Graph
 
 ```bash
 {{</* mermaid background="black" align="right" */>}}
@@ -213,26 +211,26 @@ merge newbranch
 
 {{< mermaid background="black" align="right" >}}
 gitGraph:
-  options
-  {
-    "nodeSpacing": 150,
-    "nodeRadius": 10
-  }
-  end
-  commit
-  branch newbranch
-  checkout newbranch
-  commit
-  commit
-  checkout master
-  commit
-  commit
-  merge newbranch
+options
+{
+"nodeSpacing": 150,
+"nodeRadius": 10
+}
+end
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+commit
+merge newbranch
 {{< /mermaid >}}
 
 <hr>
 
-#### Diagrama Entidad-Relación
+#### ER Diagram
 
 ```bash
 {{</* mermaid */>}}
@@ -245,7 +243,7 @@ erDiagram
 
 {{< mermaid >}}
 erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    ORDER ||--|{ LINE-ITEM : contains
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+CUSTOMER ||--o{ ORDER : places
+ORDER ||--|{ LINE-ITEM : contains
+CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 {{< /mermaid >}}
