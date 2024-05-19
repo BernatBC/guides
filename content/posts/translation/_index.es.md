@@ -1,8 +1,8 @@
 ---
-title: Traducción
+title: Translation
 menu:
   sidebar:
-    name: Traducción
+    name: Translation
     identifier: translation
     weight: 500
 ---
