@@ -1,41 +1,38 @@
 ---
-title: "Configuration de la section Etudes"
+title: Configuring Education Section
 date: 2020-06-08T06:20:40+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
 menu:
   sidebar:
-    name: Section des études
+    name: Education Section
     identifier: Education-section
     parent: sections
     weight: 135
 ---
 
-La section `Etude` a été conçue pour mettre en valeur votre parcours d'étude. Dans ce billet, nous vous guiderons sur la façon de configurer la section `Etude` de votre site. Pour une référence complète, consultez s'il vous plaît l'extrait du fichier [education.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/education.yaml).
+The `Education` section is designed to showcase your academic background. In this post, we will guide you on how to configure the `Education` section of your site. For a complete reference, you can refer to the sample [education.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/education.yaml) file.
 
-Pour commencer, créez un nouveau fichier nommé `education.yaml` dans le répertoire `data/fr/sections` de votre site. Ensuite, suivez les instructions ci-dessous.
+To begin, create a new file named `education.yaml` in the `data/en/sections` directory of your site. Then, follow the instructions below.
 
-### Ajouter les informations de section
+### Add Section Information
 
-Ajoutez les métadonnées de la section suivante dans votre fichier `education.yaml`:
+Add the following section metadata to your `education.yaml` file:
 
 ```yaml
 # section information
 section:
-  name: Etude # Titre de votre section
-  id: education # URL id/slug de section *valeur à conserver & obligatoire*
-  template: sections/education.html # Utilisez "sections/education-alt.html comme modèle alternatif.
+  name: Education
+  id: education
+  template: sections/education.html # Use "sections/education-alt.html for alternate template.
   enable: true
   weight: 4
   showOnNavbar: true
-  # Peut optionnellement masquer les titres de la section
+  # Can optionally hide the title in sections
   # hideTitle: true
 ```
 
-### Ajoutez vos degrés d'enseignement
+### Add Your Academic Degrees
 
-Pour ajouter un cycle d'étude, inclure les informations correspondantes sous la section `degrees` dans le fichier `education.yaml` comme ci-dessous :
+To add an education, include the respective information under `degrees` section in the `education.yaml` file as below:
 
 ```yaml
 degrees:
@@ -45,27 +42,27 @@ degrees:
   institution:
     name: ABC University of Technology
     url: "#"
-    logo: /images/education/college.png
-    darkLogo: /images/education/college-dark.png #(optionnel)
-  grade: #(optionnel)
+    logo: /images/education/college.png # Path of the logo image
+    darkLogo: /images/education/college-dark.png #(optional), Can optionally show a different logo for dark theme
+  grade: #(optional)
     scale: CGPA
     achieved: 3.6
     outOf: 4
-  publications: #(optionnel)
+  publications: #(optional)
   - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     url: "#"
   - title: Fusce eu augue ut odio porttitor pulvinar.
     url: "#"
   - title: Nullam vitae orci tincidunt purus viverra pulvinar.
     url: "#"
-  extracurricularActivities: #(optionnel)
+  extracurricularActivities: #(optional), supports markdown
   - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   - Fusce eu augue ut odio porttitor pulvinar.
-  custonSections: #(optionnel)
+  custonSections: #(optional)
     - name: Thesis
       content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     - name: Supervisor
       content: Fusce eu augue ut odio porttitor pulvinar.
 ```
 
-Assurez-vous que l'icône que vous utilisez soit disponible sur [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free).
+Make sure the icon you are using is available in [Font Awesome](https://fontawesome.com/icons?d=gallery\&m=free).
