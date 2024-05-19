@@ -1,72 +1,67 @@
 ---
-title: "Configuration de la section A propos"
+title: Configuring About Section
 date: 2020-06-08T06:20:50+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
 menu:
   sidebar:
-    name: Section A propos
+    name: About Section
     identifier: about-section
     parent: sections
     weight: 110
 ---
 
-L'objet de la section `A propos` est de fournir une brève introduction sur vous sur votre site web. Dans ce billet, nous vous guiderons sur la façon de configurer la section `A propos`. Pour une référence complète, consultez s'il vous plaît l'extrait du fichier [about.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/about.yaml).
+The purpose of the `About` section is to provide a brief introduction about yourself on your website. In this post, we will guide you on how to configure the `About` section. For a complete reference, please check out the sample [about.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/about.yaml) file.
 
-Pour commencer, créez un fichier `about.yaml` dans le répertoire `data/fr/sections` de votre site web. Suivez ensuite, les instructions ci-dessous:
+To get started, create an `about.yaml` file in the `data/en/sections` directory of your website. Then, follow the instructions below.
 
-### Ajouter les informations de section
-
-Ajoutez les métadonnées de la section suivante dans votre fichier `about.yaml`:
+### Add Section information
 
 ```yaml
-# section information
 section:
-  name: A propos # Titre de votre section (default: "")
-  id: about # URL id/slug de section *valeur à conserver & obligatoire*
-  enable: true # Booléen pour déterminer si la section est activée (par défaut: false)
-  weight: 1 # Ordre d'affichage de la section (par defaut: alphabetique suivi par poids)
-  showOnNavbar: true # Booléen pour déterminer si le lien doit être affiché pour cette section dans la barre de navigation
-  template: sections/about.html # Vous Permet de pointer vers un modèle spécifique.
+  name: About # Title of section (default: "")
+  id: about # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 1 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  template: sections/about.html # allows you to point to a specific template.
 ```
 
-#### Paramètre du modèle
+#### Template setting
 
-Vous avez la possibilité de personnaliser le partiel utilisé pour cette section en spécifiant la propriété `template`. Sauvegardez simplement le nouveau modèle dans votre répertoire `layout/partials`.
+You have the option to customize the partial used for this section by specifying the `template` property. Simply save the new template in your `layout/partials` directory.
 
-### Ajouter vos informations de travail
+### Add Your Work Information
 
-Pour inclure des détails à propos de votre emploi actuel, vous pouvez ajouter la section suivante dans votre fichier `about.yaml`:
+To include details about your current job, you can add the following section to your `about.yaml` file:
 
 ```yaml
-# votre désignation
+# your designation
 designation: Software Engineer
-# Les informations de votre compagnie
+# your company information
 company:
   name: Example Co.
   url: "https://www.example.com"
 ```
 
-### Ajouter un résumé sur vous
+### Add a Summary About Yourself
 
-Pour donner un aperçu concis de votre expertise professionnelle, ajoutons une section de résumé. Cela donnera aux visiteurs un aperçu rapide de ce que vous faites. Ajoutez la section suivante à votre fichier `about.yaml`:
+To provide a concise overview of your professional expertise, let's add a summary section. This will give viewers a quick glimpse into what you do. Add the following section to your `about.yaml` file:
 
 ```yaml
-# un résumé sur vous
+# a summary about you
 summary: 'I am a passionate software engineer with x years of working experience. I built OSS tools for [Kubernetes](https://kubernetes.io/) using GO. My tools help people to deploy their workloads in Kubernetes. Sometimes, I work on some fun projects such as writing a theme, etc.'
 ```
-Essayez de le rendre aussi bref que possible. Ne soyez pas trop verbeux. Nous avons d'autres sections qui donnent plus d'informations sur votre expertise.
 
->Vous pouvez utiliser la syntaxe markdown dans le champs `summary`
+Try to make it as brief as possible. Don't make it too wordy. We have other sections that give more insight into your expertise.
 
-### Ajouter vos liens sociaux
+> You can use markdown syntax in the `summary` field.
 
-Pour ajouter des liens vers vos différents profils tels que LinkedIn, Twitter, and Github, incluez la section `socialLinks` dans votre fichier `about.yaml`:
+### Add Your Social Links
+
+To add links to your various profiles such as LinkedIn, Twitter, and Github, include the following `socialLinks` section in your `about.yaml` file:
 
 ```yaml
-# Vos liens sociaux
-# Mettez en autant que voulez. Utitisez font-awesome pour les icônes.
+# your social links
+# give as many as you want. use font-awesome for the icons.
 socialLinks:
 - name: Email
   icon: "fas fa-envelope"
@@ -93,27 +88,27 @@ socialLinks:
   url: "#"
 ```
 
-Vous pouvez utiliser n'importe quelles icônes libres de [Font Awesome](https://fontawesome.com/icons?d=gallery) dans le champs `icon`.
+You can use any [Font Awesome](https://fontawesome.com/icons?d=gallery) free icons in the icon field.
 
-### Ajouter un CV
+### Add a Resume
 
-Pour ajouter votre Curriculum Vitae, placez le fichier PDF dans le répertoire `files` à l'intérieur du répertoire `static`. Ensuite, incluez la section suivante dans votre fichier `about.yaml`.
+To add your resume, place the PDF file in `files` folder within the `static` directory. Then, include the following section in your `about.yaml` file:
 
 ```yaml
-# Votre CV. Le chemin de ce fichier doit être relatif vers votre répertoire "static"
+# your resume. this file path should be relative to you "static" directory
 resourceLinks:
 - title: "My Resume"
   url: "files/resume.pdf"
 ```
 
-### Ajouter des badges
+### Add badges
 
-Maintenant, ajoutons vos badges et les indicateurs de force pour diverses compétences telles que le leadership, la communication, le travail d'équipe, etc. Incluez la section suivante dans votre fichier `about.yaml`:
+Now, let's add your badges and a strength indicator for various soft skills such as leadership, communication, teamwork, etc. Include the following section in your `about.yaml` file:
 
 ```yaml
-# Afficher vos badges
-# Vous pouvez afficher vos certifications vérifiée depuis https://www.credly.com.
-# Vous pouvez aussi afficher des barres circulaires indiquant le niveau d'expertise sur une certaine compétence
+# Show your badges
+# You can show your verifiable certificates from https://www.credly.com.
+# You can also show a circular bar indicating the level of expertise on a certain skill
 badges:
 - type: certification
   name: Certified Kubernetes Security Specialist
@@ -146,17 +141,17 @@ badges:
   color: orange
 ```
 
-Actuellement, le pourcentage de qualification doit être compris entre 0 et 100, et doit être divisible par 5. Les couleurs suivantes sont disponibles pour l'indicateur de pourcentage de qualification.
+Currently, the skill percentage should be between 0 and 100 and should be divisible by 5. The following colors are available for skills percentage indicator,
 
-- bleu
-- jaune
-- rose
-- vert
+- blue
+- yellow
+- pink
+- green
 
->Vous pouvez aussi utiliser n'importe quel code couleur hexadécimal dans le champs `color`.
+> You can also use any HEX color code in the `color` field.
 
 {{< vs 2 >}}
 
-L'image suivante montre comment le contenu du fichier `about.yaml` est cartographié dans la section `A propos`. (La portion de configuration de l'image est obsolète et la section des SoftSkills a été remplacée avec des badges)
+The following image shows how the contents of `about.yaml` are mapped into the `About` section. (The configuration portion of the image is outdated and softSkills section has been replaced with badges)
 
 {{< img src="images/about.png" >}}
