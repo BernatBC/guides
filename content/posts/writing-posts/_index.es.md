@@ -1,8 +1,8 @@
 ---
-title: Escribiendo Publicaciones
+title: Writing Posts
 menu:
   sidebar:
-    name: Escribiendo Publicaciones
+    name: Writing Posts
     identifier: writing-post
     weight: 200
 ---
