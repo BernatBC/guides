@@ -1,44 +1,41 @@
 ---
-title: "Despliegue el sitio en Github Pages"
+title: Deploy site in Github Pages
 date: 2020-06-08T22:00:20+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Despliegue en Github Pages
+    name: Deploy in Github Pages
     identifier: getting-started-github
     parent: getting-started
     weight: 20
 ---
 
-En esta publicación, vamos a desplegar el sitio que hemos creado en la pasada publicación en [Github Pages](https://pages.github.com/). Para empezar, debemos asegurarnos que el nombre de su repositorio es `<tu usuario>.github.io`. Después, haz commit de todos los cambios no publicados y haz push a Github.
+In this post, we are going to deploy the site we have created in previous post in [Github Pages](https://pages.github.com/). At first, make sure that your repository name is `<your username>.github.io`. Then, commit any local uncommitted changes and push into Github.
 
-#### Crea una rama `gh-pages`
+#### Create `gh-pages` Branch
 
-Para empezar, crea una nueva rama llamada `gh-pages`. Github automáticamente establecerá las respectivas configuraciones para Github pages cuando vea la rama con este nombre.
+At first, create a new branch named `gh-pages`. Github will automatically set respective configurations for Github Pages when it see a branch with this name.
 
 ```bash
-# crea la rama gh-pages
+# create the gh-pages branch
 $ git checkout -b gh-pages
-# hace push de la rama source a Github
+# push the source branch into Github
 $ git push gh-pages gh-pages
 ```
 
-#### Habilite Github Action
+#### Enable Github Action
 
-Vamos a automatizar el proceso de despliegue usando [Github Actions](https://github.com/features/actions). En un principio, asegúrese de que Github Action esté habilitado en su repositorio. Vaya a `Settings > Actions` de su repositorio y asegúrese de que `Action permissions` esté en modo `Allow all actions`. Aquí hay una captura de pantalla de la configuración respectiva:
+We are going to automate the deploying process using [Github Actions](https://github.com/features/actions). At first, make sure that Github Action is enabled in your repository. Go to `Settings > Actions` of your repository and make sure `Action permissions` is set to `Allow all actions`. Here, is a screenshot of the respective setting:
 
 {{< img src="images/enable_action.png" align="center" >}}
 
-#### Añade un Workflow
+#### Add Workflow
 
-Usaremos la acción [peaceiris/actions-hugo](https://github.com/peaceiris/actions-hugo) para inicializar hugo y [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) para desplegar el sitio web. Crea un directorio `.github` en la raíz de tu repositorio. Después, crea un directorio `workflows` dentro del directorio `.github`. Finalmente, crea un archivo `deploy-site.yaml` dentro del directorio `workflows` y añade el siguiente contenido:
+We are going to use [peaceiris/actions-hugo](https://github.com/peaceiris/actions-hugo) action to set up hugo and [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) to deploy the site. Create `.github` folder at the root of your repository. Then, create `workflows` folder inside the `.github` folder. Finally, create a `deploy-site.yaml` file inside the `workflows` folder and add the following content there:
 
 ```yaml
 name: Deploy to Github Pages
 
-# se ejecuta cuando un commit es pusheado a la rama "source"
+# run when a commit is pushed to "source" branch
 on:
   push:
     branches:
@@ -48,7 +45,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    # checkout del commit que ha sido pusheado
+    # checkout to the commit that has been pushed
     - uses: actions/checkout@v3
 
     - name: Setup Hugo
@@ -73,7 +70,7 @@ jobs:
     - name: Build
       run: hugo --minify
 
-    # hace push del contenido generado a la rama `gh-pages`.
+    # push the generated content into the `gh-pages` branch.
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3.9.0
       with:
@@ -82,31 +79,32 @@ jobs:
         publish_dir: ./public
 ```
 
-Esta acción se ejecutará en cada push de la rama `main`. Se creará el sitio web y hará un commit a la rama `gh-pages` con el contenido generado.
+This action will start on every push into the `main` branch. It will build the site and commit the generated content into `gh-pages` branch.
 
-#### Despliegue
+#### Deploy
 
-Si ha seguido la guía adecuadamente, su sitio debería estar listo para el despliegue en Github Pages. Ahora, si haces un push de cualquier commit a tu rama `main`, se empezará una Github Action y se desplegará su sitio web automáticamente.
+If you have followed the guide properly, your site should be ready to deploy in Github Pages. Now, if you push any commit into your `main` branch, a Github Action will start and deploy your site automatically.
 
-Haz push de un commit a la rama `main` y vaya a la pestaña `Actions` de su repositorio para verificar que la acción ha empezado.
+Push a commit into the `main` branch and go to `Actions` tab of your repository to verify that the action has started.
 
 {{< img src="images/action_running.png" align="center" >}}
 
 {{< vs 2 >}}
 
-Ahora, espere que las acciones se completen. Si se han completado correctamente, debería ver un tick verde indicado que se han ejecutado correctamente.
+Now, wait for the actions to complete. If it completes successfully, you should see a green tick indicating successful run.
 
 {{< img src="images/action_completed.png" align="center" >}}
 
 {{< vs 2 >}}
 
-Una vez la Github Action se ha completado correctamente, puede navegar a su sitio web en `https://<su usuario>.github.io`.
+Once the Github Action has completed successfully, you can browse your site at `https://<your username>.github.io`.
 
 {{< img src="images/site_deployed.png" align="center" >}}
 
-#### Añade un dominio personalizado
+#### Add custom domain name
 
-Si posee un dominio y desea utilizarlo en este sitio web, vaya al sitio web de su proveedor del dominio. Ahí, añade los siguientes Resource Records:
+If you own a domain name and willing to use it in this website go to your domain name provider website. Then add the following Resource Records:
+
 ```
 @      3600    IN A     185.199.108.153
 @      3600    IN A     185.199.109.153
@@ -119,14 +117,14 @@ WWW    3600    IN A     185.199.110.153
 WWW    3600    IN A     185.199.111.153
 ```
 
-Para verificar que su dominio y asegurarse que nadie de Github pueda usarlo excepto tu, puedes seguir los pasos en [esta guía](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages).
+To verify your domain to make sure nobody from Github can claim it except from you, you can follow the steps contained in [this guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages).
 
-Finalemente, crea un archivo `CNAME` dentro del directorio `/static` de tu repositorio. Ahí añade tu dominio:
+Finally create a `CNAME` file inside `/static` directory of your repository. Add your domain name there:
 
 ```
 example.com
 ```
 
-Una vez que la Github Action se haya completado correctamente, puede navegar a su sitio web en `https://<su dominio>`.
+Once the Github Action has completed successfully, you can browse your site at `https://<your domain name>`.
 
-Ten en cuenta que navegando a `https://<su usuario>.github.io` será redirigido automáticamente a `https://<su dominio>`.
+Note that by browsing to `https://<your username>.github.io` it will automaitcally redirect to `https://<your domain name>`.
