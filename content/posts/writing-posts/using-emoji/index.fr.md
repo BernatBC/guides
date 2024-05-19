@@ -1,31 +1,30 @@
 ---
-title: "Utilisation d'Emoji"
+title: Using Emoji
 date: 2020-06-08T06:15:25+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
 menu:
   sidebar:
-    name: Utilisation d'Emoji
+    name: Using Emoji
     identifier: writing-post-using-emoji
     parent: writing-post
     weight: 60
 ---
 
-Emoji peut être activé dans un projet Hugo de plusieurs façons.
-<!--more-->
-La fonction [`emojify`](https://gohugo.io/functions/emojify/) peut être appelée directement dans les templates ou par [shortcodes en ligne](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).
+Emoji can be enabled in a Hugo project in a number of ways.
 
-Pour activer globallement Emoji, paramètrez `enableEmoji` à `true` dans la [configuration](https://gohugo.io/getting-started/configuration/) de votre site et vous pouvez ensuite taper des codes raccourcis d'Emoji directement dans les contenus de vos fichiers; par exemple:
+<!--more-->
+
+The [`emojify`](https://gohugo.io/functions/emojify/) function can be called directly in templates or [Inline Shortcodes](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).
+
+To enable emoji globally, set `enableEmoji` to `true` in your site’s [configuration](https://gohugo.io/getting-started/configuration/) and then you can type emoji shorthand codes directly in content files; e.g.
 
 <p><span class="nowrap"><span class="emojify">🙈</span> <code>:see_no_evil:</code></span>  <span class="nowrap"><span class="emojify">🙉</span> <code>:hear_no_evil:</code></span>  <span class="nowrap"><span class="emojify">🙊</span> <code>:speak_no_evil:</code></span></p>
 <br>
 
-L'[aide mémoire Emoji](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md) est une référence utile pour les codes emoji.
+The [Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md) is a useful reference for emoji shorthand codes.
 
 ***
 
-**N.B.** Les étapes ci-dessus active les caractères Unicode Standard Emoji dans Hugo, cepandant, le rendu de ces glyphes dépend du navigateur et de la plateforme. Pour styler l'emoji vous pouvez utiliser une police emoji tierce ou un empilement de polices; par exemple:
+**N.B.** The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.
 
 {{< highlight html >}}
 .emoji {
@@ -34,6 +33,7 @@ font-family: Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,And
 {{< /highlight >}}
 
 {{< css.inline >}}
+
 <style>
 .emojify {
 	font-family: Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,Android Emoji,EmojiSymbols;
@@ -47,5 +47,5 @@ font-family: Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,And
 }
 }
 </style>
-{{< /css.inline >}}
 
+{{< /css.inline >}}
