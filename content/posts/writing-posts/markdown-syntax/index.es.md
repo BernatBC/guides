@@ -1,73 +1,75 @@
 ---
-title: "Guía de Sintxis de Markdown"
+title: Markdown Syntax Guide
 date: 2020-06-08T06:15:40+06:00
 hero: /images/posts/writing-posts/code.svg
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Guía de Markdown
+    name: Markdown Guide
     identifier: writing-post-md-guide
     parent: writing-post
     weight: 30
 ---
 
-Este artículo ofrece un ejemplo de las bases de la sintaxis de Markdown que se pueden usar en los archivos de contenido de Hugo. También muestra cómo los elementos básicos de HTML están decorados con CSS en un tema Hugo.
+This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
+
 <!--more-->
 
-## Encabezados
+## Headings
 
-Los siguientes elementos de HTML `<h1>`—`<h6>` representan seis niveles de encabezados de secciones. `<h1>` es el mayor nivel, mientras `<h6>` es el menor.
+The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
 # H1
+
 ## H2
+
 ### H3
+
 #### H4
+
 ##### H5
+
 ###### H6
 
-## Parágrafo
+## Paragraph
 
 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
-## Citas en bloque
+## Blockquotes
 
-El elemento de citas en bloque representa contenido citado de otra fuente, opcionalmente con una cita que debe estar dentro de un elemento `pie de página` o `cita`, y opcionalmente con cambios en línea, como anotaciones y abreviaturas.
+The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
 
-#### Citas en bloque sin atribución
+#### Blockquote without attribution
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Nota** puede usar *sintaxis de markdown* dentro de una cita en bloque.
+> **Note** that you can use _Markdown syntax_ within a blockquote.
 
-#### Citas en bloque con atribución
+#### Blockquote with attribution
 
 > Don't communicate by sharing memory, share memory by communicating.</p>
 > — <cite>Rob Pike[^1]</cite>
 
+[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
-[^1]: La cita anterior está extraída de la [charla](https://www.youtube.com/watch?v=PAAkCSZUG1c) de Rob Pike durante el Gopherfest, el 18 de noviembre de 2015.
+## Tables
 
-## Tablas
+Tables aren't part of the core Markdown spec, but Hugo supports them out-of-the-box.
 
-Las tablas no son parte de la especificación principal de Markdown, pero Hugo las admite.
+| Name  | Age |
+| ----- | --- |
+| Bob   | 27  |
+| Alice | 23  |
 
-   | Nombre | Edad |
-   | ------ | ---- |
-   | Bob    | 27   |
-   | Alice  | 23   |
+#### Inline Markdown within tables
 
-#### Markdown en línea dentro de tablas
+| Inline&amp;nbsp;&amp;nbsp;&amp;nbsp; | Markdown&amp;nbsp;&amp;nbsp;&amp;nbsp; | In&amp;nbsp;&amp;nbsp;&amp;nbsp;                | Table  |
+| ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------ |
+| _italics_                                                                                        | **bold**                                                                                           | ~~strikethrough~~&amp;nbsp;&amp;nbsp;&amp;nbsp; | `code` |
 
-| Markdown&nbsp;&nbsp;&nbsp; | en línea&nbsp;&nbsp;&nbsp; | dentro de&nbsp;&nbsp;&nbsp;         | tablas    |
-| -------------------------- | -------------------------- | ----------------------------------- | --------- |
-| *cursiva*                  | **negrita**                | ~~tachado~~&nbsp;&nbsp;&nbsp;       | `código`  |
+## Code Blocks
 
-## Bloques de código
-
-#### Bloques de código con comillas inveridas
+#### Code block with backticks
 
 ```
 html
@@ -75,72 +77,78 @@ html
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ejemplo de documento de HTML5</title>
+  <title>Example HTML5 Document</title>
 </head>
 <body>
-  <p>Prueba</p>
+  <p>Test</p>
 </body>
 </html>
 ```
-#### Bloques de código identado con cuatro espacios
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Ejemplo de documento de HTML5</title>
-    </head>
-    <body>
-      <p>Prueba</p>
-    </body>
-    </html>
+#### Code block indented with four spaces
 
-#### Bloques de código con el shortcode de resalto interno de Hugo
-{{< highlight html >}}
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ejemplo de documento de HTML5</title>
+  <title>Example HTML5 Document</title>
 </head>
 <body>
-  <p>Prueba</p>
+  <p>Test</p>
+</body>
+</html>
+```
+
+#### Code block with Hugo's internal highlight shortcode
+
+{{< highlight html >}}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example HTML5 Document</title>
+</head>
+<body>
+  <p>Test</p>
 </body>
 </html>
 {{< /highlight >}}
 
-## Tipos de Lista
+## List Types
 
-#### Lista Ordenada
+#### Ordered List
 
-1. Primer elemento
-2. Segundo elemento
-3. Tercer elemento
+1. First item
+2. Second item
+3. Third item
 
-#### Lista Desordenada
+#### Unordered List
 
-* Elemento de la lista
-* Otro elemento
-* Y otro elemento
+- List item
+- Another item
+- And another item
 
-#### Lista Anidada
+#### Nested list
 
-* Fruta
-  * Manzana
-  * Naranja
-  * Plátano
-* Lácteos
-  * Leche
-  * Queso
+- Fruit
+  - Apple
+  - Orange
+  - Banana
+- Dairy
+  - Milk
+  - Cheese
 
-## Otros Elementos — abbr, sub, sup, kbd, mark
+## Other Elements — abbr, sub, sup, kbd, mark
 
-<abbr title="Graphics Interchange Format">GIF</abbr> es un formato de imagen de mapa de bits.
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
 H<sub>2</sub>O
 
 X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
-Presione <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> para finalizar la sesión.
+Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
 
-La mayoría de las <mark>salamandras</mark> son nocturnas y cazan insectos, gusanos y otras criaturas pequeñas.
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
