@@ -1,65 +1,62 @@
 ---
-title: "Configurando parámetros del sitio web"
+title: Configuring Site Parameters
 date: 2020-06-08T06:20:55+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Parámetros del sitio
+    name: Site Parameters
     identifier: configuration-site-parameters
     parent: configuration
     weight: 105
 ---
 
-Después de instalar este tema, cuando ejecutas tu sitio web por primera vez, se iniciará con los parámetros predeterminados. Debería parecerse a este sitio de ejemplo, pero sin secciones en la página de inicio. No te preocupes, puede añadir estas secciones proporcionando los archivos de datos necesarios.
+After installing this theme, when you first run your site, it will start with the default parameters. It should look similar to this example site, but it won't have any sections on the homepage. Don't worry, you can easily add those sections by providing the necessary data files.
 
-En las próximas publicaciones, le guiaré sobre cómo añadir estas secciones y personalizar tu sitio web. Pero primero, empezaremos cambiando los parámetros del sitio. Puedes modificar el fondo, el logo, la información del autor y habilitar/deshabilitar varias funcionalidades.
+In the upcoming posts, I'll guide you on how to add those sections and customize your site. But first, let's start with changing the site parameters. You can modify the background, logo, author information, and enable/disable various features.
 
-Para obtener una lista completa de los parámetros de configuración disponibles, consulte el [sitio de ejemplo](https://github.com/hugo-toha/hugo-toha.github.io/tree/main).
+For a comprehensive list of available configuration parameters, please refer to the [example site](https://github.com/hugo-toha/hugo-toha.github.io/tree/main).
 
-### Añade un Fondo
+### Add Background Image
 
-Para empezar, vamos a establecer un fondo para tu sitio web. Pon la imagen de fondo que desee en el directorio `assets/images`. Después, añade lo siguiente en la sección `params` del archivo `config.yaml`.
+At first, let's set a background on your website. Put your desired background image in the `assets/images` directory. Then add the following in the `params` section of your `config.yaml` file.
 
 ```yaml
-background: "images/nombre_de_tu_imagen_de_fondo.jpg"
+background: "images/name-of-your-background-image.jpg"
 ```
 
-### Añade un Logo
+### Add Site's Logo
 
-Para añadir logos para tu sitio, necesitas dos logos diferentes: uno para la barra de navegación transparente, y otro para la barra de navegación no-transparente. Pon tus logos dentro del directorio `assets/images` y añade las siguientes líneas debajo de la sección `params` del archivo `config.yaml`.
+To add logos for your site, you need two different logos: one for the transparent navbar and another for the non-transparent navbar. Place your logos in the `assets/images` directory and add the following code under the `params` section of your `config.yaml` file.
 
 ```yaml
-# El logo invertido será usado para la barra de navegación transparente.
-# El logo principal será usado para la barra de navegación no-transparente.
+# The inverted logo will be used in the initial transparent navbar and
+# the main logo will be used in the non-transparent navbar.
 logo:
-  main: images/logo-principal.png
-  inverted: images/logo-invertido.png
+  main: images/main-logo.png
+  inverted: images/inverted-logo.png
   favicon: images/favicon.png
 ```
 
-### Habilita publicaciones del Blog
+### Enable Blog Post
 
-Para habilitar publicaciones de blog en tu sitio web, necesitarás aplicar unos cambios en el archivo `config.yaml`. Localiza la sección `params.features` y añada el siguiente código.
+To enable blog posting on your site, you need to make some changes in the `config.yaml` file. Locate the `params.features` section and add the following code:
 
 ```yaml
-# Habilita y configura publicaciones de Blog
+# Enable and configure blog posts
 blog:
   enable: true
-  showAuthor: true # muestra el autor de la publicación (por defecto: true)
+  showAuthor: true # shows the post author (defaults true)
 ```
 
-### Habilita `Tabla de Contenido`
+### Enable `Table Of Contents`
 
-Ahora, si quiere mostrar la sección `Tabla de Contenido` en tu publicación de blog, tienes que habilitarlo en la sección `params.features` del archivo `config.yaml`.
+Now, if you want to show `Table Of Contents` section in your blog post, you have to enable it in the `params.features` section of `config.yaml` file.
 
 ```yaml
 toc:
   enable: true
 ```
 
-También puedes controlar los niveles de tu Tabla de Contenido añadiendo la siguiente configuración en la sección de `markup` de tu archivo `config.yaml`.
+You can also control the level of your TOC by adding the following configuration in the `markup` section of your `config.yaml` file.
 
 ```yaml
 markup:
@@ -69,45 +66,45 @@ markup:
     ordered: false
 ```
 
-Aquí, hemos configurado nuestra Tabla de Contenido para mostrar todos los encabezados desde `h2` hasta `h6`.
+Here, we have configured our TOC to show all headings from `h2` to `h6`.
 
-### Habilita el botón `<Mejorar esta página>`
+### Enable `<Improve This Page>` Button
 
-Si quieres permitir que los lectores mejoren fácilmente una publicación haciendo correcciones como faltas de ortografía o identación, puedes habilitar el botón `<Mejorar esta página>`. Para hacerlo, añada su URL del repositorio de git en la sección `params` del archivo `config.yaml`.
-
-```yaml
-gitRepo: <URL de tu repositorio de Github del sitio>
-```
-
-Esto añadirá un botón con la etiqueta `Mejorar esta página` al final de cada publicación de blog. El botón dirigirá al usuario directamente a la página de edición respectiva en Github.
-
-Si tu rama por defecto no tiene el nombre de `main`, necesitarás especificar tu rama por defecto de git en la sección `params` en el archivo `config.yaml`.
+If you want to allow readers to easily improve a post by making corrections such as fixing typos or indentation, you can enable the `<Improve This Page>` button. To do this, add your git repository URL in the `params` section of your `config.yaml` file.
 
 ```yaml
-gitBranch: <nombre de tu rama por defecto de git>
+gitRepo: <your site's Github repo URL>
 ```
 
-### Habilita Boletín Informativo
+This will add a button labeled `Improve This Page` at the bottom of every blog post. The button will route the user directly to the respective edit page in Github.
 
-Para habilitar la funcionalidad de boletín informativo, necesitarás proveer los parámetros necesarios debajo de la sección `params.footer` en el archivo `config.yaml`. Ahora mismo, el boletín informativo solo es soportado por el proveedor Mailchimp. Aquí hay un ejemplo de cómo debería ser:
+If your default branch is not named `main`, you need to specify your git default branch in the `params` section of your `config.yaml` file.
+
+```yaml
+gitBranch: <your git default branch name>
+```
+
+### Enable Newsletter
+
+To enable the newsletter feature, you need to provide the necessary parameters under the `params.footer` section in your `config.yaml` file. Currently, the newsletter feature only supports the Mailchimp provider. Here is an example of how it should look:
 
 ```yaml
 newsletter:
   enable: true
   provider: mailchimp
-  mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
+  mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;amp;id=094a24c76e
 ```
 
-Para deshabilitar la funcionalidad del boletín informativo, puedes establecerlo con la siguiente configuración.
+To disable the newsletter feature, you can set the following configuration:
 
 ```yaml
 newsletter:
   enable: false
 ```
 
-### Habilita RAW HTML en los archivos de Markdown
+### Enable RAW HTML in the Markdown File
 
-Si quiere incluir RAW HTML en tus archivos de markdown, necesitarás habilitar el rendering inseguro. Sin habilitarlo, Hugo no podrá renderizar HTML. Para habilitar rendering inseguro de markdown, añade la siguiente configuración de `goldmark` en la sección `markup` del archivo `config.yaml`.
+If you want to include RAW HTML in your markdown files, you need to enable unsafe rendering. Without enabling this, Hugo will not render the HTML. To enable unsafe markdown rendering, add the following `goldmark` settings to the `markup` section of your `config.yaml` file.
 
 ```yaml
 markup:
@@ -116,20 +113,20 @@ markup:
       unsafe: true
 ```
 
-### Añade información del autor
+### Add Author Information
 
-Ahora, crea un archivo `author.yaml` dentro del directorio `/data/es/` y añade tu información como a continuación:
+Now, provide your basic information. Create a `author.yaml` file in your `/data/en` directory and add the author information there.
 
 ```yaml
-# Alguna información sobre ti
+# some information about you
 name: "Jane Doe"
 nickname: "Jane"
 image: "images/avatar.png"
 
-# mensaje de saludo antes de tu nombre. El valor predeterminado será "Hi!, I am" si no se proporciona.
-greeting: "Hola, soy"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
 
-# da tu información de contacto. Se utilizará en el pie de página
+# give your contact information. they will be used in the footer
 contactInfo:
   email: "janedoe@example.com"
   phone: "+0123456789"
@@ -138,35 +135,35 @@ contactInfo:
     url: "https://stackoverflow.com/users/1/exampleUser"
     text: "ExampleUser"
 
-# Un pequeño resumen de lo que haces
+# a summary of what you do
 summary:
-  - Soy un desarrollador
-  - Trabajo con Go
-  - Me gusta trabajar en proyectos divertidos
+- I am a Developer
+- I work with Go
+- I love to work with some fun projects
 ```
 
-> Nota: Los parámetros de `contactInfo` usarán el campo `icon` para buscar el respectivo icono. Asegúrese que el campo `icon` coincide con los nombres de la fuente awesome. Puedes encontrar ejemplos [aquí](https://fontawesome.com/search?o=r&f=brands).
+> Note: The `contactInfo` parameters will use the `icon` field to find the respective icon. Make sure the `icon` field matches the font awesome icon names. You can find examples [here](https://fontawesome.com/search?o=r\&f=brands).
 
-### Añade un aviso de derechos de autor
+### Add Copyright Notice
 
-Para añadir un aviso de derechos de autor en tu sitio, crea un archivo `site.yaml` dentro del directorio `/data/es`. Añada la siguiente sección al archivo:
+To add a copyright notice for your site, create a `site.yaml` file in your `/data/en` directory. Add the following section to the file:
 
 ```yaml
 copyright: © 2024 Copyright.
 ```
 
-### Descripción del sitio
+### Site's Description
 
-Para añadir una descripción de tu sitio web que ayudará a los motores de búsqueda a encontrar tu sitio, necesitarás añadir una sección de `description` en tu archivo `site.yaml`.
+To add a description of your site that will help search engines find your site, you need to add a `description` section in your `site.yaml` file.
 
 ```yaml
-# Meta descripción de su sitio. Esto ayudará a los motores de búsqueda a encontrar su sitio.
-description: Página de ejemplo del tema de hugo Toha.
+# Meta description for your site.  This will help the search engines to find your site.
+description: Example site for hugo theme Toha.
 ```
 
-### Añade Menús personalizados
+### Add Custom Menus
 
-Para añadir menús personalizados en la barra de navegación, puedes modificar el archivo `site.yaml`. Por defecto, los menús personalizados son visibles en la barra de navegación. Para esconder un menú personalizado, establece la propiedad `hideFromNavbar` a `true`. Por defecto, los menús personalizados están ocultos del área del pie de página. Para mostrar un elemento de menú personalizado en el pie de página, establece la propiedad `showOnFooter` a `true`. Esto es particularmente útil cuando desea añadir un enlace a otro sitio en la barra de navegación.
+To add custom menus in the navbar, you can modify the `site.yaml` file. By default, custom menus are visible in the navigation bar. To hide a custom menu, set the `hideFromNavbar` property to `true`. By default, custom menus are hidden from the footer's navigation area. To show a custom menu item in the footer, set its `showOnFooter` property to `true`. This is particularly helpful when you want to add a link to another site in the navbar.
 
 ```yaml
 customMenus:
@@ -176,11 +173,12 @@ customMenus:
   showOnFooter: true
 ```
 
-### Cambiar Título de la Barra de Navegación
-Para cambiar el título que aparece en la barra de navegación, puedes modificar el archivo `site.yaml`. Por defecto, el título corresponde con el nombre de la página web. Puedes añadir la siguiente línea:
+### Change Navbar Title
+
+To change the title appearing on the navbar, you can modify `site.yaml` file. By defauly, the title corresponds to the website name. You can add the following line:
 
 ```yaml
-navBarTitle: "Título"
+navBarTitle: "Title"
 ```
 
-Ahora, puedes ejecutar tu sitio y ver los cambios. En las siguientes publicaciones, te guiaré en cómo añadir secciones a tu página de inicio y personalizar aún más su sitio.
+Now, you can run your site and see the changes. In the upcoming posts, I'll guide you on how to add sections to your homepage and customize your site further.
