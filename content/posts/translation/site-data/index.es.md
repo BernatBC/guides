@@ -1,73 +1,73 @@
 ---
-title: "Cómo traducir los datos de la página de inicio"
-date: 2020-06-07T06:20:50+06:00
+title: How to Translate Site Data
+date: 2024-01-15T06:20:50+06:00
 author:
   name: BernatBC
   image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Traduciendo la página de inicio
+    name: Translating Homepage
     identifier: translation-homepage
     parent: translation
     weight: 510
 ---
 
-Este tema tiene soporte integrado para varios idiomas.
+This theme has built-in support for multiple language.
 
-## Añade el idioma en el sitio
+## Add the language to the site
 
-Añadiendo el idioma a su sitio traducirá la interfaz de usuario a ese idioma (por ejemplo, los botones, las barras de navegación, etc.).
+Adding the language to your site will translate the UI to that language (e.g. the buttons, the nav bars, etc.).
 
-### Obtener el código del idioma
+### Get language code
 
-Para traducir su sitio, necesitará el código de su idioma. La siguiente tabla contiene los idiomas soportados junto con sus códigos:
+In order to translate your site, you will need the code from your language. The following table contains the supported languages algonside its codes:
 
-| Idioma               | Código            |
-|----------------------|-------------------|
-| English              | `en` / none       |
-| বাংলা                 | `bn`              |
-| Français             | `fr`              |
-| Indonesian           | `id`              |
-| Deutsch              | `de`              |
-| Español              | `es`              |
-| 简体中文              | `zh-cn` / `zh-tw` |
-| हिन्दी                  | `hi`              |
-| Italiano             | `it`              |
-| 日本語                | `jp`              |
-| 한국어                | `ko`              |
-| русский              | `ru`              |
-| suomi                | `fi`              |
-| Tiếng Việt           | `vn`              |
-| Turkish              | `tr`              |
-| Arabic (العربية)        | `ar`              |
-| Português Europeu    | `pt-pt`           |
-| Català               | `ad`              |
-| Português Brasileiro | `pt-br`           |
-| Dutch                | `nl`              |
-| Hebrew               | `he`              |
+| Languages                           | Code              |
+| ----------------------------------- | ----------------- |
+| English                             | `en` / none       |
+| বাংলা                               | `bn`              |
+| Français                            | `fr`              |
+| Indonesian                          | `id`              |
+| Deutsch                             | `de`              |
+| Español                             | `es`              |
+| 简体中文                                | `zh-cn` / `zh-tw` |
+| हिन्दी                              | `hi`              |
+| Italiano                            | `it`              |
+| 日本語                                 | `jp`              |
+| 한국어                                 | `ko`              |
+| русский                             | `ru`              |
+| suomi                               | `fi`              |
+| Tiếng Việt                          | `vn`              |
+| Turkish                             | `tr`              |
+| Arabic (العربية) | `ar`              |
+| Português Europeu                   | `pt-pt`           |
+| Català                              | `ad`              |
+| Português Brasileiro                | `pt-br`           |
+| Dutch                               | `nl`              |
+| Hebrew                              | `he`              |
 
 </br>
 
-Para una lista completa de los idiomas soportados, por favor, consulte el archivo README de [toha repository](https://github.com/hugo-toha/toha).
+For a complete list of the supported languages, please check the README file from the [toha repository](https://github.com/hugo-toha/toha).
 
-Si el idioma al que desea traducir el contenido no está disponible, consulte la guía [Cómo añadir un idioma sin soporte](/es/posts/translation/new-language/).
+If the language you desire to translate the content to is not available, please check the guide [How to add an unsupported language](/posts/translation/new-language/).
 
-### Añade el idioma a `config.yaml`
+### Add the language into `config.yaml`
 
-Después de conocer el código para el idioma al que desea traducir su sitio, abra el archivo `config.yaml` y, debajo de la sección `language`, añade lo siguiente:
+After you know what's the code for the language you wish to translate your site, open `config.yaml` file, and under the `languages` section add the following:
 
 ```yaml
 languages:
   en:
     languageName: English
     weight: 1
-  <código_del_idioma>:
-    languageName: <nombre_del_idioma>
-    weight: 2 # Puedes establecer el orden de los idiomas con este valor
+  <language_code>:
+    languageName: <language_name>
+    weight: 2 # You can set the language order with this value
 
 ```
 
-Por ejemplo, si deseas establecer el francés como segundo idioma, la sección debería ser similar a:
+For example, if we want to set `Français` as the new language, the section would look similar to:
 
 ```yaml
 languages:
@@ -76,17 +76,16 @@ languages:
     weight: 1
   fr:
     languageName: Français
-    weight: 2 # Puedes establecer el orden de los idiomas con este valor
+    weight: 2 # You can set the language order with this value
 
 ```
 
-## Traduciendo la página de inicio
+## Translating the Main Page
 
-Puedes traducir la página de inicio creando un nuevo directorio dentro de `data`. El nombre del nuevo directorio debería ser `<código_del_idioma>`. Por ejemplo, si queremos traducirlo al francés, crearemos el directorio `fr` dentro de `data`. 
+You can translate the main page by creating a new directory into `data` directory. The name of the new directory should be `<language_code>`. For example, if we want to translate it to french, we would create the `fr` directory into `data` directory.
 
-Afterwards you can create your usual data file like `about.yaml` or `education.yaml` files, keeping the same file structure and maintaining the same file names. Inside those files, you can just translate the content of the fields into your desired language. 
-Luego, puede crear sus archivos de datos habituales, como `about.yaml` o `education.yaml`, manteniendo la misma estructura y los mismos nombres de archivos. Dentro de esos archivos, puede traducir el contenido de los campos al idioma que desee.
+Afterwards you can create your usual data file like `about.yaml` or `education.yaml` files, keeping the same file structure and maintaining the same file names. Inside those files, you can just translate the content of the fields into your desired language.
 
-## A continuación
+## Next up
 
-Puedes consultar la siguiente guía [Cómo traducir las publicaciones](/es/posts/translation/content/).
+You can check the following guide [How to Translate Posts](/posts/translation/content/).
