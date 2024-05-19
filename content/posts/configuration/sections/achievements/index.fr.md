@@ -1,58 +1,55 @@
 ---
-title: "Configuration de la section Réalisations"
+title: Configuring Achievements Section
 date: 2020-06-08T06:20:30+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
 menu:
   sidebar:
-    name: Section des réalisations
+    name: Achievements Section
     identifier: achievements-section
     parent: sections
     weight: 160
 ---
 
-La section `Réalisations` a été conçue pour afficher vos réalisations dans le format d'une galerie attrayante. Ce guide vous accompagnera à travers le processus de configuration de la section `Réalisations` sur votre site. Pour une référence complète, consultez s'il vous plaît l'extrait du fichier [achievements.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/achievements.yaml).
+The `Achievements` section is designed to display your accomplishments in a visually appealing gallery format. This guide will walk you through the process of configuring the `Achievements` section on your website. For a complete reference, you can refer to the sample [achievements.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/achievements.yaml) file.
 
-Pour commencer, créez un nouveau fichier nommé `achievements.yaml` dans le répertoire `data/fr/sections` de votre site web. Ensuite, suivez les instructions ci-dessous:
+To begin, create a new file named `achievements.yaml` in the `data/en/sections` directory of your website. Then, follow the instructions below.
 
-### Ajouter les informations de section
+### Add Section Information
 
-Ajoutez les métadonnées de la section suivante dans votre fichier `achievements.yaml`:
+Add the following section metadata to your `achievements.yaml` file:
 
 ```yaml
 # section information
 section:
-  name: Réalisations # Titre de votre section (default: "")
-  id: achievements # URL id/slug de section *valeur à conserver & obligatoire*
-  enable: true # Booléen pour déterminer si la section est activée (par défaut: false)
-  weight: 9 # Ordre d'affichage de la section (par defaut: alphabetique suivi par poids)
-  showOnNavbar: true # Booléen pour déterminer si le lien doit être affiché pour cette section dans la barre de navigation
-  # Peut optionnellement masquer les titres de la section
+  name: Achievements
+  id: achievements
+  enable: true
+  weight: 9
+  showOnNavbar: true
+  # Can optionally hide the title in sections
   # hideTitle: true
 ```
 
-### Ajouter les réalisations
+### Add Your Achievements
 
-Pour ajouter vos réalisations, ouvrez le fichier `achievements.yaml` et incluez les entrées suivantes sous la section `achievements`:
+To add your achievements, open the `achievements.yaml` file and include the following entries under the `achievements` section:
 
 ```yaml
 achievements:
-- title: Meilleur présentateur
+- title: Best Presenter
   image: images/sections/achievements/presenter.jpg
-  summary: Meilleur présentation de l'année 2020 à la conférence XYZ.
+  summary: Best presenter in the 2020 XYZ conference.
 ```
 
-Chaque entrée d'une réalisation doit avoir les champs suivants:
+Each achievements entry should have the following fields,
 
-- **title**: Le titre de la réalisation.
-- **image**: Une image de la réalisation.
-- **summary**: Un résumé de la réalisation.
+- **title**: The title of the achievement.
+- **image**: An image of the achievement.
+- **summary**: A summary of the achievement.
 
->Vous pouvez utilisez la syntaxe markdown dans le champs `summary`.
+> You can use markdown syntax in the `summary` field.
 
 {{< vs 2 >}}
 
-L'image suivante montre comment les contenus du fichier `achievements.yaml` sont cartographiés dans la section `Réalisations`.
+The following image shows how the contents of `achievements.yaml` are mapped into the `Achievements` section.
 
 {{< img src="images/achievements.png" >}}
