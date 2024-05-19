@@ -1,13 +1,10 @@
 ---
-title: "Link externo en la barra lateral"
+title: External Link on Sidebar
 date: 2022-03-14T06:00:23+06:00
-description: Añadir link externo en la barra lateral
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
+description: Adding external link in sidebar
 menu:
   sidebar:
-    name: Ejemplo de link externo
+    name: External Link Example
     identifier: external-link
     pageRef: https://example.com/
     weight: 850
