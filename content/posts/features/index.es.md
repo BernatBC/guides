@@ -1,77 +1,74 @@
 ---
-title: "Características"
+title: Features
 date: 2020-06-08T08:59:13+06:00
-description: Características del tema de Hugo Toha
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
+description: Features of Hugo theme Toha
 menu:
   sidebar:
-    name: Características
+    name: Features
     identifier: features
     weight: 1
 ---
 
-[Enlace de prueba](/es/posts/getting-started/prepare-site/index.md)
+[Test Link](/posts/getting-started/prepare-site/index.md)
 
-Este tema ha sido diseñado desde un punto de preferencia personal. Como desarrollador, quiero organizar mi portfolio de manera que refleje de la mejor manera mis habilidades. Entonces, este tema puede o no satisfacer sus necesidades, pero estaré encantado de tener tu feedback.
+This theme has been designed from a personal point of preference. As a developer, I want to organize my portfolio in a way that will reflect my skills best. So, this theme may or may not meet your needs but I will be happy to have your feedback.
 
-Esta publicación daré una descripción general de las características que este tema incorpora.
+This post will give you an overview of the features that this theme incorporates.
 
-### Diseño minimalista
+### Minimalist Design
 
-Este tema ha sido diseñado con la intención de ser minimalista y hermoso. El esquema de colores ha sido escogido para ser simple pero potente. Esta página de publicación ha sido diseñada para tener las menos distracciones posibles. Gracias a [Anup Deb](https://dribbble.com/anupdeb) por su guía en el diseño.
+This theme has been designed to be minimalist and beautiful. The color scheme has been chosen to be simple but yet powerful. The post page has been designed to be as distraction-free as possible. Thanks to [Anup Deb](https://dribbble.com/anupdeb) for his design guidance.
 
 {{< img src="images/minimalist.png" width="900" align="center">}}
 
 {{< vs 3 >}}
 
-### Receptivo
+### Responsive
 
-El tema es completamente receptivo. Tiene una estética hermosa, y consistente en los dispositivos de Sobremesa, Portátiles, Tablet y Móviles.
+The theme is fully responsive. It looks beautiful and consistent across Desktop, Laptop, Tablet, and Mobile devices.
 
 {{< img src="images/responsive.png" align="center" >}}
 
 {{< vs 3 >}}
 
-### Tarjetas diseñadas cuidadosamente
+### Carefully Designed Cards
 
-Las tarjetas de habilidades y proyectos han sido diseñadas cuidadosamente para dar información significativa. Las tarjetas de habilidades no solo enumeran las habilidades. También dan al visitante una idea sobre el conocimiento de una habilidad particular. Las tarjetas de proyectos dan una idea sobre la popularidad de su proyecto si es un proyecto de código abierto en Github.
+The skill and project cards are designed carefully to give more meaningful information. The skill cards not only just list your skills. It also gives the viewer an idea about your depth of knowledge of the particular skill. The project cards give an idea about the popularity of your project if it is an open-source project on Github.
 
 {{< img src="images/cards.png" align="center" >}}
 
 {{< vs 3 >}}
 
-### Una cronología de experiencias que realmente representa tus experiencias
+### An Experience Timeline that truly represents your experiences
 
-La cronología de experiencias ha sido diseñada para reflejar su experiencia profesional. Muestra las responsabilidades que ha manejado en las distintas etapas de su carrera.
+The experience timeline has been designed to reflect your career background. It shows the responsibilities you have handled in various stages of your career.
 
 {{< img src="images/experience-timeline.png" width="900" align="center" >}}
 
 {{< vs 3 >}}
 
-### Una galería para mostrar sus logros
+### A Gallery to show your Achievements
 
-La sección de galería te permite mostrar tus logros al público.
+The gallery section allows you to show your achievements to the public.
 
 {{< img src="images/gallery.png" width="900" align="center" >}}
 
 {{< vs 3 >}}
 
-### Una barra lateral con sentido
+### A sidebar that makes sense
 
-¿Alguna vez pasaste mucho tiempo buscando una publicación en particular en un blog? Yo también lo hice. Este tema incorpora un menú de barra lateral que clasifica sus publicaciones en varias categorías y subcategorías.
+Did you ever find yourself spending lots of time to find a particular post on a blog? I did it too. This theme incorporates a sidebar menu that categorizes your posts in various categories and sub-categories.
 
 {{< img src="images/sidebar.png" width="900" align="center" >}}
 
 {{< vs 3 >}}
 
-### Personalización & Extensibilidad
+### Customizability & Extensibility
 
-Es fácil customizar el tema sin cambiar el código del tema. Ha sido diseñado para ser extensible y personalizado. Puedes añadir fácilmente una nueva sección o sobrescribir el CSS de cualquier sección existente si alterar el tema.
+It is easy to customize the theme without changing the theme codes. It has been designed to be extensible and customizable. You can easily add a new section or overwrite the CSS of any existing sections without altering the theme.
 
-¿Aún no cumples con tus requisitos? Presenta una solicitud de función [aquí](https://github.com/hossainemruz/toha).
+Still not meeting your requirements? File a feature request [here](https://github.com/hossainemruz/toha).
 
-### Soporte de múltiples idiomas
+### Multiple Language Support
 
-Este tema tiene soporte integrado para varios idiomas. Puede traducir su contenido a varios idiomas fácilmente para una mejor accesibilidad.
+This theme has built-in support for multiple language. You can translate your content in multiple languages easily for better reachability.
