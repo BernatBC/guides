@@ -1,58 +1,54 @@
 ---
-title: "Configuration de la section Expériences"
+title: Configuring Experiences Section
 date: 2020-06-08T06:20:40+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
 menu:
   sidebar:
-    name: Section des expériences
+    name: Experiences Section
     identifier: experiences-section
     parent: sections
     weight: 130
 ---
 
-La section `expériences` a été conçue pour mettre en valeur votre carrière et mettre en évidence les responsabilités que vous avez assumées tout au long de votre parcours professionnel. Dans ce billet, nous vous guiderons sur la façon de configurer la section `Expériences` de votre site. Pour une référence complète, consultez s'il vous plaît l'extrait du fichier [experiences.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/experiences.yaml).
+The `Experiences` section is designed to showcase your career background and highlight the responsibilities you have handled throughout your professional journey. In this post, we will guide you on how to configure the `Experiences` section of your site. For a complete reference, you can refer to the sample [experiences.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/experiences.yaml) file.
 
-Pour commencer, créez un nouveau fichier nommé `experiences.yaml` dans le répertoire `data/fr/sections` de votre site. Ensuite, suivez les instructions ci-dessous:
+To begin, create a new file named `experiences.yaml` in the `data/en/sections` directory of your site. Then, follow the instructions below.
 
-### Ajouter les informations de section
+### Add Section Information
 
-Ajoutez les métadonnées de la section suivante dans votre fichier `experiences.yaml`:
+Add the following section metadata to your `experiences.yaml` file:
 
 ```yaml
-# section information
 section:
   name: Experiences # Titre de la section (par défaut: "" )
-  id: experiences # URL id/slug de section *valeur à conserver & obligatoire*
+  id: experiences # url id/slug of section *Required*
   enable: true
   weight: 3
   showOnNavbar: true
-  # Peut optionnellement masquer les titres de la section
+  # Can optionally hide the title in sections
   # hideTitle: true 
 ```
 
-### Ajouter vos expériences
+### Add Your Experiences
 
-Pour ajouter une expérience, incluez les informations correspondantes sous la section `experiences` de votre fichier `experiences.yaml` comme ci-dessous:
+To add an experience, include the respective information under `experiences` section in the `experiences.yaml` file as below:
 
 ```yaml
-# Vos expériences
+# Your experiences
 experiences:
 - company:
     name: Example Co.
     url: "https://www.example.com"
     location: Dhaka Branch
     logo: /images/experiences/company.png
-    darkLogo: /images/experiences/company-dark.png #(optionnel)
-    # Aperçu de votre compagnie
+    darkLogo: /images/experiences/company-dark.png #(optional), Can optionally show a different logo for dark theme
+    # company overview
     overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
   positions:
   - designation: Senior Software Engineer
     start: Nov 2019
-    # Ne pas fournir de date de fin sur votre poste actuel. Ca sera remplacé par "Aujourd'hui".
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
-    # Donnez quelques points à propos de vos responsabilités dans cette entreprise.
+    # give some points about what was your responsibilities at the company.
     responsibilities:
     - Design and develop XYZ tool for ABC task
     - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
@@ -67,16 +63,16 @@ experiences:
     - Learn k,d,w technology for xyz.
 ```
 
-Chaque entrée dans une section `expériences` devrait avoir les informations suivantes:
+Each entry in the `experiences` section should have the following information:
 
-- **company**: Quelques informations sur votre entreprise. Vous devez fournir `name`, `url`, `location`, `logo`, et une brève `overview` de votre entreprise.
-- **positions**: Une liste des postes que vous avez occupé dans l'entreprise. Vous pouvez fournir plusieurs postes si vous en avez changé au sein de cette entreprise.
-- **designation**: Indique le rôle que vous jouiez sur ce poste.
-- **start**: Temps quand vous avez démarré à ce poste.
-- **end**: Temps quand vous avez quitté ce poste. Si vous occupé actuellement ce poste, ne renseignez pas ce champs.
-- **responsibilities**: Une liste des responsabilités que vous avez assumée à ce poste. Cette section est très importante car elle donnera aux visiteurs une idée des responsabilités que vous êtes capable de gérer.
+- **company**: Some information about your company. You should provide `name`, `url`, `location`, `logo`, and a brief `overview` of the company.
+- **positions**: A list of positions you have held in the company. You can provide multiple positions if you have changed your position in the company.
+- **designation**: Represents the role that you were playing at the position.
+- **start**: Time when you had joined at the position.
+- **end**: Time when you have left the position. If you are currently working at the position, don't provide this field.
+- **responsibilities**: A list of responsibilities you handled at that position. This section is very important as it will give the viewer an idea about the professional responsibilities you are capable to deal with.
 
-> Vous pouvez utiliser la syntaxe markdown dans le champs `overview` de la section `company` et dans le champs `responsabilities`.
+> You can use markdown syntax in `overview` field of `company` section and `responsibilities` field.
 
 <!-- {{< vs 2 >}}
 
