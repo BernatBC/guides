@@ -1,22 +1,22 @@
 ---
-title: "Ajouter une nouvelle section"
+title: Adding a new section
 date: 2024-01-13T22:30:50+06:00
 author:
-  name: Nicolas DIETLIN
-  image: images/author/nicolas.jpg
+  name: Emruz Hossain
+  image: images/author/emruz.jpg
 menu:
   sidebar:
-    name: Ajouter une nouvelle section
+    name: Adding New Section
     identifier: customizing-add-new-section
     parent: customizing
     weight: 415
 ---
 
-Si les sections par défaut, modèles, et composants ne satisfont pas vos besoins, vous pouvez facilemement ajouter de nouvelles sections, modèles, et composants à votre site. Ce guide montrera comment ajouter une nouvelle section à votre site.
+If the default sections, templates, and components do not meet your needs, you can easily add new sections, templates, and components to your site. This guide will demonstrate how to add a new section to your site.
 
-### Etape 1 : Ajouter du fichier de mise en page
+### Step 1 : Add Layout File
 
-Pour ajouter une nouvelle section à votre site, vous devez créer un fichier de mise en page dans le répertoire `layout/partials/sections`. Le fichier doit être nommé d'après le nom de la section. Par exemple, si vous voulez ajouter une section `contact` avec le formulaire de contact, créez un fichier nommé `contact.html`. Utilisez le modèle suivants pour le fichier `contact.html`.
+To add a new section to your site, you need to create a layout file in the `layouts/partials/sections` directory. The file should be named after the section's name. For example, if you want to add a `contact` section with a contact form, create a file named `contact.html`. Use the following template for the `contact.html` file:
 
 ```html
 {{ $sectionID := replace (lower .section.name) " " "-"  }}
@@ -29,17 +29,17 @@ Pour ajouter une nouvelle section à votre site, vous devez créer un fichier de
 </div>
 ```
 
-### Etape 2: Ajouter des styles CSS
+### Step 2: Add CSS Styles
 
-Si vous voulez ajouter un CSS personnalisé pour votre nouvelle section, vous pouvez le faire en ajouter le code CSS au fichier `assets/styles/overrides.scss` dans votre site. Ce fichier est automatiquement chargé par le thème et appliquera les styles personnalisés. Alternativement, vous pouvez créer un fichier SCSS séparé dans le répertoire `assets/styles` de votre dépôt et l'inclure dans le fichier `assets/styles/overrides.scss` en utilisant la syntaxe suivante:
+If you want to add custom CSS for your new section, you can do so by adding the CSS code to the `assets/styles/override.scss` file in your site. This file is automatically loaded by the theme and will apply the custom styles. Alternatively, you can create a separate SCSS file in the `assets/styles` directory of your repository and include it in the `assets/styles/override.scss` file using the following syntax:
 
 ```scss
 @import "your-style-file-name";
 ```
 
-### Etape 3: Ajouter JavaScript
+### Step 3: Add JavaScript
 
-De façon similaire, si votre nouvelle section requiert un JavaScript supplémentaire, la méthode recommandée est d'ajouter le JavaScript dans le fichier de mise en page lui-même avec le tag `<script>`. Si vous voulez ajouter le JavaScript dans un fichier séparé, alors placez le fichier JavaScript dans le répertoire `assets/scripts` de votre dépôt et l'inclure dans le fichier de mise en page comme suit:
+Similarly, if your new section requires additional JavaScript, the recommended way is to add the JavaScript in the layout file itself with `<script>` tag. If you want to add the JavaScript in a separate file, then put the JavaScript file in `assets/scripts` directory of your repo and include it in the layout file as following:
 
 ```html
 {{ $script := resources.Get "scripts/your-script.js" }}
