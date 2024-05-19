@@ -1,8 +1,8 @@
 ---
-title: Categoría
+title: Category
 menu:
   sidebar:
-    name: Organizando Publicaciones
+    name: Organizing Posts
     identifier: writing-post-category
     parent: writing-post
     weight: 10
