@@ -1,5 +1,5 @@
 ---
-title: "Front Matter"
+title: Front Matter
 date: 2020-06-08T06:15:45+06:00
 menu:
   sidebar:
@@ -9,4 +9,4 @@ menu:
     weight: 20
 ---
 
-### Article complet à venir...
+### Complete Post Coming Soon...
