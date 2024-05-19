@@ -1,70 +1,68 @@
 ---
-title: "Configurando la sección de Educación"
+title: Configuring Education Section
 date: 2020-06-08T06:20:40+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Sección de Educación
+    name: Education Section
     identifier: Education-section
     parent: sections
     weight: 135
 ---
 
-La sección de `Educación` ha sido diseñada para mostrar su formación académica. En esta publicación, le guiaré a través del proceso de configuración de la sección de `Educación` en su sitio web. Para obtener una referencia completa, puede consultar el archivo de ejemplo [education.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/education.yaml).
+The `Education` section is designed to showcase your academic background. In this post, we will guide you on how to configure the `Education` section of your site. For a complete reference, you can refer to the sample [education.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/education.yaml) file.
 
-Para empezar, crea un nuevo archivo llamado `education.yaml` dentro del directorio `data/es/sections` de tu sitio web. Después, sigue las instrucciones de abajo.
+To begin, create a new file named `education.yaml` in the `data/en/sections` directory of your site. Then, follow the instructions below.
 
-### Añade la información de la sección
+### Add Section Information
 
-Añade la siguiente sección de metadatos en el archivo `education.yaml`:
+Add the following section metadata to your `education.yaml` file:
 
 ```yaml
+# section information
 section:
-  name: Educación # Título de la sección (predeterminado: "")
-  id: education # id del url de la sección *se requiere*
-  template: sections/education.html # Usa "sections/education-alt.html" para una plantilla alterna
-  enable: true # Booleano que determina si la sección está activada (predeterminado: false)
-  weight: 4 # Orden de la sección (predeterminado: alfabeticamente seguida del peso)
-  showOnNavbar: true # Booleano que determina si el enlace de esta sección debe aparecer en la barra de navegación
-  # Opcionalmente puede ocultar el título del menú
+  name: Education
+  id: education
+  template: sections/education.html # Use "sections/education-alt.html for alternate template.
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
   # hideTitle: true
 ```
 
-### Añade sus grados académicos
+### Add Your Academic Degrees
 
-Para añadir una educación, incluya la información respectiva en la sección `degrees` en el archivo `education.yaml` como se muestra a continuación:
+To add an education, include the respective information under `degrees` section in the `education.yaml` file as below:
 
 ```yaml
 degrees:
-- name: Doctorado en Criptografía Cuántica
+- name: Ph.D in Quantum Cryptography
   icon: fa-microscope
   timeframe: 2016-2020
   institution:
-    name: Universidad de Teconología ABC
+    name: ABC University of Technology
     url: "#"
-    logo: /images/education/college.png # Ruta del logo
-    darkLogo: /images/education/college-dark.png #(opcional), opcionalmente puede mostrar un logo distinto para el tema oscuro.
-  grade: #(opcional)
+    logo: /images/education/college.png # Path of the logo image
+    darkLogo: /images/education/college-dark.png #(optional), Can optionally show a different logo for dark theme
+  grade: #(optional)
     scale: CGPA
     achieved: 3.6
     outOf: 4
-  publications: #(opcional)
+  publications: #(optional)
   - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     url: "#"
   - title: Fusce eu augue ut odio porttitor pulvinar.
     url: "#"
   - title: Nullam vitae orci tincidunt purus viverra pulvinar.
     url: "#"
-  extracurricularActivities: #(opcional), suporta markdown
+  extracurricularActivities: #(optional), supports markdown
   - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   - Fusce eu augue ut odio porttitor pulvinar.
-  custonSections: #(opcional)
-    - name: Tesis
+  custonSections: #(optional)
+    - name: Thesis
       content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     - name: Supervisor
       content: Fusce eu augue ut odio porttitor pulvinar.
 ```
 
-Asegúrese que el icono que utilices esté disponible en [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free).
+Make sure the icon you are using is available in [Font Awesome](https://fontawesome.com/icons?d=gallery\&m=free).
