@@ -1,83 +1,82 @@
 ---
-title: "Cómo contribuir?"
+title: How to Contribute?
 date: 2024-01-19T02:30:00+06:00
-description: Una guía de cómo contribuir al tema de toha
+description: A guide on how to contribute to toha
 author:
   name: BernatBC
   image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Contribuyendo
-    identifier: Contribuyendo
+    name: Contributing
+    identifier: contributing
     weight: 900
 ---
 
-## Maneras de contribuir
+## Ways to Contribute
 
-Puedes contribuir a este tema de varias maneras.
+You can contribute to this theme in various ways.
 
-### Código
+### Code
 
-Los Pull Requests son bienvenidos y estaré encantado de revisarlos. Simplemente siga los siguientes principios:
+Pull requests are most welcome and I will be happy to review. Just follow the following principles:
 
-- Manténgalo simple.
-- Manténgalo consistente con el diseño.
-- Utilice la menor cantidad de dependencias posible.
-- Ten paciencia.
+- Keep it simple.
+- Keep it consistent with the design of the UI.
+- Use as few dependencies as possible.
+- Be patient.
 
-### Testeando y reportando errores
+### Testing and reporting issues
 
-- Puedes reportar un [bug](https://github.com/hugo-toha/toha/issues/new?template=bug.md)
-- También puedes [pedir una característica](https://github.com/hugo-toha/toha/issues/new?template=feature_request.md)
-- [Dar ideas y sugerencias](https://github.com/hugo-toha/toha/issues/new?template=question.md)
+- You can report a [bug](https://github.com/hugo-toha/toha/issues/new?template=bug.md)
+- File a [feature request](https://github.com/hugo-toha/toha/issues/new?template=feature_request.md)
+- [share your thoughts](https://github.com/hugo-toha/toha/issues/new?template=question.md)
 
-### Documentación
+### Documentation
 
-También puedes contribuir con la documentación del tema:
 You can also contribute to the theme documentation by:
-- Añadiendo información y secciones.
-- Corrigiendo errores y faltas de ortografía.
-- Actualizando documentación obsoleta.
-- Traduciendo la documentación a un nuevo idioma, [esta](/es/posts/translation/content/) guía te podría ser útil.
 
-### Traducción
+- Adding information and sections.
+- Fixing errors and typos.
+- Updating obsolete documentation.
+- Translating the documentation to a new language, [this](/posts/translation/content/) guide might be helpful.
 
-Finalmente, puedes contribuir a la traducción del tema a distintos idiomas, completando palabras que faltan, o añadiendo un nuevo idioma. Puedes seguir la guía [Cómo añadir un idioma sin soporte](/es/posts/translation/new-language/) para más información.
+### Translation
 
-## Cómo contribuir?
+Finally, you can contribute to the translation of the theme to several languages, by completing missing words, or by adding a new language. You can follow the guide [How to add an unsupported language](/posts/translation/new-language/) for more information.
 
-Para el desarrollo local, puedes hacer cambios al submódulo del tema y probar los cambios con tu propio sitio o con el [sitio de ejemplo](https://github.com/hugo-toha/hugo-toha.github.io) localmente.
+## How to contribute?
+
+For local development, you can make changes in the theme submodule and test the changes against your own site or this [example site](https://github.com/hugo-toha/hugo-toha.github.io) locally.
 
 ### Fork
 
-Para comenzar, haz fork de [este repositorio](https://github.com/hugo-toha/toha). Después, sigue los siguientes pasos para usar el tema forkeado para el desarrollo local,
+At first, fork [this repo](https://github.com/hugo-toha/toha). Then, follow the following steps to use the forked theme for local developments,
 
+#### Running the forked theme against the example site
 
-#### Ejecuta el tema forkeado con el sitio de ejemplo
-
-Si quieres ejecutar tu desarrollo local con este [sitio de ejemplo](https://github.com/hugo-toha/hugo-toha.github.io), sigue los siguientes pasos:
+If your want to run your local development against this [example site](https://github.com/hugo-toha/hugo-toha.github.io), follow the following steps:
 
 ```bash
-# va al directorio exampleSite
+# go to exampleSite directory
 $ cd exampleSite
-# instala los módulos de hugo
+# install hugo modules
 $ hugo mod tidy
-# instala las dependencias
+# install dependencies
 $ hugo mod npm pack
 $ npm install
-# ejecuta el sitio de ejemplo localmente
+# run the example site locally
 $ hugo server -w
 ```
 
-Ahora, puedes hacer cambios en el tema, y se verán reflectados inmediatamente en el sitio. Si necesitas cambiar alguna configuración, lo puedes hacer en el archivo `config.yaml` dentro del directorio `exampleSite`. Si necesitas añadir contenido o datos, puedes crear el respectivo directorio dentro de `exampleSite` y añade tu contenido o datos deseados ahí.
+Now, you can make change in the theme and they will be reflected immediately on the running site. If you need to change any configuration, you can do that in the `config.yaml` file inside `exampleSite` folder. If you need to add any content or data, you can create the respective folder inside `exampleSite` directory and add your desired content or data there.
 
-#### Ejecuta el tema forkeado con tu propio sitio
+#### Running the forked theme against your own site
 
-Si quieres ejecutar tu desarrollo local con tu sitio, sigue los siguientes pasos:
+If you want to run your local development against your own site, follow the following steps:
 
-**Sustituye los módulos del tema:**
+**Replace the theme module:**
 
-Abre el archivo `go.mod` de tu sitio y sustituye `github.com/hugo-toha/toha/v4` por el path de tu repositorio forkeado. Por ejemplo, si tu repositorio forkeado es `github.com/<tu-usuario-de-github>/toha`, sustituye `github.com/hugo-toha/toha/v4` por `github.com/<tu-usuario-de-github>/toha/v4`.
+Open your site's `go.mod` file and replace the `github.com/hugo-toha/toha/v4` with your forked repo's path. For example, if your forked repo is `github.com/<your-github-user>/toha`, then replace the `github.com/hugo-toha/toha/v4` with `github.com/<your-github-user>/toha/v4`.
 
 ```go
 module github.com/hugo-toha/hugo-toha.github.io
@@ -91,7 +90,7 @@ replace(
 )
 ```
 
-Para el desarrollo interactivo, puedes sustituir el tema con tu fork clonado localmente. Por ejemplo, si has clonado tu fork en `/home/mis-proyectos/toha`, sustituye `github.com/hugo-toha/toha/v4` por `/home/mis-proyectos/toha`.
+For interactive development, you can replace the theme with your locally cloned fork. For example, if you have cloned your fork in `/home/my-projects/toha`, then replace the `github.com/hugo-toha/toha/v4` with `/home/my-projects/toha`.
 
 ```go
 module github.com/hugo-toha/hugo-toha.github.io
@@ -105,35 +104,35 @@ replace(
 )
 ```
 
-**Actualizar dependencias:**
+**Update dependencies:**
 
 ```bash
-# actualiza los módulos de hugo
+# update hugo modules
 $ hugo mod tidy
-# instala las dependencias
+# install dependencies
 $ hugo mod npm pack
 $ npm install
 ```
 
-**Ejecuta tu sitio localmente:**
+**Run your site locally:**
 
 ```bash
 $ hugo server -w
 ```
 
-Desde aquí ya puedes hacer cambios al código fuente del tema mientras lo pruebas con tu sitio Hugo o con el de ejemplo.
+From there you can make changes to the source code of the theme while testing with your running Hugo site or the example site.
 
-### Abre un Pull Request
+### Open a Pull Request
 
-Cuando ya hayas hecho los cambios, haz commit y haz push a tu fork.
+When the changes look good, commit and push them to your fork.
 
 ```bash
-# añade todos los cambios
+# stage all the changes
 $ git add .
-# haz commit de los cambios con un mensaje significativo
-$ git commit -m "Un mensaje de commit significativo"
-# haz push del commit a tu fork
-$ git push my-fork mi-nueva-rama
+# commit the changes with a meaning full commit message
+$ git commit -m "A meaningful commit message"
+# push the commit to your fork
+$ git push my-fork my-feature-branch
 ```
 
-Después, abre un Pull Request en la rama `main` de [hugo-toha/toha](https://github.com/hugo-toha/toha) desde la rama `mi-nueva-rama` de tu propio fork.
+Then, open a PR against `main` branch of [hugo-toha/toha](https://github.com/hugo-toha/toha) from the `my-feature-branch` branch of your own fork.
