@@ -1,22 +1,19 @@
 ---
-title: "Automatiza las actualizaciones del tema"
+title: Automate Theme Update
 date: 2020-06-08T20:00:15+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Automatiza actualizaciones
+    name: Automate Theme Update
     identifier: getting-started-theme-update
     parent: getting-started
     weight: 40
 ---
 
-Para garantizar que su sitio se beneficie de las funciones y correcciones más recientes, es fundamental mantenerlo actualizado con la última versión del tema. Este artículo te guiará a través del proceso de establecimiento de un GitHub workflow que actualizará automáticamente la versión del tema. Esta acción realizará comprobaciones diarias de cualquier actualización del tema. Si se detecta una actualización, se generará un Pull Request para actualizar su sitio a la versión más reciente del tema.
+To ensure your site benefits from the most recent features and corrections, it's crucial to keep it updated with the latest theme version. This article will guide you through the process of establishing a GitHub workflow that will automatically update the theme version. This action will perform daily checks for any updates to the theme. If an update is detected, it will generate a PR to update your site to the most recent theme version.
 
-### Configurando Github Workflow
+### Setup Github Workflow
 
-Ahora, crea un archivo `theme-update.yml` dentro del directorio `.github/workflows`  de tu repositorio con el siguiente contenido:
+Now, create a `theme-update.yml` file in the `.github/workflows` folder of your repository with the following content:
 
 ```yaml
 name: "Theme Update"
@@ -73,4 +70,4 @@ jobs:
           labels: automerge
 ```
 
-Ahora está listo. De hora en adelante, esta acción se ejecutará diariamente y generará un Pull Request si se detecta alguna actualización del tema.
+You're good to go. From now on, this action will execute on a daily basis and generate a Pull Request if any updates to the theme are detected.
