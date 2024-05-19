@@ -1,31 +1,31 @@
 ---
-title: "Comment traduire des billets ?"
+title: How to Translate Posts
 date: 2024-01-15T06:20:50+06:00
 author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
+  name: BernatBC
+  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Traduire des billets
+    name: Translating Posts
     identifier: translation-posts
     parent: translation
     weight: 520
 ---
 
-Ce thème prend en charge plusieurs langues.
+This theme has built-in support for multiple language.
 
-Avant de commencer la traduction d'un billet, assurez-vous que vous avez activé la langue sur votre site. Si ce n'est pas le cas, vous pouvez suivre la section `Ajout d'une langue à votre site` du guide [Comment traduire les données du site ?](/fr/posts/translation/site-data/)
+Before starting the post translation, make sure that you have enabled the language to your site. If that's not the case, you can follow the section `Add the language to the site` from the guide [How to Translate Site Data](/posts/translation/site-data/).
 
-## Création du billet
+## Creating the post
 
-Lorsque vous avez ajouté la langue désirée à votre site web, sachez que vous pouvez traduire un billet dans cette langue. Nous allons supposer que vous voulez traduire un billet existant.
+Once you have your desired language added to your website, know you can translate posts to that language. We're going to assume that you want to translate an existing post.
 
-### Création du fichier index
+### Create the index file
 
-La première étape est de localiser le fichier `index.md` du billet que vous voulez traduire. Puis vous allez créer un fichier dans le même répertoire (ou bien vous pouvez juste dupliquer le fichier `index.md`), et le nommer `index.<code_langue>.md`, où `<code_langue>` est le code du langage que vous pouvez retrouver dans le tableau des langages sur [Comment traduire les données du site ?](/fr/posts/translation/site-data/)
+The first step is to locate the `index.md` file from the post that you want to translate. Then you have to create a file in the same directory (or you can just copy the `index.md` file), and name it `index.<language_code>.md`, where `<language_code>` is the language code that you can find in the language table in [How to Translate Site Data](/posts/translation/site-data/).
 
-### Traduction du billet
+### Translate the post
 
-Maintenant, vous pouvez démarrer la traduction du billet, de la même façon que vous écrivez un nouveau billet.
+Now, you can start translating the post, the same way as you write a new post.
 
-> INFO : Si vous avez affaire à des références internes, vous devez ajouter le prefix `/<code_langue>` devant votre chemin relatif. Par exemple, si vous voulez créer un lien pointant vers `/posts/translation/site-data/`, le lien vers le billet traduit sera `/<code_langue>/posts/translation/site-data/`.
+> INFO: If you're dealing with internal references, you'll need to add the prefix `/<language_code>` in front of your relative path. For example, if you want to create a link that is pointing to `/posts/translation/site-data/`, the link for the translated post will be `/<language_code>/posts/translation/site-data/`.
