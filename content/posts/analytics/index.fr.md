@@ -1,37 +1,34 @@
 ---
-title: "Analytiques"
+title: Analytics
 date: 2020-06-08T06:00:23+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
-description: Ajouter l'analytique dans hugo theme Toha
+description: Adding analytics in hugo theme Toha
 menu:
   sidebar:
-    name: Analytiques
+    name: Analytics
     identifier: analytics
     weight: 600
 ---
 
-## Analytiques
+## Analytics
 
-Ce thème a été construit avec le support de divers outils d'analyse. Actuellement, il prend en charge les analyses suivantes:
+This theme has built in support for various analytic tools. Currently, it supports the following analytics:
 
 - [GoatCounter](https://www.goatcounter.com/)
 - [counter.dev](https://counter.dev/)
 - [Google Analytics](https://analytics.google.com)
 - [Matomo](https://matomo.org/)
 
-Pour une liste complète des analytiques supportés, référez-vous au fichier d'échantillon [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml).
+For a complete list of supported analytics, please refer the sample [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml) file.
 
 {{< alert type="warning" >}}
-Avertissement: Lors de l'ajout d'analyses, vous devriez prendre en considération la législation locale pour voir si une bannière de confidentialité est nécessaire pour informer les visiteurs du suivi de ses données personnelles. En général (pas un conseil juridique), les méthodes anonymes et respectueuses de la vie privée telles que [counter.dev](https://counter.dev) et [GoatCounter](https://www.goatcounter.com/) n'ont pas besoin d'une bannière, car elles ne collectent pas de données personnelles identifiables.
+Warning: When adding analytics, you should consider local legislation to see if a privacy banner is required to inform users of the tracking in personal data. In general (not legal advice), privacy-friendly, anonymous methods such as [counter.dev](https://counter.dev) and [GoatCounter](https://www.goatcounter.com/) don't need a banner, since they do not collect personally identifiable data.
 {{< /alert >}}
 
 ### Goat Counter
 
-[GoatCounter](https://www.goatcounter.com/) est la méthode d'analyse la plus complète, simple et respectueuse de la vie privée supportée dans Toha. Ces scripts traquent les pages les plus vues, le nombre total d'utilisateur, et plus encore, tout en étant open source !
+[GoatCounter](https://www.goatcounter.com/) is the most complete, simple and privacy friendly analytics method supported in Toha. Its script tracks the most viewed pages, total number of users, devices, and much more, all while being open source!
 
-Pour activer l'analyse GoatCounter sur votre site, vous avez deux options: la première est de s'inscrire sur [goatcounter.com](https://www.goatcounter.com) et obtenir un code pour votre site, la seconde est une instance auto-hébergée de GoatCounter. Ensuite, vous avez à ajouter une section `analytics` sous la section `params.features` de votre fichier `config.yaml` comme ci-dessous:
+To enable GoatCounter analytics in your site, you have two options: one is to sign in at [goatcounter.com](https://www.goatcounter.com) and obtain a code for your site, the second is to self-hosted an instance of GoatCounter. Then, you have to add `analytics` section under `params.features` section of your `config.yaml` file as below:
 
 ```yaml
 analytics:
@@ -45,30 +42,31 @@ analytics:
 
 ### counter.dev
 
-[counter.dev](https://counter.dev) est un site d'analytique simple et respectueux de la vie privée qui vous permet de suivre le nombre total d'utilisateurs, la première page visitée et quelques autres métriques sur votre site web. Malheureusement, pour que les choses restent simples (et gratuites), elles ne montrent pas un classement des pages les plus visités, mais plutôt celles qui ont été consultées en premier.
+[counter.dev](https://counter.dev) is a simple, privacy friendly and open source analytics website which enables you to track the total user count, first visited page and some other metrics on your website. Unfortunately, to keep things simple (and free) they don't show a ranking of the most visited pages, but rather the ones that are accessed the first.
 
-Vous pouvez l'activer par l'ajout de l'email avec lequel vous vous êtes inscrit sur la page de counter.dev sous la section `params.features` dans votre fichier `config.yaml` comme ci-dessous:
+You can enable it by adding the email you registered with at counter.dev's page under `params.features` section in your `config.yaml` as below:
 
 ```yaml
 analytics:
   enable: true
   services:
     counterDev:
-      id: <votre counter.dev id>
+      id: <your counter.dev id>
 ```
-Le code de suivi sera automatiquement ajouté à votre site.
+
+The tracking code will be automatically added to your site.
 
 {{< alert type="warning" >}}
-Remarques : Sur certains sites, [une erreur a été détectée](https://github.com/ihucos/counter.dev/issues/37) où seul le répertoire racine ("/") est passé à counter.dev, donc le suivi n'affiche rien sous la section "pages". Pour corriger cela, on peut ajouter `referrerPolicy: no-referrer-when-downgrade` comme paramètre dans la section "counterDev", en s'assurant que les nouvelles visites de pages sont toujours correctement passées sur counter.dev.
+Note: On some sites, [an error has been detected](https://github.com/ihucos/counter.dev/issues/37) where only the root directory ("/") is passed over to counter.dev, so the tracking wont show anything under the "pages" section. To fix this, one can add `referrerPolicy: no-referrer-when-downgrade` as a parameter on the "counterDev" section, ensuring that new page visits are always correctly passed onto counter.dev.
 {{< /alert >}}
 
 ### Google Analytics
 
 {{< alert type="danger" >}}
-Méfiez-vous, [d'après une récente jurisprudence](https://www.euractiv.com/section/politics/short_news/use-of-google-analytics-violates-eu-law-austrian-authority-rules/), Google Analytics pourrait être illégal dans l'Union Européenne.
+Beware that [according to recent case law](https://www.euractiv.com/section/politics/short_news/use-of-google-analytics-violates-eu-law-austrian-authority-rules/), Google Analytics might be illegal in the European Union
 {{< /alert >}}
 
-Vous pouvez activer Google Analytics sur votre site en ajoutant votre id de suivi sous la section `params.features` dans votre fichier `config.yaml` comme ci-dessous:
+You can enable Google Analytics in your site by adding your tracking id under `params.features` section in your `config.yaml` file as below:
 
 ```yaml
 analytics:
@@ -79,13 +77,13 @@ analytics:
       id: <your Google Analytics tracking id>
 ```
 
-Vous pouvez utiliser à la fois la V3 ou V4 de l'ID de suivi. Le thème détectera automatiquement la version du code de suivi et ajoutera les scripts de suivi correspondants en fonction de votre site.
+You can use both V3 or V4 tracking ID. The theme will automatically detect the tracking code version and add the respective tracking scripts accordingly to your site.
 
-Pour des paramètres de confidentialité additionnels concernant Google Analytics, vous pouvez fournir une section `privacy.googleAnalytics` dans votre fichier `config.yaml` comme décrit [ici](https://gohugo.io/about/hugo-and-gdpr/#all-privacy-settings).
+For additional privacy settings regarding Google Analytics, you can provide `privacy.googleAnalytics` section in your `config.yaml` file as described [here](https://gohugo.io/about/hugo-and-gdpr/#all-privacy-settings).
 
 ### Matomo
 
-Vous pouvez activer Matomo (anciennement Piwik) par l'ajout de la configuration Matomo sous la section `params.features` dans votre fichier `config.yaml` comme ci-dessous:
+You can enable Matomo (formerly Piwik) by adding the matomo configuration under `params.features` section in the `config.yaml` file as shown below:
 
 ```yaml
 analytics:
@@ -96,3 +94,21 @@ analytics:
       instance: matomo.example.com
       siteId: 1 # The number generated after adding a site in your instance
 ```
+
+### Umami
+
+[Umami](https://umami.is) is an open source analytics tool fully compliant with GDPR and with a cookieless approach. It can be installed on-premise or you can use the provided cloud version.
+You can enable the Umami tracking by adding the following configs under `params.features` section in the `config.yaml` file:
+
+```yaml
+analytics:
+  enable: true
+  services:
+    # Umami Analytics
+    umami:
+      scheme: https
+      instance: analytics.eu.umami.is
+      id: <your Umami website id>
+```
+
+where `scheme` is the scheme (i.e: https, http) you want to use to connect to instance, and `instance` is the domain (or address) of your deployment, by default pointing to the EU cloud instance.
