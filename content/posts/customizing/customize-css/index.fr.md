@@ -1,24 +1,24 @@
 ---
-title: "Personnalisation CSS"
+title: Customizing CSS
 date: 2024-01-13T22:00:50+06:00
 author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
+  name: Emruz Hossain
+  image: images/author/emruz.jpg
 menu:
   sidebar:
-    name: Personnaliser les CSS
+    name: CSS Customization
     identifier: customize-css
     parent: customizing
     weight: 407
 ---
 
-Ce thème vous permet de personnaliser l'apparence de votre site et ses composants par une surcharge du CSS par defaut. Ce guide vous montrera comment surcharger le schéma de couleurs et personnaliser les CSS des composants individuels.
+This theme allows you to customize the appearance of your site and its components by overriding the default CSS. This guide will demonstrate how to override the theme's color scheme and customize the CSS of individual components.
 
-Le thème utilise [Sass](https://sass-lang.com/) pour générer du CSS. Si vous n'êtes pas familier avec Sass, vous pouvez en apprendre plus à son sujet [ici](https://sass-lang.com/guide).
+This theme uses [Sass](https://sass-lang.com/) to generate CSS. If you are not familiar with Sass, you can learn more about it from [here](https://sass-lang.com/guide).
 
-## Surcharger les variables des couleurs du thème
+## Override Theme Colors Variables
 
-Si vous voulez changer le schéma de couleurs par défaut de votre thème, vous pouvez surcharger les variables de couleur du thème. Pour surcharger les variables de couleur du thème, vous devrez créer un fichier nommé `variables.scss` dans le répertoire `assets/styles` de votre site. Puis copiez le contenu du fichier [variables.scss](https://github.com/hugo-toha/toha/blob/main/assets/styles/variables.scss) par défaut et collez le dans votre fichier de personnalisation `variables.scss`. Ici, seule la section `$theme` du fichier `variables.scss` par defaut est montré ci-dessous:
+If you want to change the default color scheme of the theme, you can override the theme color variables. To override the theme color variables, you need to create a file named `variables.scss` in the `assets/styles` directory of your site. Then copy the content of the default [variables.scss](https://github.com/hugo-toha/toha/blob/main/assets/styles/variables.scss) file and put into your custom `variables.scss` file. Here, only the `$theme` section from default `variables.scss` file is shown below:
 
 ```scss
 // themes
@@ -85,13 +85,13 @@ $themes: (
 );
 ```
 
-Les champs `light` et `dark` dans la cartopgraphie de couleur représentent respectivement les schémas de couleur pour le mode lumière et le mode sombre. En modifiant les codes couleurs dans ces champs, vous pouvez personnaliser l'apparence de votre site.
+The `light` and `dark` fields in the color mappings represent the color schemes for light mode and dark mode, respectively. By modifying the color codes in these fields, you can customize the look and feel of your site.
 
-## Surcharger un composant CSS
+## Override Component CSS
 
-Pour surcharger le CSS d'un composant, créez un fichier `override.scss` dans le répertoire `assets/styles` de votre site. Puis, placez le nouveau CSS pour ce composant ici. Vous n'avez pas besoin de réécrire l'ensemble du CSS du composant. Vous pouvez juste mettre les champs modifiés.
+To override the CSS of a component, create a `override.scss` file in your site's `assets/styles` directory. Then, put the new CSS for the component there. You don't have to re-write the entire CSS of the component. You can just put the changed fields.
 
-Par exemple, pour désactiver l'effet flou de l'image d'arrière plan sur la page d'accueil, vous pouvez ajouter le code SCSS suivant dans votre fichier `override.scss`:
+For example, to disable blur effect of the background image on the home page, you can add the following SCSS code in your `override.scss` file:
 
 ```scss
 .home{
