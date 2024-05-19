@@ -1,70 +1,67 @@
 ---
-title: "Configurando la sección Sobre mi"
+title: Configuring About Section
 date: 2020-06-08T06:20:50+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Sección Sobre mi
+    name: About Section
     identifier: about-section
     parent: sections
     weight: 110
 ---
 
-El propósito de la sección `Sobre mi` es proveer una breve introducción sobre ti en tu sitio web. En esta publicación, te guiaré en cómo configurar la sección `Sobre mi`. Para obtener una referencia completa, consulte el archivo de ejemplo [about.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/about.yaml).
+The purpose of the `About` section is to provide a brief introduction about yourself on your website. In this post, we will guide you on how to configure the `About` section. For a complete reference, please check out the sample [about.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/about.yaml) file.
 
-Para empezar, crea un archivo `about.yaml` dentro del directorio `data/es/sections` de tu sitio web. Después sigue las instrucciones de abajo.
+To get started, create an `about.yaml` file in the `data/en/sections` directory of your website. Then, follow the instructions below.
 
-### Añade la información de la sección
+### Add Section information
 
 ```yaml
 section:
-  name: Sobre mi # Título de la sección (predeterminado: "")
-  id: about # id del url de la sección *se requiere*
-  enable: true # Booleano que determina si la sección está activada (predeterminado: false)
-  weight: 1 # Orden de la sección (predeterminado: alfabeticamente seguida del peso)
-  showOnNavbar: true # Booleano que determina si el enlace de esta sección debe aparecer en la barra de navegación
-  template: sections/about.html # Permite apuntar a una plantilla específica
+  name: About # Title of section (default: "")
+  id: about # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 1 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  template: sections/about.html # allows you to point to a specific template.
 ```
 
-#### Configuración de la plantilla
+#### Template setting
 
-Tienes la opción de personalizar el "partial" usado para esta sección especificando la propiedad `template.` Simplemente, guarde la nueva plantilla en el directorio `layout/partials`.
+You have the option to customize the partial used for this section by specifying the `template` property. Simply save the new template in your `layout/partials` directory.
 
-### Añade tu información de trabajo
+### Add Your Work Information
 
-Para incluir detalles sobre tu trabajo actual, puedes añadir la siguiente sección en el archivo `about.yaml`:
+To include details about your current job, you can add the following section to your `about.yaml` file:
 
 ```yaml
-# Tu designación
-designation: Ingeniero de Software
-# Información de tu empresa
+# your designation
+designation: Software Engineer
+# your company information
 company:
   name: Example Co.
   url: "https://www.example.com"
 ```
 
-### Añade un resumen sobre ti
+### Add a Summary About Yourself
 
-Para proporcionar una descripción general concisa de su experiencia profesional, añadimos una sección de resumen. Esto les dará a los visitantes una idea rápida de lo que haces. Añade la siguiente sección al archivo `about.yaml`:
+To provide a concise overview of your professional expertise, let's add a summary section. This will give viewers a quick glimpse into what you do. Add the following section to your `about.yaml` file:
 
 ```yaml
-# Un resumen sobre ti
-summary: 'Soy un ingeniero de software apsionado con x años de experiencia. He creado herramientas OSS para [Kubernetes](https://kubernetes.io/) utilizando Go. Mis herramientas ayudan a personas a desplegar sus workloads en Kubernetes. A veces trabajo en projectos divertidos como crear un tema, etc.'
+# a summary about you
+summary: 'I am a passionate software engineer with x years of working experience. I built OSS tools for [Kubernetes](https://kubernetes.io/) using GO. My tools help people to deploy their workloads in Kubernetes. Sometimes, I work on some fun projects such as writing a theme, etc.'
 ```
 
-Intenta que sea lo más breve posible. No lo hagas demasiado largo. Tenemos otras secciones que brindan más información sobre su experiencia.
+Try to make it as brief as possible. Don't make it too wordy. We have other sections that give more insight into your expertise.
 
->Puedes usar la sintáctica de markdown en el campo `summary`.
+> You can use markdown syntax in the `summary` field.
 
-### Añade tus links de redes sociales
+### Add Your Social Links
 
-Para añadir enlaces de tus perfiles de plataformas como LinkedIn, Twitter y Github, incluye esta sección `socialLinks` en tu archivo `about.yaml`.
+To add links to your various profiles such as LinkedIn, Twitter, and Github, include the following `socialLinks` section in your `about.yaml` file:
 
 ```yaml
-# tus links de redes sociales
-# da tantos como quieras. Utilitza font-awesome para los iconos.
+# your social links
+# give as many as you want. use font-awesome for the icons.
 socialLinks:
 - name: Email
   icon: "fas fa-envelope"
@@ -91,30 +88,30 @@ socialLinks:
   url: "#"
 ```
 
-Puedes usar cualquier icono gratis de [Font Awesome](https://fontawesome.com/icons?d=gallery) en este campo.
+You can use any [Font Awesome](https://fontawesome.com/icons?d=gallery) free icons in the icon field.
 
-### Añade un Currículum
+### Add a Resume
 
-Para añadir un currículum, pon tu archivo PDF dentro del directorio `files` localizado dentro del directorio `static`. Después incluye la siguiente sección en el archivo `about.yaml`:
+To add your resume, place the PDF file in `files` folder within the `static` directory. Then, include the following section in your `about.yaml` file:
 
 ```yaml
-# tu currículum. Este archivo debe ser relativo a tu directorio "static"
+# your resume. this file path should be relative to you "static" directory
 resourceLinks:
-- title: "Mi Curríulum"
-  url: "files/curriculum.pdf"
+- title: "My Resume"
+  url: "files/resume.pdf"
 ```
 
-### Añade tus competencias sociales
+### Add badges
 
-Ahora, vamos a añadir tus competencias sociales y un indicador para diversas habilidades sociales como liderazgo, comunicación, trabajo en equipo, etc. Incluye la siguiente sección dentro del archivo `about.yaml`:
+Now, let's add your badges and a strength indicator for various soft skills such as leadership, communication, teamwork, etc. Include the following section in your `about.yaml` file:
 
 ```yaml
-# Muestra tus certificaciones
-# Puedes mostrar tus certificaciones verificables de https://www.credly.com.
-# También puedes mostrar una barra circular indicando el nivel de experiencia en una habilidad determinada
+# Show your badges
+# You can show your verifiable certificates from https://www.credly.com.
+# You can also show a circular bar indicating the level of expertise on a certain skill
 badges:
 - type: certification
-  name: Especialista Certificado de Seguridad de Kubernetes
+  name: Certified Kubernetes Security Specialist
   url: "https://www.credly.com/org/the-linux-foundation/badge/exam-developer-certified-kubernetes-security-specialist"
   badge: "https://images.credly.com/size/680x680/images/f4bf92ed-8985-40b2-bc07-2f9308780854/kubernetes-security-specialist-logo-examdev.png"
 
@@ -124,35 +121,37 @@ badges:
   badge: "https://images.credly.com/size/680x680/images/8d34d489-84bf-4861-a4a0-9e9d68318c5c/Beyond_basics_of_Istio_on_Cloud_v2.png"
 
 - type: certification
-  name: Inteligencia Artificial y Aprendizaje Automático
+  name: Artificial Intelligence and Machine Learning
   url: "https://www.credly.com/org/grupo-bancolombia/badge/artificial-intelligence-and-machine-learning"
   badge: "https://images.credly.com/size/680x680/images/e027514f-9d07-4b29-862f-fe21a8aaebf1/ae.png"
 
-
-- name: Liderazgo
+- type: soft-skill-indicator
+  name: Leadership
   percentage: 85
   color: blue
-- name: Trabajo en equipo
+
+- type: soft-skill-indicator
+  name: Team Work
   percentage: 90
   color: yellow
-- name: Comunicación
+
+- type: soft-skill-indicator
+  name: Hard Working
   percentage: 85
-  color: pink
+  color: orange
 ```
 
-Actualmente, el porcentaje de habilidades debe estar entre 0 y 100 y debe ser divisible por 5. Los siguientes colores están disponibles para el indicador de porcentaje de habilidades,
+Currently, the skill percentage should be between 0 and 100 and should be divisible by 5. The following colors are available for skills percentage indicator,
 
 - blue
 - yellow
 - pink
 - green
-- sky
-- orange
 
->También puedes usar cualquier código de color HEX en el campo `color`.
+> You can also use any HEX color code in the `color` field.
 
 {{< vs 2 >}}
 
-La siguiente imagen muestra cómo el contenido de `about.yaml` está distribuido en la sección `Sobre mi`. (La porción de configuración de la imagen está obsoleta y la sección de habilidades sociales han sido reemplazadas por certificaciones)
+The following image shows how the contents of `about.yaml` are mapped into the `About` section. (The configuration portion of the image is outdated and softSkills section has been replaced with badges)
 
 {{< img src="images/about.png" >}}
