@@ -1,31 +1,31 @@
 ---
-title: "Comment ajouter un langage non supporté ?"
+title: How to add an unsupported language
 date: 2024-01-15T06:20:50+06:00
 author:
   name: BernatBC
   image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Ajout d'une nouvelle langue
+    name: Adding new language
     identifier: new-language
     parent: translation
     weight: 510
 ---
 
-Si vous voulez traduire vers une langue non supportée, vous pouvez traduire les éléments de l'UI.
+If you want to translate to an unsupported language, you can translate the UI elements.
 
-## Créer un fichier `i18n`
+## Create an `i18n` file
 
-Pour ce faire, vous avez à créer un répertoire `i18n` à l'intérieur de la racine de votre site, le répertoire où vous pouvez trouver le fichier `config.yaml`, et les répertoires tel que `data`, `content`, etc.
+To do so, you have to create the `i18n` diretory inside the root of the site, the directory where you can find the `config.yaml` file, and directories like `data`, `content`, etc.
 
-Après cela, vous pouvez créer le fichier `<langage code>.toml` dans le répertoire `i18n`. Dans ce [répertoire](https://github.com/hugo-toha/hugo-toha.github.io/tree/gh-pages/flags/1x1), vous pouvez trouver tous les codes de langue avec le drapeau qui apparaît avec ce code.
+Afterwards, you can create the file `<language_code>.toml` into the `i18n` directory. In this [directory](https://github.com/hugo-toha/hugo-toha.github.io/tree/gh-pages/flags/1x1), you can find all language codes with the flag that will appear with that code.
 
-## Traduire les éléments de l'UI
+## Translate the UI elements
 
-A l'intérieur d'un nouveau fichier, copiez simplement le contenu suivant, et remplacez le contenu entre guillemets avec le nom de la langue désirée.
+Inside the new file, just copy the following content, and replace the content between the quotation marks with the name in your desired language.
 
 {{< alert type="warning" >}}
-Si le contenu ci-dessous devient obsolète, vous pouvez copier les contenus depuis le fichier [en](https://github.com/hugo-toha/toha/blob/main/i18n/en.toml).
+If the content below gets obsolete, you can copy the contents from the [en](https://github.com/hugo-toha/toha/blob/main/i18n/en.toml) file.
 {{< /alert >}}
 
 ```toml
