@@ -1,69 +1,70 @@
 ---
-title: "Creando una Categoría"
+title: Creating Category
 date: 2020-06-08T06:15:55+06:00
 author:
-  name: BernatBC
-  image: images/author/bernatbc.png
+  name: Md.Habibur Rahman
+  image: /images/author/habib.jpg
 menu:
   sidebar:
-    name: Creando una Categoría
+    name: Creating Category
     identifier: writing-post-category-create
     parent: writing-post-category
     weight: 10
 ---
 
-Primero, necesitamos entender cómo crear una publicación para poder crear categorías.
+First, we need to understand how to create a post then we will be able to create categories.
 
-## Crear una Publicación
+## Post Creation
 
-Para crear una publicación en tu primer blog, primero necesitas ir al directorio `posts`. Ahí crea un archivo `_index.md` (el nombre tiene que ser exactamente el mismo). Después, abre el archivo y añade las siguientes líneas: </br>
-    
-    ---
-    title: Posts
-    ---  
+To create a post in your blog first you need to go to the folder named `posts`. Here, create a file `_index.md`(The file name has to be exactly the same as it is mentioned). Then open the file and add below lines: </br>
 
-Ahora, guarda y cierra el archivo. Ahora, supone que quieres escribir una publicación. Primero, crea un archivo y nómbralo con la extensión de markdown al final. Por ejemplo: hemos creado el archivo nombrado `analytics-and-comments.md` y hemos añadido las siguientes líneas: </br>
+```
+---
+title: Posts
+---  
+```
 
-    ---
-    title: "Analytics and Comments"
-    date: 2020-06-08T06:00:23+06:00
-    hero: /images/posts/writing-posts/analytics.svg
-    description: Adding analytics and disquss comment in hugo 
-    theme: Toha
-    menu:
-      sidebar:
-        name: Analytics & Comments
-        identifier: analytics-and-comments
-        weight: 500
-    ---
+now, save and close the file. Now, Suppose, you want to write a post. First, create a file, name it with a markdown extension at the end. For example: we've created a file named `analytics-and-comments.md` and added the below lines of contents: </br>
 
-    ### Complete Post Coming Soon...
+```
+---
+title: "Analytics and Comments"
+date: 2020-06-08T06:00:23+06:00
+hero: /images/posts/writing-posts/analytics.svg
+description: Adding analytics and disquss comment in hugo 
+theme: Toha
+menu:
+  sidebar:
+    name: Analytics & Comments
+    identifier: analytics-and-comments
+    weight: 500
+---
 
-Como sabemos, el encabezado de este archivo empieza y acaba con tres guiones horizontales (`---`) es nombrado front-matter, y todos los posts que escribamos necesitan tener el front-matter incluido ahí. Vamos a entender cuáles son los parámetros, y para qué sirven: </br>
+### Complete Post Coming Soon...
+```
 
-**title:** Este es el título de tu publicación. </br>
-**date:** Esta es la fecha y hora que muestra la fecha y hora de publicación de tu blog. La primera porción está en el formato `year-month-date`. Puedes editar la fecha y hora como quieras. </br>
-**hero:** Aquí, necesitarás incluir la ruta de la imagen de portada de tu publicación. Vaya al directorio `static` y crea un directorio nombrado `images` (únicamente si no lo tienes). Después, dentro de este directorio crea un nuevo directorio nombrado `posts`, y dentro de este, hemos creado un directorio nombrado `writing-posts`, donde hemos puesto el archivo de imagen `analytics.svg`. Ahora copia la ruta, y añádalo al parámetro `hero`. </br>
-**description:** Añade la descripción que te convenga.</br>
-**menu:** Esta sección contiene otros parámetros nombrados `sidebar` que configurarán cómo se mostrará la estructura del archivo en la barra lateral. Debajo de este, tenemos:</br>
-**name:** Este define cual será el nombre del documento en la barra lateral. </br>
-**identifier:** Este ayuda a identificar el archivo con otros archivos en términos de la categoría. </br>
-**weight:** Se asigna un valor a este parámetro como valor de peso y, para varios archivos, los documentos aparecerán en la jerarquía de archivos según este valor de peso en orden ascendente.
+As we know that, the header part of this file which starts and ends with 3 horizontal hyphen(`---`) is called the front-matter and every blog post that we write needs to be a front matter included there. Let's understand what are the parameters actually mean: </br>
 
-Después del front-matter, puedes escribir cualquier contenido siguiendo la sintaxis de markdown.
-
-
-La siguiente imagen muestra cómo el contenido de `analytics-and-comments.md` está distribuido en la sección de la barra lateral. 
+**title:** This is the title of your post. </br>
+**date:** This is the time that shows the posting time of your blog. The first portion is in the `year-month-date format`. You can edit the date and time as you wish.</br>
+**hero:** Here, you need to include the location path of the cover photo of your post. Go to the `static` folder and create a folder named `images`(If you don't have) then inside this folder create another folder called `posts` and inside this, we created a folder named `writing-posts` where we put the image file `analytics.svg`. Now copy the path and add it to the `hero` parameter as mentioned above. </br>
+**description:** Add any description you like.</br>
+**menu:** This section contains another parameter called `sidebar` which actually displays how the file structure in the sidebar is going to look, and under this we have:</br>
+**name:** This defines what would be the name of the document in sidebar file hierarchy </br>
+**identifier:** This helps to distinguish the file from other files and helps in terms of category creation. </br>
+**weight:** A value is assigned to this param as a weight value and for multiple files, the documents will appear in the file hierarchy based on this weight value in ascending order.\</ </br>
+after the front-matter, you can write any content following the markdown rules.</br>
+The following image shows how the contents of `analytics-and-comments.md` are mapped into the sidebar section. </br>
 
 ![Image1](https://dev-to-uploads.s3.amazonaws.com/i/5klx1docgxewhxeo9sgi.png)
 
-> En la figura de arriba, Features, Installation, Configuration, Writing Posts, Customizing, Short Codes, etc., son directorios creados para otras publicaciones.
+> In the above figure- Features, Installation, Configuration, Writing Posts, Customizing, Short Codes, etc are folders created just for other posts.
 
-## Crear una Categoría
+## Category Creation
 
-Como hemos creado un archivo `_index.md` y una publicación anteriormente, ahora, para crear una categoría, necesitamos crear un directorio. Hemos creado un directorio nombrado `getting-started`, y dentro de este, hemos creado otro archivo `_index.md`, que tendrá el siguiente contenido front-matter:
+As we have created one `_index.md` file and one blog post markdown file previously, now to create a category, we need to create a folder. We created a folder called `getting-started` and inside this folder, we again need to create a `_index.md` file which contains the front-matter as below:</br>
 
-```    
+```
 ---
 title: Deploy Site
 menu:
@@ -74,7 +75,7 @@ menu:
 ---
 ```
 
-El significado de cada parámetro ha sido explicado anteriormente. Ahora, ten en cuenta que vamos a crear el nombre de la categoría como `getting-started`, por eso lo incluimos como identificador en este archivo "_index.md", pero puede darle el nombre que desee. Después, vamos a crear un archivo markdown nombrado `github-pages.md` que será nuestra publicación en este directorio. Nuestro archivo `github-pages.md` tiene las siguientes líneas:
+The meaning of each parameter in the above code block has been discussed earlier. Just, for the time being, keep in mind that we are going to create the category name as `getting-started` that's why we included it as an identifier in this `_index.md` file but you can give any name you want. Next, we are going to create a markdown file called `github-pages.md` which will be our blog post file for this folder. Our `github-pages.md` includes the following lines:</br>
 
 ```
 ---
@@ -88,18 +89,17 @@ menu:
     parent: getting-started
     weight: 10
 ---
-### Próximamente...
+### Complete Post Coming Soon...
 ```
 
-Ya conocemos los parámetros usados aquí, pero tenemos uno nuevo incluido, que es `parent`. Si nos damos cuenta, entenderemos que el valor de este parámetro y el valor del parámetro `identifier` en el archivo `_index.md` dentro de este directorio son ambos iguales. Debemos tener cuidado de que el valor de ambos parámetros coincida. Ahora puedes agregar tantas publicaciones y categorías como quieras siguiendo el procedimiento mencionado anteriormente. Así es cómo creamos las categorías.
+We already know about the parameters used here, but we have one new parameter this time included which is `parent` and If we notice we will understand that the value of this param and the value of `identifier` param in the `_index.md` file inside this folder are both the same. We have to be careful that both of these parameter value matches. Now, you can add as many posts and categories as you want following the above-mentioned procedure. This is how we create categories. </br>
 
-La siguiente imagen muestra cómo el contenido está distribuido en la sección de la barra lateral. 
-
+The following image shows how the contents are mapped into the sidebar section. </br>
 ![Image2](https://dev-to-uploads.s3.amazonaws.com/i/cso16yy6wf89eywgbufb.png)
 
-## Personalizando la información del auto de la publicación
+## Customizing post's author information
 
-Por defecto, la publicación usa la información de autor del archivo `config.yaml`. Si quieres sobrescribir la información predeterminada, simplemente añade la siguiente sección en el front-matter:
+By default, the post should use author information from `config.yaml`. If you want to overwrite the default author information, just add following author section in the front-matter:
 
 ```yaml
 author:
@@ -107,10 +107,10 @@ author:
   image: /images/authors/habib.jpg
 ```
 
-El front-matter debería parecerse a:
+Your final front-matter should look-like:
 
 ```yaml
-title: "Creando una Categoría"
+title: "Creating Category"
 date: 2020-06-08T06:15:55+06:00
 # hero: images/background/flower.jpg
 author:
@@ -118,7 +118,7 @@ author:
   image: /images/authors/habib.jpg
 menu:
   sidebar:
-    name: Creando una Categoría
+    name: Creating Category
     identifier: writing-post-category-create
     parent: writing-post-category
     weight: 10
