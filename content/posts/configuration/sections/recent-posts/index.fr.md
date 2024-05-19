@@ -1,28 +1,25 @@
 ---
-title: "Configuration Section Billets Récents"
+title: Configuring Recent Posts Section
 date: 2020-06-08T06:20:34+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
 menu:
   sidebar:
-    name: Section billets récents
+    name: Recent Posts Section
     identifier: recent-posts-section
     parent: sections
     weight: 150
 ---
 
-La section `Billets récents` est utilisée pour mettre en valeur les derniers billets de votre contenu. Pour activer cette section, créez une fichier `recent-posts.yaml` dans votre répertoire `data/fr/sections` et incluez le contenu suivant:
+The `Recent Posts` section is used to showcase the latest posts from your content. To enable this section, create a `recent-posts.yaml` file in the `data/en/sections` directory and include the following content:
 
 ```yaml
 # section information
 section:
-  name: Billets récents # Titre de la section (par défaut: "" )
-  id: recent-posts # URL id/slug de section *valeur à conserver & obligatoire*
-  enable: true # Booléen pour déterminer si la section est activée (par défaut: false)
-  weight: 6 # # Ordre d'affichage de la section (par defaut: alphabetique suivi par poids)
-  showOnNavbar: # true Booléen pour déterminer si le lien doit être affiché pour cette section dans la barre de navigation
-  hideTitle: true # Peut optionnellement masquer les titres de la section (defaut: false)
-  numShow: 4 # Peut optionnellement augmenter le nombre de billets à afficher (defaut: 3)
-  showMoreButton: false # Peu optionnellement afficher le bouton 'Plus de billets' (default: false)
+  name: Recent Posts # Title of section (default: "")
+  id: recent-posts # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 6 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  hideTitle: true # Can optionally hide the title in sections (default: false)
+  numShow: 4 # Can optionally increase the number of posts to display (default: 3)
+  showMoreButton: false #Can optionally show 'More Posts' button (default: false)
 ```
