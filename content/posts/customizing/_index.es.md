@@ -1,8 +1,8 @@
 ---
-title: Personalización
+title: Customizing
 menu:
   sidebar:
-    name: Personalización
+    name: Customizing
     identifier: customizing
     weight: 400
 ---
