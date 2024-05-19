@@ -1,56 +1,54 @@
 ---
-title: "Configurando la sección de Habilidades"
+title: Configuring Skills Section
 date: 2020-06-08T06:20:45+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Sección de Habilidades
+    name: Skills Section
     identifier: skills-sections
     parent: sections
     weight: 120
 ---
 
-La sección de `Habilidades` ha sido diseñada para mostrar sus habilidades y proporcionar información sobre su experiencia en cada habilidad. Esta guía lo guiará a través del proceso de configuración de la sección de `Habilidades` en su sitio web. Para obtener una referencia completa, puede consultar el archivo de ejemplo [skills.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/skills.yaml).
+The `Skills` section is designed to showcase your skills and provide insights into your expertise in each skill. In this post, we will guide you on how to configure the `Skills` section of your site. For a complete reference, please check out the sample [skills.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/skills.yaml) file.
 
-Para empezar, crea un nuevo archivo llamado `skills.yaml` dentro del directorio `data/es/sections` de tu sitio web. Después, sigue las instrucciones de abajo.
+To begin, create a `skills.yaml` file in the `data/en/sections` directory of your site. Then, follow the instructions below.
 
-### Añade la información de la sección
+### Add Section Information
 
-Añade la siguiente sección de metadatos en el archivo `skills.yaml`:
+Add the following section metadata to your `skills.yaml` file:
 
 ```yaml
+# section information
 section:
-  name: Habilidades # Título de la sección (predeterminado: "")
-  id: skills # id del url de la sección *se requiere*
-  enable: true # Booleano que determina si la sección está activada (predeterminado: false)
-  weight: 2 # Orden de la sección (predeterminado: alfabeticamente seguida del peso)
-  showOnNavbar: true # Booleano que determina si el enlace de esta sección debe aparecer en la barra de navegación
-  # Opcionalmente puede ocultar el título del menú
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  # Can optionally hide the title in sections
   # hideTitle: true
 ```
 
-### Añade tus habilidades
+### Add Your Skills
 
-Para añadir una `habilidad` añada su información debajo de la sección `skills` dentro del archivo `skills.yaml`, como a continuación:
+To add a `skill` add it's information under `skills` section in your `skills.yaml` file as bellow:
 
 ```yaml
-# Tus habilidades
-# Haz un resumen de cada habilidad.
+# Your Skills.
+# Give a summary of you each skill in the summary section.
 skills:
 - name: Kubernetes
-  icon: "images/sections/skills/kubernetes.png"
-  summary: "Capaz de implementar y administrar aplicaciones en Kubernetes. Con experiencia en escribir controladores de Kubernetes para CRD."
-  url: https://kubernetes.io/
+  logo: /images/sections/skills/kubernetes.png
+  summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
+  url: "https://kubernetes.io/"
 ```
 
-Aquí, debes proveer los campos `name`, `log`, y `summary` para cada habilidad. El campo `summary` debe proveer una idea sobre su profundo conocimiento de esta habilidad en particular.
+Here, you have to provide the `name`, `log`, and `summary` fields for a skill. The `summary` field should provide an idea about your depth of knowledge of this particular skill.
 
->Puedes usar la sintáctica de markdown en el campo `summary`.
+> You can use markdown syntax in the `summary` field.
 
 {{< vs 2 >}}
 
-La siguiente imagen muestra cómo el contenido de `skills.yaml` está distribuido en la sección de `Habilidades`.
+The following image shows how the content of `skills.yaml` files are mapped into the `Skills` section.
 
 {{< img src="images/skills.png">}}
