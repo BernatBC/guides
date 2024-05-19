@@ -1,57 +1,55 @@
 ---
-title: "Configurando la sección de Logros"
+title: Configuring Achievements Section
 date: 2020-06-08T06:20:30+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Sección de Logros
+    name: Achievements Section
     identifier: achievements-section
     parent: sections
     weight: 160
 ---
 
-La sección de `Logros` ha sido diseñada para mostrar sus logros en un formato de galería visualmente atractivo. Esta guía lo guiará a través del proceso de configuración de la sección de `Logros` en su sitio web. Para obtener una referencia completa, puede consultar el archivo de ejemplo [achievements.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/achievements.yaml).
+The `Achievements` section is designed to display your accomplishments in a visually appealing gallery format. This guide will walk you through the process of configuring the `Achievements` section on your website. For a complete reference, you can refer to the sample [achievements.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/achievements.yaml) file.
 
-Para empezar, crea un nuevo archivo llamado `achievements.yaml` dentro del directorio `data/es/sections` de tu sitio web. Después, sigue las instrucciones de abajo.
+To begin, create a new file named `achievements.yaml` in the `data/en/sections` directory of your website. Then, follow the instructions below.
 
-### Añade la información de la sección
+### Add Section Information
 
-Añade la siguiente sección de metadatos en el archivo `achievements.yaml`:
+Add the following section metadata to your `achievements.yaml` file:
 
 ```yaml
+# section information
 section:
-  name: Logros # Título de la sección (predeterminado: "")
-  id: achievements # id del url de la sección *se requiere*
-  enable: true # Booleano que determina si la sección está activada (predeterminado: false)
-  weight: 9 # Orden de la sección (predeterminado: alfabeticamente seguida del peso)
-  showOnNavbar: true # Booleano que determina si el enlace de esta sección debe aparecer en la barra de navegación
-  # Opcionalmente puede ocultar el título del menú
+  name: Achievements
+  id: achievements
+  enable: true
+  weight: 9
+  showOnNavbar: true
+  # Can optionally hide the title in sections
   # hideTitle: true
 ```
 
-### Añade tus logros
+### Add Your Achievements
 
-Para añadir tus logros, abre el archivo `achievements.yaml` e incluye las siguientes entradas debajo de la sección `achievements`:
+To add your achievements, open the `achievements.yaml` file and include the following entries under the `achievements` section:
 
 ```yaml
 achievements:
-- title: Mejor presentador
+- title: Best Presenter
   image: images/sections/achievements/presenter.jpg
-  summary: Mejor presentador en la conferencia XYZ 2020.
+  summary: Best presenter in the 2020 XYZ conference.
 ```
 
-Cada entrada de logro, debe tener los siguientes campos,
+Each achievements entry should have the following fields,
 
-- **title**: El título del logro.
-- **image**: La imagen del logro.
-- **summary**: Un resumen del logro.
+- **title**: The title of the achievement.
+- **image**: An image of the achievement.
+- **summary**: A summary of the achievement.
 
->Puedes usar la sintáctica de markdown en el campo `summary`.
+> You can use markdown syntax in the `summary` field.
 
 {{< vs 2 >}}
 
-La siguiente imagen muestra cómo el contenido de `achievements.yaml` está distribuido en la sección de `Logros`.
+The following image shows how the contents of `achievements.yaml` are mapped into the `Achievements` section.
 
 {{< img src="images/achievements.png" >}}
