@@ -1,27 +1,29 @@
 ---
-title: "Contenu riche"
+title: Rich Content
 date: 2020-06-08T06:15:30+06:00
 menu:
   sidebar:
-    name: Contenu riche
+    name: Rich Content
     identifier: writing-post-rich-content
     parent: writing-post
     weight: 50
 ---
 
-Hugo est livré avec quelques [Shortcode intégrés](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) pour du contenu riche, ainsi qu'une [configuration pour le respect de la vie privée](https://gohugo.io/about/hugo-and-gdpr/) et un ensemble de Shortcode simples qui active des versions statiques et sans JS de différents médias sociaux.
+Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) for rich content, along with a [Privacy Config](https://gohugo.io/about/hugo-and-gdpr/) and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
 
 <!--more-->
+
 ---
 
-## Shortcode simple Instagram
+## Instagram Simple Shortcode
+
 <!-- ref: https://github.com/gohugoio/hugo/issues/7879 -->
 
 <br>
 
 ---
 
-## Shortcode amélioré de confidentialité YouTube 
+## YouTube Privacy Enhanced Shortcode
 
 {{< youtube ZJthWmvUzzc >}}
 
@@ -29,7 +31,7 @@ Hugo est livré avec quelques [Shortcode intégrés](https://gohugo.io/content-m
 
 ---
 
-## Shortcode simple X (ex-Twiter) 
+## Twitter Simple Shortcode
 
 {{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
 
@@ -37,6 +39,6 @@ Hugo est livré avec quelques [Shortcode intégrés](https://gohugo.io/content-m
 
 ---
 
-## Shortcode simple Vimeo 
+## Vimeo Simple Shortcode
 
 {{< vimeo_simple 48912912 >}}
