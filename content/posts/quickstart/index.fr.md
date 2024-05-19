@@ -1,143 +1,143 @@
 ---
-title: "Démarrage rapide"
+title: Quickstart
 date: 2022-08-09T00:00:00+06:00
-description: "Guide de démarrage rapide pour le thème Toha"
+description: Quick starting guide for the Toha theme
 menu:
   sidebar:
-    name: "Démarrage rapide"
+    name: Quickstart
     identifier: quickstart
     weight: 2
 ---
 
-**Salutation !** Merci d'avoir décidé d'utiliser ce thème. Dans ce guide, Je vais vous montrer comment commencer rapidement avec ce thème.
+**Greeting!** Thank you for deciding to use this theme. In this guide, I will show you how you can get started with this theme very quickly.
 
-Ici, je vais supposer que vous voulez commencer un nouveau site Hugo en utilisant ce thème. Si vous utilisez déjà Hugo pour votre site, alors vous devez savoir comment utiliser un thème. Dans ce cas, veuillez suivre ce [dépôt échantillon](https://github.com/hugo-toha/hugo-toha.github.io) pour plus de détails.
+Here, I am going to assume that you want to start a fresh Hugo site using this theme. If you are already using Hugo for your site, then you must know how to use a theme. In that case, please follow this [sample repo](https://github.com/hugo-toha/hugo-toha.github.io) for further reference.
 
-### Le nécessaire
+### Requirements
 
-Pour exécuter ce thème localement, vous devez avoir les outils suivants installés.
+In order to run the theme locally, you must have the following tools installed.
 
-1. Hugo version `v0.118.x` (extended) ou plus.
-2. Langage [Go](https://go.dev/doc/install) version `v1.18.x` or plus.
-3. Node version `v18.x` et npm version `8.x` ou plus.
+1. Hugo version `v0.118.x` (extended) or later.
+2. [Go](https://go.dev/doc/install) language version `v1.18.x` or later.
+3. Node version `v18.x` and npm version `8.x` or later.
 
-Assurez-vous d'avoir les outils nécessaires dans les versions appropriées en utilisant les commandes suivantes.
+Make sure you have the required tools installed to the proper version using the following commands.
 
 ```bash
-# Contrôle de la version de Hugo
+# Check Hugo version
 ➜ hugo version
 hugo v0.118.2+extended linux/amd64 BuildDate=unknown
 
-# Contrôle de la version de Go
+# Check Go version
 ➜ go version
 go version go1.19.4 linux/amd64
 
-# Contrôle de la version de Node
+# Check Node version
 ➜ node -v
 v18.12.1
 
-# Contrôle de la version de NPM
+# Check NPM version
 ➜ npm -v
 8.19.2
 ```
 
-### Commencer
+### Getting Started
 
-Maintenant, revenons à notre mission. Suivez simplement les 5 étapes pour commencer avec votre site.
+Now, let's get back into our mission. Simply, follow these 5 steps to get started with your site.
 
-#### Etape 1: Forker le dépôt d'exemple et renommer
+#### Step 1: Fork the example repo and rename
 
-D'abord, **forkez** ce [dépôt échantillon](https://github.com/hugo-toha/hugo-toha.github.io) sur votre compte. Ensuite, renommez ce dépôt commme vous voulez. Si vous voulez utiliser les [Github Pages](https://pages.github.com/) pour déployer votre site, alors renommez le en `<your username>.github.io`. Ce dépôt échantillon fourni des Github Actions pré-configurés pour publier le site dans Github Pages et Netlify.
+At first, **fork** this [sample repo](https://github.com/hugo-toha/hugo-toha.github.io) to your account. Then, rename the repo to whatever you want. If you want to use [Github Pages](https://pages.github.com/) to deploy your site, then rename it to `<your username>.github.io`. The sample repo comes with pre-configured Github Actions to publish the site in Github Pages and Netlify.
 
-#### Etape 2: Cloner le dépôt forké localement
+#### Step 2: Clone the forked repo locally
 
-Lorsque vous avez forké et renommé votre dépôt d'échantillon, vous pouvez maintenant cloner le dépôt forké sur votre machine locale pour d'autres changements.
-
-```bash
-git clone git@github.com:<votre username>/<nom du dépôt forké>
-```
-
-#### Etape 3: Mettre à jour le fichier du module
-
-Vous devriez voir les fichiers `go.mod` et `go.sum` à la racine du dépôt. Mettez à jour la première ligne du fichier `go.mod` comme suit:
+Once you have forked and renamed the repository, you can now clone the forked repository in your local machine for further changes.
 
 ```bash
-module github.com/<votre username>/<nom du dépôt forké>
+git clone git@github.com:<your username>/<forked repo name>
 ```
 
-#### Etape 4: Modifier le fichier `config.yaml`
+#### Step 3: Update the module file
 
-Maintenant, ouvrez le dépôt dans un éditeur et modifiez les configurations dans votre fichier `config.yaml` situé à la racine de votre dépôt.
+You should see `go.mod` and `go.sum` files in the root of the repository. Update the first line of the `go.mod` file as below:
 
-##### Modifier le `baseURL`
+```bash
+module github.com/<your username>/<forked repo name>
+```
 
-D'abord, modifiez le `baseURL` avec l'URL de votre site. Si vous voulez utilisez Github Pages pour héberger votre site, alors paramètrez comme suit:
+#### Step 4: Change `config.yaml` file
+
+Now, open the repository in an editor and change the following configurations in your `config.yaml` file located at the root of your repository.
+
+##### Change the `baseURL`
+
+At first change the `baseURL` to your site URL. If you want to use Github Pages to host your site, then set it as below:
 
 ```yaml
-baseURL: https://<votre username>.github.io
+baseURL: https://<your username>.github.io
 ```
 
-##### Modifier le `gitRepo`
+##### Change the  `gitRepo`
 
-Maintenant, modifiez le `gitRepo` sous la section `params` pour pointer sur votre dépôt forké. Exemple,
+Now, change the `gitRepo` field under the `params` section to point to your forked repository. For example,
 
 ```yaml
-gitRepo: https://github.com/<votre username>/<votre nom de dépôt forké>
+gitRepo: https://github.com/<your username>/<your forked repo name>
 ```
 
-##### Désactiver l'analytique ou la configurer correctement
+##### Disable analytics or configure it properly
 
-Le dépôt d'échantillon fournit le service Google Analytics pré-configuré. L'identifiant analytics indique le site d'origine. Donc, soit vous désactivez les analyses, soit vous les configurez correctement selon ce [guide](/posts/analytics/).
+The sample repo comes with Google Analytics pre-configured. The analytics id point to the original site. So, either disable the analytics or configure it properly according to [this guide](/posts/analytics/).
 
-Vous pouvez désactiver les analyses en paramètrant le champ suivant sous la section `params.features` :
+You can disable the analytics by setting the following field under the `params.features` section:
 
 ```yaml
 analytics:
   enabled: false
 ```
 
-##### Désactiver la fonctionnalité de lettre d'information
+##### Disable news letter functionality
 
-Le dépôt d'échantillon fournit un service de lettre d'information [mailchimp](https://mailchimp.com/) pré-configuré. Désactivez-le en paramètrant le champ suivant sous la section `params.footer`.
+The sample repo comes with a pre-configured [mailchimp](https://mailchimp.com/) newsletter service. Disable it by setting the following field under the `params.footer` section.
 
 ```yaml
 newsletter:
   enable: false
 ```
 
-#### Step 5: Exécuter le site localement
+#### Step 5: Run the site locally
 
-Maintenant, exécutez les commandes suivantes pour lancer votre site localement:
+Now, run the following commands to run your site locally:
 
-a. Charger les modules Hugo
+a. Load Hugo modules
 
 ```bash
 hugo mod tidy
 ```
 
-b. Installer les modules Node
+b. Install node modules
 
 ```bash
 hugo mod npm pack
 npm install
 ```
 
-c. Exécuter le site
+c. Run the site
 
 ```bash
 hugo server -w
-```  
+```
 
 <br>
 
-Si tout se passe bien, vous devriez voir une sortie similaire à ceci.
+If everything goes right, you should see an output similar to this.
 {{< img src="images/local_site.png" align="center" alt="Command to run site locally">}}
 
-Maintenant, allez sur [localhost:1313](http://localhost:1313/) dans votre navigateur et vous devriez voir vous site en cours d'exécution.
+Now, go to [localhost:1313](http://localhost:1313/) in your browser and you should see your site running.
 
-#### Etape 6: Pousser les modifications sur Github
+#### Step 6: Push the changes to Github
 
-Si vous êtes arrivé aussi loin, cela signifie que votre site s'exécute localement sans aucuns problèmes. Poussons ces modifications sur Github.
+If you have come this far, it means your site is running locally without any issue. Let's push these changes to Github.
 
 ```bash
 # stage all the changes
@@ -150,12 +150,11 @@ git commit -m "Initial site setup" -s
 git push origin HEAD
 ```
 
-### Et ensuite ?
+### What Next
 
-- Personnaliser l'arrière-plan, le logo, et quelques autres choses de votre site en suivant [ce guide](/fr/posts/configuration/site-parameters/).
-- Ajouter des informations sur vous en suivant [ce guide](/fr/posts/configuration/sections/about/).
-- Ajouter les informations sur vos compétences en suivant [ce guide](/fr/posts/configuration/sections/skills/).
-- Ajouter les informations sur vos expériences en suivant [ce guide](/fr/posts/configuration/sections/experiences/).
-- Déployer votre site sur Github Page en suivant le guide par [ici](/fr/posts/getting-started/github-pages/).
-- Déployer votre site sur Netlify en suivant le guide par [ici](/fr/posts/getting-started/netlify/).
-
+- Customize the background, logo, and a few other things of your site by following [this guide](/posts/configuration/site-parameters/).
+- Add information about you by following [this guide](/posts/configuration/sections/about/).
+- Add your skills information by following [this guide](/posts/configuration/sections/skills/).
+- Add your experience information by following [this guide](/posts/configuration/sections/experiences).
+- Deploy your site in Github Pages by following the guide from [here](/posts/getting-started/github-pages/).
+- Deploy your site in Netlify by following the guide from [here](/posts/getting-started/netlify/).
