@@ -1,22 +1,19 @@
 ---
-title: "Automatiser la mise à jour du thème"
+title: Automate Theme Update
 date: 2020-06-08T20:00:15+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
 menu:
   sidebar:
-    name: MAJ auto du thème
+    name: Automate Theme Update
     identifier: getting-started-theme-update
     parent: getting-started
     weight: 40
 ---
 
-Pour garantir que votre site bénéfie des fonctionnalités et correctifs les plus récents, il est crucial de le maintenir à jour avec la dernière version du thème. Cet article vous guidera tout au long du processus de mise en place du workflow Github qui mettra à jour automatiquement la version du thème. Cette action réalisera quotidiennement une vérification d'une mise à jour du thème. Si une mise à jour est détectée, cela va générer une PR qui mettra à jour votre site avec la version du thème la plus récente.
+To ensure your site benefits from the most recent features and corrections, it's crucial to keep it updated with the latest theme version. This article will guide you through the process of establishing a GitHub workflow that will automatically update the theme version. This action will perform daily checks for any updates to the theme. If an update is detected, it will generate a PR to update your site to the most recent theme version.
 
-### Configurer Github Workflow
+### Setup Github Workflow
 
-Maintenant, créez un fichier `theme-update.yml` dans le répertoire `.github/workflows` de votre dépôt avec le contenu suivant:
+Now, create a `theme-update.yml` file in the `.github/workflows` folder of your repository with the following content:
 
 ```yaml
 name: "Theme Update"
@@ -73,6 +70,4 @@ jobs:
           labels: automerge
 ```
 
-Vous êtes bien pour vous lancer. A partir de maintenant, cette action s'exécutera quotidiennement et génèrera une Pull Request si des mises à jour du thème sont détectées.
-
-From now on, this action will execute on a daily basis and generate a Pull Request if any updates to the theme are detected.
+You're good to go. From now on, this action will execute on a daily basis and generate a Pull Request if any updates to the theme are detected.
