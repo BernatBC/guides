@@ -1,8 +1,8 @@
 ---
-title: Rédaction de billets
+title: Writing Posts
 menu:
   sidebar:
-    name: Rédaction de billets
+    name: Writing Posts
     identifier: writing-post
     weight: 200
 ---
