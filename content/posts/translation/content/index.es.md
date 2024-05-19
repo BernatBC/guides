@@ -1,31 +1,31 @@
 ---
-title: "Cómo traducir las publicaciones"
-date: 2020-06-07T06:20:50+06:00
+title: How to Translate Posts
+date: 2024-01-15T06:20:50+06:00
 author:
   name: BernatBC
   image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Traduciendo Publicaciones
+    name: Translating Posts
     identifier: translation-posts
     parent: translation
     weight: 520
 ---
 
-Este tema tiene soporte integrado para varios idiomas.
+This theme has built-in support for multiple language.
 
-Antes de empezar la traducción de la publicación, asegúrese de haber habilitado el idioma en su sitio. Si ese no es el caso, puedes seguir la sección `Añade el idioma en el sitio` de la guía [Cómo traducir los datos de la página de inicio](/es/posts/translation/site-data/).
+Before starting the post translation, make sure that you have enabled the language to your site. If that's not the case, you can follow the section `Add the language to the site` from the guide [How to Translate Site Data](/posts/translation/site-data/).
 
-## Creando la publicación
+## Creating the post
 
-Una vez que haya agregado el idioma deseado a su sitio web, sepa que puede traducir publicaciones a ese idioma. Asumiremos que deseas traducir una publicación existente.
+Once you have your desired language added to your website, know you can translate posts to that language. We're going to assume that you want to translate an existing post.
 
-### Creado el archivo index
+### Create the index file
 
-El primer paso es localizar el archivo `index.md` del post que deseas traducir. Después, crea un archivo en el mismo directorio (o simplemente copia el archivo `index.md`), y nómbralo `index.<código_del_idioma>.md`, dónde `<código_del_idioma>` es el código que encontrará en la tabla de idiomas de [Cómo traducir los datos de la página de inicio](/es/posts/translation/site-data/).
+The first step is to locate the `index.md` file from the post that you want to translate. Then you have to create a file in the same directory (or you can just copy the `index.md` file), and name it `index.<language_code>.md`, where `<language_code>` is the language code that you can find in the language table in [How to Translate Site Data](/posts/translation/site-data/).
 
-### Traduce la publicación
+### Translate the post
 
-Ahora ya puede empezar traduciendo la publicación, de la misma forma que escribes una publicación nueva.
+Now, you can start translating the post, the same way as you write a new post.
 
-> INFORMACIÓN: Si está tratando con referencias internas, necesitarás añadir el prefijo `/<código_del_idioma>` delante del path relativo. Por ejemplo, si quieres crear un link que apunta a `/posts/translation/site-data/`, el link de la publicación traducida será `/<language_code>/posts/translation/site-data/`.
+> INFO: If you're dealing with internal references, you'll need to add the prefix `/<language_code>` in front of your relative path. For example, if you want to create a link that is pointing to `/posts/translation/site-data/`, the link for the translated post will be `/<language_code>/posts/translation/site-data/`.
