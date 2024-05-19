@@ -1,37 +1,37 @@
 ---
-title: "Configuration de la section Projets"
+title: Configuring Projects Section
 date: 2020-06-08T06:20:35+06:00
 menu:
   sidebar:
-    name: Section des projets
+    name: Projects Section
     identifier: projects-section
     parent: sections
     weight: 140
 ---
 
-L'objet de la section `Projets` est de présenter efficacement vos projets. Dans ce billet, nous vous guiderons sur la façon de configurer la section `Projets` de votre site. Pour une référence complète, consultez s'il vous plaît l'extrait du fichier [projects.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/projects.yaml).
+The purpose of the `Projects` section is to effectively showcase your projects. In this post, we will guide you on how to configure the `Projects` section on your site. For a complete reference, please refer to the sample [projects.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/projects.yaml) file.
 
-Pour commencer, créez un nouveau fichier nommé `projects.yaml` dans le répertoire `data/fr/sections` de votre site. Ensuite, suivez les instructions ci-dessous:
+To begin, create a new file named `projects.yaml` in the `data/en/sections` directory of your website. Then, follow the instructions below.
 
-### Ajouter les informations de section
+### Add Section Information
 
-Ajoutez les métadonnées de la section suivante dans votre fichier `projects.yaml`:
+Add the following section metadata to your `projects.yaml` file:
 
 ```yaml
 # section information
 section:
-  name: Projects # Titre de la section (par défaut: "" )
-  id: projects # URL id/slug de section *valeur à conserver & obligatoire*
+  name: Projects
+  id: projects
   enable: true
   weight: 5
   showOnNavbar: true
-  # Peut optionnellement masquer les titres de la section
+  # Can optionally hide the title in sections
   # hideTitle: true
 ```
 
-### Ajouter des boutons de filtrage projet
+### Add Project Filtering Buttons
 
-Maintenant, ajoutez une section `buttons` dans votre fichier `projects.yaml` comme ci-dessous:
+Now, add a `buttons` section in your `projects.yaml` file as bellow,
 
 ```yaml
 buttons:
@@ -44,13 +44,14 @@ buttons:
 - name: Hobby
   filter: "hobby"
 ```
-Chaque bouton a deux propriétés. La première propriété est `name` qui est le texte qui sera affiché sur le bouton et l'autre est `filter` qui spécifie la catégorie des projets que ce bouton doit sélectionner.
 
-Un bouton n'affichera que les projets qui ont un tag correspondant au texte spécifié dans le `filter` choisi. La valeur du filtre `all` est traitée spécifiquement. Il correspond à tous les projets même s'ils n'ont pas `all` en tant que tag dans leur champs `tags`.
+Each button has two properties. The first property is `name` which is the text that will be displayed on the button and the other is `filter` which specifies the category of the projects this button should select.
 
-### Ajouter vos projets
+A button will show only those projects that have a tag that matches the text specified in the `filter` filed. The filter value `all` is treated specially. It matches all the projects even though they don't have `all` as a tag in their `tags` field.
 
-Maintenant, ajoutez vos projects sous la section `projects` dans votre fichier `projects.yaml` comme ci-dessous:
+### Add Your Projects
+
+Now, add your projects under the `projects` section of your `projects.yaml` file as bellow,
 
 ```yaml
 projects:
@@ -64,21 +65,21 @@ projects:
   tags: ["professional", "kubernetes", "cloud"]
 ```
 
-Vous pouvez spécifier les champs suivants pour votre projet:
+You can specify the following field for a project,
 
-- **name**: Le nom du projet.
-- **logo**: Le log du projet. Si le projet n'a pas de logo, le thème y ajoutera automatiquement un espace réservé.
-- **role**: Votre rôle sur ce projet.
-- **timeline**: La chronologie quand vous avez travaillé sur ce projet.
-- **repo**: Si ce projet est projet Open-Source et hébergé sur Github, vous pouvez fournir l'URL du dépôt.Il Ca sera utilisé pour montrer le nombre d'étoiles pour ce projet.
-- **url**: Si le projet n'est pas open-source ou n'est pas hébergé sur Github, vous pouvez fournir une URL de votre projet. Cela créera un bouton avec le lien dans la carte du projet.
-- **summary**: Une courte description du projet.
-- **tags**: Une liste de tags pour votre projet. Ca sera utilisé pour sélectionner les projets sous une catégorie avec le bouton de filtrage.
+- **name**: The name of the project.
+- **logo**: The logo of the project. If the project does not have a logo, the theme will automatically add a placeholder there.
+- **role**: Your role in the project.
+- **timeline**: The timeline when you have worked on the project.
+- **repo**: If the project is an open-source project and hosted on Github, you can provide the repository URL. This will be used to show the star count for the project.
+- **url**: If the project is not an open-source project or not hosted on Github, you can provide an URL of the project. This will create a button with the link in the project card.
+- **summary**: A short description of your project.
+- **tags**: A list of tags for your project. It will be used to select the project under a category by the filtering buttons.
 
->Vous pouvez utiliser la syntaxe markdown dans le champs `summary`.
+> You can use markdown syntax in the `summary` field.
 
 {{< vs 2 >}}
 
-L'image suivante montre commment les contenus de `projects.yaml` sont cartographiés dans la section `projects.yaml`.
+The following image shows how the contents of `projects.yaml` are mapped into the `Projects` section.
 
 {{< img src="images/projects.png" >}}
