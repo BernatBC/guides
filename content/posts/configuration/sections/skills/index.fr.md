@@ -1,44 +1,41 @@
 ---
-title: "Configuration Section Compétences"
+title: Configuring Skills Section
 date: 2020-06-08T06:20:45+06:00
-author:
-  name: Nicolas Dietlin
-  image: images/author/nicolas.jpg
 menu:
   sidebar:
-    name: Section des compétences
+    name: Skills Section
     identifier: skills-sections
     parent: sections
     weight: 120
 ---
 
-La section `Compétences` est conçue pour mettre en valeur vos compétences et fournir des informations sur votre expertise pour chaque compétence. Dans ce billet, nous vous guiderons sur la façon de configurer la section `compétences` de votre site. Pour une référence complète, consultez s'il vous plaît cet échantillon du fichier [skills.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/skills.yaml).
+The `Skills` section is designed to showcase your skills and provide insights into your expertise in each skill. In this post, we will guide you on how to configure the `Skills` section of your site. For a complete reference, please check out the sample [skills.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/data/en/sections/skills.yaml) file.
 
-Pour commencer, créez un fichier `skills.yaml` dans le répertoire `data/fr/sections` de votre site. Ensuite, suivez les instructions ci-dessous:
+To begin, create a `skills.yaml` file in the `data/en/sections` directory of your site. Then, follow the instructions below.
 
-### Ajouter les informations de section
+### Add Section Information
 
-Ajoutez les métadonnées de la section à votre fichier `skills.yaml`:
+Add the following section metadata to your `skills.yaml` file:
 
 ```yaml
 # section information
 section:
-  name: Compétences # Titre de votre section
-  id: skills # URL id/slug de section *valeur à conserver & obligatoire*
-  enable: true # Booléen pour déterminer si la section est activée (par défaut: false)
-  weight: 2 # Ordre d'affichage de la section (par defaut: alphabetique suivi par poids)
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
   showOnNavbar: true
-  # Peut optionnellement masquer les titres de la section
+  # Can optionally hide the title in sections
   # hideTitle: true
 ```
 
-### Ajouter vos compétences
+### Add Your Skills
 
-Ajoutez une `compétence` et ses informations sous la section `skills` dans votre fichier `skills.yaml` comme ci-dessous:
+To add a `skill` add it's information under `skills` section in your `skills.yaml` file as bellow:
 
 ```yaml
-# Vos compétences.
-# Donnez un résumé pour chaque compétence dans la section summary.
+# Your Skills.
+# Give a summary of you each skill in the summary section.
 skills:
 - name: Kubernetes
   logo: /images/sections/skills/kubernetes.png
@@ -46,12 +43,12 @@ skills:
   url: "https://kubernetes.io/"
 ```
 
-Ici, vous renseignez les champs `name`, `logo`, et `summary` pour une compétence. Le champs `summary` doit fournir une idée du niveau de connaissance sur une compétence particulière.
+Here, you have to provide the `name`, `log`, and `summary` fields for a skill. The `summary` field should provide an idea about your depth of knowledge of this particular skill.
 
->Vous pouvez utiliser la syntaxe markdown dans le champs `summary`.
+> You can use markdown syntax in the `summary` field.
 
 {{< vs 2 >}}
 
-L'image suivante montre comment le contenu du fichier `skills.yaml` est cartographié dans la section `Compétences`.
+The following image shows how the content of `skills.yaml` files are mapped into the `Skills` section.
 
 {{< img src="images/skills.png">}}
