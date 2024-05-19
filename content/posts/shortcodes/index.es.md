@@ -1,267 +1,264 @@
 ---
-title: "Los Shortcodes"
+title: Shortcodes
 date: 2020-06-08T08:06:25+06:00
-description: Los Shortcodes
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
+description: Shortcodes
 menu:
   sidebar:
-    name: Los Shortcodes
+    name: Shortcodes
     identifier: shortcodes
     weight: 700
 hero: boat.jpg
 ---
 
-Esta es una publicación de ejemplo con el objetivo de testear lo siguiente:
+This is a sample post intended to test the followings:
 
-- Imagen de hero determinada.
-- Los distintos shortcodes.
+- Default hero image.
+- Different shortcodes.
 
-## Alerta
+## Alert
 
-Las siguientes alertas están disponibles en este tema.
+The following alerts are available in this theme.
 
-#### Éxito
+#### Success
 
-**Código:**
+**Code:**
 
 ```markdown
 {{</* alert type="success" */>}}
-Esto es un ejemplo de alerta con `type="success"`.
+This is sample alert with `type="success"`.
 {{</* /alert */>}}
 ```
 
-**Resultado:**
+**Result:**
 
 {{< alert type="success" >}}
-Esto es un ejemplo de alerta con `type="success"`.
+This is sample alert with `type="success"`.
 {{< /alert >}}
 
-#### Peligro
+#### Danger
 
-**Código:**
+**Code:**
 
 ```markdown
 {{</* alert type="danger" */>}}
-Esto es un ejemplo de alerta con `type="danger"`.
+This is sample alert with `type="danger"`.
 {{</* /alert */>}}
 ```
 
-**Resultado:**
+**Result:**
 
 {{< alert type="danger" >}}
-Esto es un ejemplo de alerta con `type="danger"`.
+This is sample alert with `type="danger"`.
 {{< /alert >}}
 
-#### Advertencia
+#### Warning
 
-**Código:**
+**Code:**
 
 ```markdown
 {{</* alert type="warning" */>}}
-Esto es un ejemplo de alerta con `type="warning"`.
+This is sample alert with `type="warning"`.
 {{</* /alert */>}}
 ```
 
-**Resultado:**
+**Result:**
 
 {{< alert type="warning" >}}
-Esto es un ejemplo de alerta con `type="warning"`.
+This is sample alert with `type="warning"`.
 {{< /alert >}}
 
-#### Inforamación
+#### Info
 
-**Código:**
+**Code:**
 
 ```markdown
 {{</* alert type="info" */>}}
-Esto es un ejemplo de alerta con `type="info"`.
+This is sample alert with `type="info"`.
 {{</* /alert */>}}
 ```
 
-**Resultado:**
+**Result:**
 
 {{< alert type="info" >}}
-Esto es un ejemplo de alerta con `type="info"`.
+This is sample alert with `type="info"`.
 {{< /alert >}}
 
-## Imagen
+## Image
 
-#### Una imagen de ejemplo sin ningún atributo.
+#### A sample image without any attribute.
 
-**Código:**
+**Code:**
 
 ```markdown
-{{</* img src="/posts/shortcodes/boat.jpg" title="Una barca en el mar" */>}}
+{{</* img src="/posts/shortcodes/boat.jpg" title="A boat at the sea" */>}}
 ```
 
-**Resultado:**
+**Result:**
 
-{{< img src="/posts/shortcodes/boat.jpg" title="Una barca en el mar" >}}
+{{< img src="/posts/shortcodes/boat.jpg" title="A boat at the sea" >}}
 
 {{< vs 3 >}}
 
-#### Una imagen de ejemplo con los atributos `height` y `width`.
+#### A sample image with `height` and `width` attributes.
 
-**Código:**
+**Code:**
 
 ```markdown
-{{</* img src="/posts/shortcodes/boat.jpg" height="400" width="600" title="Una barca en el mar" */>}}
+{{</* img src="/posts/shortcodes/boat.jpg" height="400" width="600" title="A boat at the sea" */>}}
 ```
 
-**Resultado:**
+**Result:**
 
-{{< img src="/posts/shortcodes/boat.jpg" height="400" width="600" title="Una barca en el mar" >}}
+{{< img src="/posts/shortcodes/boat.jpg" height="400" width="600" title="A boat at the sea" >}}
 
 {{< vs 3 >}}
 
-#### Una imagen de ejemplo centrada con los atributos `height` y `width`.
+#### A center aligned image with `height` and `width` attributes.
 
-**Código:**
+**Code:**
 
 ```markdown
-{{</* img src="/posts/shortcodes/boat.jpg" height="400" width="600" align="center" title="Una barca en el mar" */>}}
+{{</* img src="/posts/shortcodes/boat.jpg" height="400" width="600" align="center" title="A boat at the sea" */>}}
 ```
 
-**Resultado:**
+**Result:**
 
-{{< img src="/posts/shortcodes/boat.jpg" height="400" width="600" align="center" title="Una barca en el mar" >}}
+{{< img src="/posts/shortcodes/boat.jpg" height="400" width="600" align="center" title="A boat at the sea" >}}
 
 {{< vs 3 >}}
 
-#### Una imagen de ejemplo con el atributo `float`.
+#### A image with `float` attribute.
 
-**Código:**
+**Code:**
 
 ```markdown
-{{</* img src="/posts/shortcodes/boat.jpg" height="200" width="500" float="right" title="Una barca en el mar" */>}}
+{{</* img src="/posts/shortcodes/boat.jpg" height="200" width="500" float="right" title="A boat at the sea" */>}}
 ```
 
-**Resultado:**
+**Result:**
 
-{{< img src="/posts/shortcodes/boat.jpg" height="200" width="500" float="right" title="Una barca en el mar" >}}
+{{< img src="/posts/shortcodes/boat.jpg" height="200" width="500" float="right" title="A boat at the sea" >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies. Praesent tellus risus, eleifend vel efficitur ac, venenatis sit amet sem. Ut ut egestas erat. Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat. Suspendisse nec ipsum eu erat finibus dictum. Morbi volutpat nulla purus, vel maximus ex molestie id. Nullam posuere est urna, at fringilla eros venenatis quis.
 
 Fusce vulputate dolor augue, ut porta sapien fringilla nec. Vivamus commodo erat felis, a sodales lectus finibus nec. In a pulvinar orci. Maecenas suscipit eget lorem non pretium. Nulla aliquam a augue nec blandit. Curabitur ac urna iaculis, ornare ligula nec, placerat nulla. Maecenas aliquam nisi vitae tempus vulputate.
 
-## División
+## Split
 
-Este tema soporta dividir la página en tantas columnas como desee.
+This theme support splitting the page into as many columns as you wish.
 
-#### División en dos columnas
+#### Two column split
 
-**Código:**
+**Code:**
 
 ```markdown
 {{</* split 6 6 */>}}
-##### Columna Izquierda
+##### Left Column
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies.
 
 ---
 
-##### Columna Derecha
+##### Right Column
 
 Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat.
 
 {{</* /split */>}}
 ```
 
-**Resultado:**
+**Result:**
 
 {{< split 6 6>}}
 
-##### Columna Izquierda
+##### Left Column
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies.
 
 ---
 
-##### Columna Derecha
+##### Right Column
 
 Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat.
 
 {{< /split >}}
 
-#### División en tres columnas
+#### Three column split
 
-**Código:**
+**Code:**
 
 ```markdown
 {{</* split 4 4 4 */>}}
-##### Columna Izquierda
+##### Left Column
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies.
 
 ---
 
-##### Columna Central
+##### Middle Column
 
 Aenean dignissim dictum ex. Donec a nunc vel nibh placerat interdum.
 
 ---
 
-##### Columna Derecha
+##### Right Column
 
 Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat.
 
 {{</* /split */>}}
 ```
 
-**Resultado:**
+**Result:**
 
 {{< split 4 4 4 >}}
 
-##### Columna Izquierda
+##### Left Column
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies.
 
 ---
 
-##### Columna Central
+##### Middle Column
 
 Aenean dignissim dictum ex. Donec a nunc vel nibh placerat interdum.
 
 ---
 
-##### Columna Derecha
+##### Right Column
 
 Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat.
 
 {{< /split >}}
 
-## Espacio Vertical
+## Vertical Space
 
-Da espacio vertical entre dos líneas.
+Give vertical space between two lines.
 
-**Código:**
+**Code:**
 
 ```markdown
-Esta es la primera línea.
+This is line one.
 {{</* vs 4*/>}}
 This is line two. It should have `4rem` vertical space with previous line.
-Esta es la segunda línea. Debería tener un espacio vertical `4rem` con la línea previa.
 ```
 
-**Resultado:**
+**Result:**
 
-Esta es la primera línea.
+This is line one.
 {{< vs 4>}}
-Esta es la segunda línea. Debería tener un espacio vertical `4rem` con la línea previa.
+This is line two. It should have `4rem` vertical space with previous line.
 
-## Vídeo
+## Video
 
-**Código:**
+**Code:**
 
 ```markdown
 {{</* video src="/videos/sample.mp4" */>}}
 ```
 
-**Resultado:**
+**Result:**
 
 {{< video src="/videos/sample.mp4" >}}
 
 <!-- markdown-link-check-disable-next-line -->
-Video por [Rahul Sharma](https://www.pexels.com/@rahul-sharma-493988) de [Pexels](https://www.pexels.com).
+
+Video by [Rahul Sharma](https://www.pexels.com/@rahul-sharma-493988) from [Pexels](https://www.pexels.com).
