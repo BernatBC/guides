@@ -1,29 +1,29 @@
 ---
-title: "Contenido Enriquecido"
+title: Rich Content
 date: 2020-06-08T06:15:30+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Contenido Enriquecido
+    name: Rich Content
     identifier: writing-post-rich-content
     parent: writing-post
     weight: 50
 ---
 
-Hugo viene con unos cuantos [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) para el contenido enriquecido, junto con una [configuración de privacidad](https://gohugo.io/about/hugo-and-gdpr/) y un conjunto de shortcodes simples que permiten versiones estáticas y sin varios embeds de redes sociales de JavaSrcipt.
+Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) for rich content, along with a [Privacy Config](https://gohugo.io/about/hugo-and-gdpr/) and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
+
 <!--more-->
+
 ---
 
-## Shortcode simple de Instagram
+## Instagram Simple Shortcode
+
 <!-- ref: https://github.com/gohugoio/hugo/issues/7879 -->
 
 <br>
 
 ---
 
-## Shortcode de privacidad mejorada de Youtube
+## YouTube Privacy Enhanced Shortcode
 
 {{< youtube ZJthWmvUzzc >}}
 
@@ -31,7 +31,7 @@ Hugo viene con unos cuantos [Built-in Shortcodes](https://gohugo.io/content-mana
 
 ---
 
-## Shortcode simple de Twitter
+## Twitter Simple Shortcode
 
 {{< tweet user="SanDiegoZoo" id="1453110110599868418" >}}
 
@@ -39,6 +39,6 @@ Hugo viene con unos cuantos [Built-in Shortcodes](https://gohugo.io/content-mana
 
 ---
 
-## Shortcode simple de Vimeo
+## Vimeo Simple Shortcode
 
 {{< vimeo_simple 48912912 >}}
