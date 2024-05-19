@@ -1,52 +1,50 @@
 ---
-title: "Comentarios"
+title: Comments
 date: 2022-03-14T06:00:23+06:00
-description: Añadiendo Comentarios en el tema de hugo Toha
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
+description: Adding comments in hugo theme Toha
 menu:
   sidebar:
-    name: Comentarios
+    name: Comments
     identifier: comments
     weight: 650
 ---
-## Comentarios
 
-Este tema tiene soporte para comentarios en las publicaciones. Actualmente, soporta las siguientes extensiones de comentarios:
+## Comments
+
+This theme has built-in support for comment on the posts. Currently, it support the following comment plugins:
 
 - [Disqus](https://disqus.com/)
 - [Valine](https://valine.js.org/)
 - [Utterances](https://utteranc.es/)
 - [Giscus](https://giscus.app/)
 
-Para una lista completa de las extensiones de comentarios soportadas, puede consultar el archivo de ejemplo [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml).
+For a complete list of supported comments, please refer the sample [config.yaml](https://github.com/hugo-toha/hugo-toha.github.io/blob/main/config.yaml) file.
 
 ### Disqus
 
-Disqus es una extensión de comentarios popular. Después de acceder a [Disqus](https://disqus.com/) necesitarás proveer tu shortname debajo de la sección `params.features` de tu archivo `config.yaml`, como a continuación:
+Disqus is a popular comment plug-in. After signing up to [Disqus](https://disqus.com/) you will need to provide your shortname under `params.features` section of your `config.yaml` file as below:
 
 ```yaml
 comment:
   enable: true
   services:
     disqus:
-      shortName: ejemplo-de-sitio-de-toha
+      shortName: toha-example-site
 ```
 
 ### Valine
 
-[Valine](https://valine.js.org/) resulta ser una extensión de comentarios chino. Puedes habilitar la extensión de comentarios valine añadiendo la sección `valine` debajo de la sección `params.features` de tu archivo `config.yaml`, como a continuación: 
+[Valine](https://valine.js.org/) appears to be a Chinese comments comments plugin. You can enable valine comment plugin by adding `valine` section under `params.features` section as shown below:
 
 ```yaml
 comment:
   enable: true
   services:
     valine:
-      appId: id-de-la-aplicación
-      appKey: clave-de-la-aplicación
+      appId: app-id
+      appKey: app-key
       avatar: retro
-      placeholder: Comparte tu pensamiento.
+      placeholder: Share your thought.
       lang: en
       recordIP: true
       enableQQ: true
@@ -54,33 +52,33 @@ comment:
 
 ### Utterances
 
-Para habilitar la extensión de comentarios Utterances, necesitarás ir primero a [utteranc.es](https://utteranc.es/). En la sección de `Configuration`, provee la información necesaria. Te dará un script para incluir en tu sitio. Solo necesitarás extraer la información respectiva del script, y proveerla debajo de la sección `params.features` de tu archivo `config.yaml`, como a continuación: 
+To enable Utterances comment plugin, at first go to [utteranc.es](https://utteranc.es/). On the `Configuration` section, provide the necessary information. It will give you a script to include to your site. You just need to extract the respective information from the script and provide it under `params.features` section as below:
 
 ```yaml
 comment:
   enable: true
   services:
     utteranc:
-      repo: tu-repositorio/nombre
+      repo: your-repo/name
       issueTerm: title
       theme: github-light
 ```
 
 ### Giscus
 
-Giscus está basado en Utterances, pero usa [GitHub Discussions](https://docs.github.com/en/discussions) como backend. Esto requiere tener un repositorio público, y permitir que la aplicación Giscus use tu repositorio. Las instrucciones de configuración se pueden encontrar en [Giscus home page](https://giscus.app/).
+Giscus is based off Utterances, but uses [GitHub Discussions](https://docs.github.com/en/discussions) as the backend. This requires you to allow have a public repository, and the Giscus app to use your repository. Setup instructions can be found at the [Giscus home page](https://giscus.app/).
 
-Para habilitar la extensión de comentarios Utterances, necesitarás ir primero a [giscus.app](https://giscus.app/). En la sección de `Configuration`, provee la información necesaria. Te dará un script para incluir en tu sitio. Solo necesitarás extraer la información respectiva del script, y proveerla debajo de la sección `params.features` de tu archivo `config.yaml`, como a continuación: 
+To enable Giscus comment plugin, at first go to [giscus.app](https://giscus.app/). On the `Configuration` section, provide the necessary information. It will give you a script to include to your site. You just need to extract the respective information from the script and provide it under `params.features` section as below:
 
 ```yaml
 comment:
   enable: true
   services:
     giscus:
-      repo: tu-repositorio/nombre
-      repoID: ide-de-tu-repositorio
-      category: tu-categoría
-      categoryID: tu-ide-de-categoría
+      repo: your-repo/name
+      repoID: your-repo-id
+      category: your-category
+      categoryID: your-category-id
       theme: light
       map: url
       reaction: 1
