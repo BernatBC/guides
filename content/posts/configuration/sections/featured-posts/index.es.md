@@ -1,30 +1,27 @@
 ---
-title: "Configurando la sección de Publicaciones Destacadas"
+title: Configuring Featured Posts Section
 date: 2024-02-06T06:20:34+06:00
-author:
-  name: BernatBC
-  image: images/author/bernatbc.png
 menu:
   sidebar:
-    name: Sección de Publicaciones Destacadas
-    identifier: featured-posts-section
+    name: Featured Posts Section
+    identifier: fetured-posts-section
     parent: sections
     weight: 150
 ---
 
-La sección de `Publicaciones Destacadas` sirve para mostrar las publicaciones que quieras. Para habilitar esta sección, crea un archivo `featured-posts.yaml` dentro del directorio `data/es/sections` e incluye el siguiente contenido:
+The `Fetured Posts` section is used to showcase any post you like. To enable this section, create a `featured-posts.yaml` file in the `data/en/sections` directory and include the following content:
 
 ```yaml
-# Información de la sección
+# section information
 section:
-  name: Publicaciones DestacadAS # Título de la sección
-  id: featured-posts # id del url de la sección *se requiere*
-  enable: true # Booleano que determina si la sección está activada (predeterminado: false)
-  weight: 6 # Orden de la sección (predeterminado: alfabeticamente seguida del peso)
-  showOnNavbar: true # Booleano que determina si el enlace de esta sección debe aparecer en la barra de navegación
-  hideTitle: true # Opcionalmente puede ocultar el título del menú (predeterminado: false)
+  name: Featured Posts # Title of section (default: "")
+  id: featured-posts # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 6 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  hideTitle: true # Can optionally hide the title in sections (default: false)
 
-# publicaciones a destacar
+# posts to feature
 posts:
   - quickstart
   - update-v3-to-v4
